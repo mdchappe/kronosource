@@ -1,0 +1,1 @@
+<h2><?php echo $name; ?> added to site!</h2>

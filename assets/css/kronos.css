@@ -1,0 +1,32 @@
+/*css document*/
+body{padding-top: 200px; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased;}
+.welcome-user{color: #fff; font-weight: 200;}
+.nav{left: -9px !important;}
+.navbar-inverse .navbar-inner{background: rgba(0,0,0,0.80);}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {margin-bottom: 0; margin-top: 6px; height: 29px; border-radius: none !important; -webkit-border-radius: none !important; -moz-border-radius: none !important; -ms-border-radius: none !important; -o-border-radius:none !important;  }
+body{background: url(../img/krono-bg.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; width: 100%;}
+footer{background: rgba(0,0,0,0.80); width: 100%; color: #fff; height: 100px; text-align: center;}
+.push {height: 100px;}
+.footer-copy {position: relative; top: 20px;}
+.wrap {min-height: 100%; height: auto !important; height: 100%;margin: 0 auto -100px;}
+.welcome-user {margin-top: 20px;}
+.edit-wrap, .browse-wrap {background: rgba(0,0,0,0.80); color: white;}
+.edit-inner, .browse-inner {padding-left: 30px; padding-right: 30px;}
+.edit-inner input { width: 40%; min-width: 275px; margin-bottom: 30px;}
+.edit-inner label {cursor: text;}
+.edit-username {position: relative; top: 20px;}
+.edit-btn, .edit-inner .btn-danger {min-width: 100px !important; width: 100px !important; }
+.edit-inner .btn-danger {display: block; padding-right: 0; padding-left: 0;}
+.browse-wrap {margin-bottom: 50px;}
+.browse-wrap ul {list-style-type: none; margin-left: 0;}
+.browse-listing {height: 100px; border-bottom: 1px white solid; margin-top: 20px;}
+.browse-listing img {margin-right: 30px;}
+.edit-inner legend {color: white;}
+.checkboxes input {width: auto; margin-bottom: 8px;}
+.container {margin-bottom: 50px;}
+.navbar-inner .container {margin-bottom: 0;}
+.footer-toe {margin: 15px; position: relative; top: 13px; color: white; font-size: 15px;}
+.footer-toe:hover {color: white;}
+.the-user {font-weight: 700; text-transform: uppercase;}
+/*temporary*/
+.construction-statement {font-size: 5em; line-height: 1.1em; padding: 70px; background: rgba(0,0,0,0.80); color: white; font-weight: 700; }
