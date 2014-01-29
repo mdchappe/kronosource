@@ -55,7 +55,9 @@ $db['kronosource']['database'] = 'db491689781';
 $db['kronosource']['dbdriver'] = 'mysql';
 $db['kronosource']['dbprefix'] = '';
 $db['kronosource']['pconnect'] = TRUE;
-$db['kronosource']['db_debug'] = TRUE;
+//change to true in production
+$db['kronosource']['db_debug'] = FALSE;
+//
 $db['kronosource']['cache_on'] = FALSE;
 $db['kronosource']['cachedir'] = '';
 $db['kronosource']['char_set'] = 'utf8';
