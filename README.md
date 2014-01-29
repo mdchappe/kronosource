@@ -14,7 +14,7 @@ kronosource
 <li>run: <code>git update-index --assume-unchanged config.php</code></li>
 <li>run: <code>git update-index --assume-unchanged database.php</code></li>
 <li>open config.php and change <code>line 17</code> to <code>$config['base_url']	= 'http://localhost:8888/';</code></li>
-<li>open database.php and change <code>line 54</code> to<br>
+<li>open database.php and change <code>line 51</code> - <code>line 54</code> to<br>
 "<br><code>
 $db['kronosource']['hostname'] = 'localhost:8889';<br>
 $db['kronosource']['username'] = 'root';<br>
