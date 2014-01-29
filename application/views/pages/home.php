@@ -1,7 +1,7 @@
 <?php 
 	$captcha_vals = array(
 		'img_path'	 => 'assets/captcha/',
-		'img_url'	 => base_url().'/assets/captcha/',
+		'img_url'	 => 'http://www.kronosource.com/assets/captcha/',
 		'img_width'	 => '150',
 		'img_height' => 30,
 		'expiration' => 7200
