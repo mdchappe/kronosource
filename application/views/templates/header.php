@@ -18,7 +18,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="/index.php/"><img src="http://www.frequencycreative.com/codeigniter/assets/img/kronosource_logo.png" /></a></a>
+        <a class="brand" href="/index.php/"><img src="<?php echo base_url();?>assets/img/kronosource_logo.png" /></a></a>
         <div class="nav-collapse collapse">
           
           <div class="pull-right nav">

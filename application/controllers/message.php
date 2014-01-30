@@ -124,7 +124,7 @@
 				
 				$this->session->set_flashdata('status','Message deleted.');
 				
-				redirect('http://www.kronosource.com/index.php/message/inbox/');
+				redirect(base_url().'index.php/message/inbox/');
 			} 
 		}
 	}

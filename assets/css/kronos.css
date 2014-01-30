@@ -1,5 +1,6 @@
 /*css document*/
 body{padding-top: 200px; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased;}
+legend{color:#FFF;padding-top:30px;}
 .welcome-user{color: #fff; font-weight: 200;}
 .nav{left: -9px !important;}
 .navbar-inverse .navbar-inner{background: rgba(0,0,0,0.80);}
