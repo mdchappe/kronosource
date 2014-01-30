@@ -1,7 +1,7 @@
 <div class="container edit-wrap">
 	<div class="edit-inner">
 		
-		<h2>Property Management</h2><br><br>
+		<h2>Property Management</h2>
 		<?php echo form_error('username','<p>username: ','</p>'); ?>
 		<?php echo form_error('password','<p>password: ','</p>'); ?>
 		<?php echo form_error('email','<p>email: ','</p>'); ?>

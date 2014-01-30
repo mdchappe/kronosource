@@ -37,6 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+$route['search/properties'] = 'search/properties';
 $route['contact/form'] = 'pages/contactform';
 $route['message/delete'] = 'message/delete';
 $route['message/read'] = 'message/read';

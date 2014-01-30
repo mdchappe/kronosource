@@ -63,7 +63,39 @@
 			
 			$this->load->helper('form');
 			
-			$data['title'] = 'Property Search';
+			$date_input = array(
+				'name' => 'unit_date',
+				'id' => 'unit_date',
+				'type' => 'text',
+				'placeholder' => 'mm/dd/yyyy'
+			);
+			
+			$direction_dropdown = array(
+				'Any' => 'Any',
+				'N' => 'N',
+				'NE' => 'NE',
+				'E' => 'E',
+				'SE' => 'SE',
+				'S' => 'S',
+				'SW' => 'SW',
+				'W' => 'W',
+				'NW' => 'NW'
+			);
+			
+			$washer_dropdown = array(
+				'any' => 'Any',
+				'none' => 'None',
+				'connection' => 'Connection',
+				'side_by_side' => 'Side By Side',
+				'stacked' => 'Stacked'
+			);
+			
+			$data['direction_dropdown'] = $direction_dropdown;
+			$data['date_input'] = $date_input;
+			$data['washer_dropdown'] = $washer_dropdown;
+			
+			$data['title'] = 'KronoSource Search';
+			$data['status'] = $this->session->flashdata('status');
 			
 			$this->load->view('templates/header',$data);
 			$this->load->view('locator/searchProperties',$data);
