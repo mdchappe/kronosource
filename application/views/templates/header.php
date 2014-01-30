@@ -2,9 +2,8 @@
 
 <head>
 	<title><?php echo $title ?></title>
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap-responsive.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/kronos.css" type="text/css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Abel|Rokkitt:400,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	
 </head>
 
@@ -18,7 +17,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="/index.php/"><img src="http://www.frequencycreative.com/codeigniter/assets/img/kronosource_logo.png" /></a></a>
+        <a class="brand" href="/index.php/"><img src="http://www.frequencycreative.com/codeigniter/assets/img/kronosource_logo.png" /></a>
         <div class="nav-collapse collapse">
           
           <div class="pull-right nav">
@@ -30,9 +29,10 @@
 				<input class="btn btn-primary" type="submit" name="submit" value="log in" />
 				</form>
 			</p>
+		
 			
 			<p class="welcome-user">
-				Unregistered?  Enter code below and click the submit button:<br/>
+				Unregistered?  Enter code below and click the submit button:
 				<?php $registration_code_opts = 'placeholder="Registration Code"'; echo form_open('pages/register').form_input('regcode', '', $registration_code_opts);?>
 				<input class="btn btn-primary" type="submit" name="submit_register" value="register" />
 				</form>

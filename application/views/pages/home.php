@@ -19,38 +19,37 @@
 	$this->db->query($query);
 ?>
 
-<div class="home-wrapper container">
-	<p class="construction-statement">
-		Hang in there, KronoSource is almost ready.<br/>
-		
+<div class="home-wrapper container effect7">
+	
 		<?php if(!$this->ion_auth->logged_in()):
 			  echo form_open('contact/form');
-			  echo form_fieldset('Want to know more?');
+			  echo form_fieldset('<h2>Want to know more?</h2>');
 		?>
+	<div class="row-fluid">
 		<?php echo validation_errors('<p class="error">', '</p>'); ?>
-		<?php echo '<span>'.$status.'</span><br/>';?>
-		Please complete all fields below.
-		<label for="name">Name</label>
-		<?php echo form_input('name', set_value('name'));?><br/>
-		<label for="company">Company</label>
-		<?php echo form_input('company', set_value('company'));?><br/>
-		<label for="phone">Phone Number</label>
-		<?php echo form_input('phone', set_value('phone'));?><be/>
-		<label for="email">Email Address</label>
-		<?php echo form_input('email', set_value('email'));?><br/>
-		<label for="email_validate">Validate Email Address</label>
-		<?php echo form_input('email_validate');?><br/>
-		<label for="locator">I am or represent a:</label>
-		<?php echo form_radio('account_type','locator',set_value('account_type'));?>Locator<br/>
-		<?php echo form_radio('account_type','Property',set_value('account_type'));?>Property<br/>
-		<label for="contact_phone">Contact me by:</label>
-		<?php echo form_radio('contact','Phone',set_value('contact')).'Phone<br/>';
-			  echo form_radio('contact','Email',set_value('contact')).'Email<br/>';
-			  echo form_radio('contact','Either',set_value('contact')).'Either<br/>';?>
-		<label for="captcha">Prove your humanity:</label>
+		<?php echo '<span>'.$status.'</span>';?>
+		<h4>Please complete all fields below.</h4>
+		<label for="name">Name:</label>
+		<?php echo form_input('name', set_value('name'));?>
+		<label for="phone">Phone Number:</label>
+		<?php echo form_input('phone', set_value('phone'));?>
+		<label for="email">Email Address:</label>
+		<?php echo form_input('email', set_value('email'));?>
+		<label for="email_validate">Verify Email Address:</label>
+		<?php echo form_input('email_validate');?>
+		<label for="company">Company:</label>
+		<?php echo form_input('company', set_value('company'));?><br><span class="radio-selectors">
+		<label class="radio-label" for="locator">I am or represent a:</label>
+		<?php echo form_radio('account_type','locator',set_value('account_type'));?>Locator
+		<?php echo form_radio('account_type','Property',set_value('account_type'));?>Property
+		<label class="radio-label" for="contact_phone">Contact me by:</label>
+		<?php echo form_radio('contact','Phone',set_value('contact')).'Phone';
+			  echo form_radio('contact','Email',set_value('contact')).'Email';
+			  echo form_radio('contact','Either',set_value('contact')).'Either<br/>';?></span>
+		<label for="captcha">Are You Human?</label>
 		<?php echo $captcha['image'].form_input('captcha');?><br/>
-		<input type="submit" name="submit" value="submit" />
+		<input class="btn" type="submit" name="submit" value="submit" />
 		
 		<?php endif;?>
-	</p>
+	</div>
 </div>

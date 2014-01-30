@@ -1,7 +1,7 @@
 <div class="push"></div>
 </div><!-- end wrap -->
 <footer>
-	<div class="footer-copy">KRONOSOURCE &copy; 2013 <br>
+	<div class="footer-copy"><a class="footer-toe" href="/">KRONOSOURCE &copy; 2013</a>
 		<a class="footer-toe" href="mailto:office@kronosource.com">OFFICE@KRONOSOURCE.COM</a> <a class="footer-toe" href="tel:2147858055">214-785-8055</a> <span class="footer-toe">9330 LBJ FREEWAY STE. 900 DALLAS TX, 75243</span>
 	</div>
 </footer>
