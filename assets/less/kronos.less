@@ -1,6 +1,7 @@
 
 @import "bootstrap";
-@import "bootstrap-responsive";
+/*we can add this later, It's just too much work right now*/
+/* @import "bootstrap-responsive"; */
 @import "mixins";
 
 /*css document*/
@@ -31,7 +32,10 @@ body {
 	.gradient (@startColor: #4d90fe, @endColor: #4787ed);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d90fe',endColorstr='#4787ed',GradientType=0);
 border: none;
+width: auto !important;
 }
+
+.btn:hover {color: #fff;}
 
 
 
@@ -76,6 +80,36 @@ h1,h2,h3,h4,h5,h6 {
             box-shadow:0 1px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.15) inset;
 }
 
+.unregistered {
+	margin-top:20px;
+	color:#969696;
+	text-shadow:inset 0px 1px 0px rgba(0,0,0,0.1);
+	font-size: 17px;
+}
+
+.welcome-user {
+	color: #969696;
+	margin-top: 10px !important;
+}
+
+.logged-in-nav {
+	list-style-type: none;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	
+	li {
+		display: inline-block;
+		text-align: center;
+		margin: 20px 3px 10px 3px;
+		
+		a {
+		
+			color: #4d90fe;
+		}
+	}
+}
+
 .brand {
 	background-color:#1b1b1b;
 	.border-radius (@radius: 2);
@@ -109,16 +143,41 @@ footer,.navbar-inverse .navbar-inner {
 	margin:0 auto -40px;
 }
 
-.welcome-user {
-	margin-top:20px;
-	color:#969696;
-	text-shadow:inset 0px 1px 0px rgba(0,0,0,0.1);
-	font-size: 17px;
-}
-
 .edit-wrap,.browse-wrap {
-	background:rgba(0,0,0,0.80);
-	color:#fff;
+	position: relative;
+	.border-radius (@radius: 5px);
+	border:1px solid #5C5C5C;
+	-webkit-box-shadow:0 1px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.15) inset;
+       -moz-box-shadow:0 1px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.15) inset;
+            box-shadow:0 1px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.15) inset;
+	
+	label {
+		display: inline-block;
+		width: 150px;
+		text-align: right;
+		position: relative;
+		top: 4px;
+	}
+		
+	.property-features	span {
+			width:200px;
+			display: inline-block;
+			text-align: left;
+	}
+	
+	legend, .text-left > fieldset {text-align: left !important;}
+	
+	span.property-features {
+		width: 650px;
+		display: inline-block;
+		left: 50%;
+		position: relative;
+		margin-left: -325px;
+	}
+	.property-features-dropdowns {text-align: left;}
+	.property-features-dropdowns label {width: 110px;}
+	.property-features-dropdowns select {margin-right: 20px;}
+	.property-features-dropdowns select, .property-features-dropdowns input {width: 150px; margin-left: 10px;}
 }
 
 .edit-inner,.browse-inner {
@@ -206,6 +265,8 @@ footer,.navbar-inverse .navbar-inner {
 .the-user {
 	font-weight:700;
 	text-transform:uppercase;
+	letter-spacing: 1px;
+	color: white;
 }
 
 .home-wrapper {
@@ -219,6 +280,8 @@ footer,.navbar-inverse .navbar-inner {
 
 .home-wrapper img {
 	margin-right: 15px;
+	position: relative;
+	top: 2px;
 }
 
 
@@ -289,3 +352,9 @@ footer,.navbar-inverse .navbar-inner {
 	background:linear-gradient(to bottom,rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ededed',GradientType=0);
 } 
+
+
+@media (max-width: 979px) {
+body {
+padding-top: 0 !important;}
+}

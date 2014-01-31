@@ -12,11 +12,6 @@
  <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
         <a class="brand" href="/index.php/"><img src="http://www.frequencycreative.com/codeigniter/assets/img/kronosource_logo.png" /></a>
         <div class="nav-collapse collapse">
           
@@ -31,7 +26,7 @@
 			</p>
 		
 			
-			<p class="welcome-user">
+			<p class="unregistered">
 				Unregistered?  Enter code below and click the submit button:
 				<?php $registration_code_opts = 'placeholder="Registration Code"'; echo form_open('pages/register').form_input('regcode', '', $registration_code_opts);?>
 				<input class="btn btn-primary" type="submit" name="submit_register" value="register" />
@@ -42,7 +37,7 @@
 			else if($the_user->group == 'locator'){
 			
 				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->first_name.'</span>! You are logged in to KronoSource!<br/>
-						<ul class="nav">
+						<ul class="logged-in-nav">
 							<li><a href="/index.php/message/inbox">Inbox</a></li>
 							<li><a href="/index.php/users/edit">Edit Profile</a></li>
 							<li><a href="/index.php/locator/browseProperties">Browse</a></li>
@@ -55,7 +50,7 @@
 			
 			else if($the_user->group == 'property'){ 
 				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->company.'</span>! You are logged in to KronoSource!<br/>
-					  	<ul class="nav">
+					  	<ul class="logged-in-nav">
 					  		<li><a href="/index.php/message/inbox">Inbox</a></li>
 					  		<li><a href="/index.php/property/manage">Manage Property Information</a></li>
 					  		<li><a href="/index.php/users/logout">Logout</a></li>
