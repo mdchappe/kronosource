@@ -37,7 +37,11 @@
 				$this->form_validation->set_rules('email_verify','Email Address','matches[email]');
 			}
 			
-			if($this->form_validation->run() === FALSE) {
+			if($this->form_validation->run() === FALSE || $this->session->flashdata('status')) {
+				
+				if($this->session->flashdata('status')){
+					$data['status'] = $this->session->flashdata('status');
+				}
 				
 				$features = $this->property_model->get_features($this->the_user->id);
 				foreach($features as $feature => $value):
@@ -77,9 +81,9 @@
 				
 				$this->property_model->update_features($this->the_user->id);
 				if($this->ion_auth->update($this->the_user->id, $user_data)){
-					$this->load->view('templates/header',$data);
-					$this->load->view('property/success',$data);
-					$this->load->view('templates/footer',$data);
+					
+					$this->session->set_flashdata('status','<p>Property information updated.</p>');
+					redirect(base_url().'index.php/property/manage');
 				}
 			}
 		}
@@ -251,7 +255,7 @@
 				
 				if($this->property_model->update_unit($id)) {
 					
-					redirect('/property/manage');
+					redirect(base_url().'index.php/property/manage');
 				}
 			}
 		}

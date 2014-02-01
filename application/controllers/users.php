@@ -33,6 +33,7 @@
 			$this->form_validation->set_rules('email_verify','Email Address','matches[email]');
 			$this->form_validation->set_rules('first_name','First Name','trim|required|alpha');
 			$this->form_validation->set_rules('last_name','Last Name','trim|required|alpha');
+			$this->form_validation->set_rules('display_name','Display Name','trim|required');
 			$this->form_validation->set_rules('phone','Phone Number','trim|required');
 			
 			if($this->form_validation->run() === FALSE) {
@@ -49,7 +50,8 @@
 					'first_name' => $this->input->post('first_name'),
 					'last_name' => $this->input->post('last_name'),
 					'phone' => $this->input->post('phone'),
-					'company' => $this->input->post('company')
+					'company' => $this->input->post('company'),
+					'display_name' => $this->input->post('display_name')
 				);
 				$group = array('2');
 				$remember = TRUE;
@@ -84,6 +86,7 @@
 			$this->form_validation->set_rules('email_verify','Email Address','matches[email]');
 			$this->form_validation->set_rules('first_name','First Name','trim|required|alpha');
 			$this->form_validation->set_rules('last_name','Last Name','trim|required|alpha');
+			$this->form_validation->set_rules('display_name','Display Name','trim|required');
 			$this->form_validation->set_rules('phone','Phone Number','trim|required');
 			$this->form_validation->set_rules('property_name','Property Name','trim|required');
 			$this->form_validation->set_rules('street','Street','trim|required');
@@ -143,7 +146,8 @@
 					'city' => $this->input->post('city'),
 					'state' => $this->input->post('state'),
 					'zip' => $this->input->post('zip'),
-					'file_name' => '/assets/img/profile/'.$upload_data['file_name']
+					'file_name' => '/assets/img/profile/'.$upload_data['file_name'],
+					'display_name' => $this->input->post('display_name')
 				);
 				
 				$group = array('3');
@@ -199,7 +203,7 @@
 				
 				if($this->ion_auth->update($id,$update)) {
 				
-				redirect('/');
+				redirect(base_url().'users/edit');
 				}
 			}
 		}

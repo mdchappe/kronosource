@@ -81,6 +81,8 @@
 			
 			$data['property_id'] = $id;
 			
+			$data['updated'] = time();
+			
 			return $this->db->insert('property',$data);
 		}
 		
@@ -127,6 +129,8 @@
 			$data['cable'] = $this->input->post('cable');
 			
 			$data['trash'] = $this->input->post('trash');
+			
+			$data['updated'] = time();
 			
 			$this->db->where('property_id', $id);
 			$this->db->update('property',$data);

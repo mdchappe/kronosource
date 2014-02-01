@@ -25,18 +25,29 @@
 				</form>
 			</p>
 		
-			
+			<? if (isset($home)):?>
 			<p class="unregistered">
-				Unregistered?  Enter code below and click the submit button:
-				<?php $registration_code_opts = 'placeholder="Registration Code"'; echo form_open('pages/register').form_input('regcode', '', $registration_code_opts);?>
+				
+				<?php if($this->session->flashdata('register')):
+						
+						echo $this->session->flashdata('register');
+					  
+					  else:
+					  	
+					  	echo 'Unregistered?  Enter code below and click the submit button:';
+					  
+					  endif ?>
+					  
+				<?php $registration_code_opts = 'placeholder="Registration Code"'; echo form_open('pages/register').form_input('regcode', $regcode, $registration_code_opts);?>
 				<input class="btn btn-primary" type="submit" name="submit_register" value="register" />
 				</form>
 			</p>
+			<?php endif;?>
 		<?php } 
 			
 			else if($the_user->group == 'locator'){
 			
-				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->first_name.'</span>! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->display_name.'</span>! You are logged in to KronoSource!<br/>
 						<ul class="logged-in-nav">
 							<li><a href="/index.php/message/inbox">Inbox</a></li>
 							<li><a href="/index.php/users/edit">Edit Profile</a></li>
@@ -49,7 +60,7 @@
 			}
 			
 			else if($the_user->group == 'property'){ 
-				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->company.'</span>! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->display_name.'</span>! You are logged in to KronoSource!<br/>
 					  	<ul class="logged-in-nav">
 					  		<li><a href="/index.php/message/inbox">Inbox</a></li>
 					  		<li><a href="/index.php/property/manage">Manage Property Information</a></li>

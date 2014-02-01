@@ -1,6 +1,10 @@
 <div class="container edit-wrap">
 	<div class="edit-inner">
 		
+		<?php if(isset($status)):
+		echo $status;
+		endif; ?>
+		
 		<h2>Property Management</h2>
 		<?php echo form_error('username','<p>username: ','</p>'); ?>
 		<?php echo form_error('password','<p>password: ','</p>'); ?>
