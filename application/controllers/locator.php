@@ -25,6 +25,8 @@
 		
 		public function viewProperty($id) {
 			
+			$this->load->helper('date');
+			
 			$property = $this->property_model->get_property($id);
 			$features = $this->property_model->get_features($id);
 			$units = $this->property_model->get_units($id);

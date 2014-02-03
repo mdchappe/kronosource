@@ -34,6 +34,8 @@
 			
 			$data['title'] = 'KronoSource '.ucfirst($page); //make first letter of page name uppercase
 			$data['status'] = $this->session->flashdata('status');
+			$data['regcode'] = ($this->session->flashdata('regcode') ? $this->session->flashdata('regcode') : '');
+			$data['home'] = TRUE;
 			
 			$this->load->view('templates/header', $data);
 			$this->load->view('pages/'.$page, $data);
@@ -51,7 +53,7 @@
 			
 			if ($this->form_validation->run() === FALSE){
 				
-				redirect('/');
+				redirect(base_url().'index.php/');
 			} else {
 				
 				if(!$this->ion_auth->logged_in()) {
@@ -62,14 +64,20 @@
 					$user_type = $this->preregistration_model->check_registration_code($code);
 					
 					if(!empty($user_type) && $user_type['active'] == 1){
+						
 						$this->load->view('templates/header',$data);
 						$this->load->view('register/'.$user_type['usertype'],$data);
 						$this->load->view('templates/footer',$data);
 					} else {
-						redirect('/');
+						
+						$this->session->set_flashdata('register','You have entered an invalid registration code.<br/>Please check your code and try again.');
+						$this->session->set_flashdata('regcode',$this->input->post('regcode'));
+						redirect(base_url().'index.php/');
 					}
 				} else {
-					redirect('/');
+					
+					$this->session->set_flashdata('register','You are already logged in.  Please log out if you wish to register a new account with a new registration code.');
+					redirect(base_url().'index.php/');
 				}
 			}
 		}

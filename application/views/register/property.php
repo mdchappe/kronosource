@@ -22,6 +22,8 @@
 			?>
 			<label for="property_name">Property Name</label>
 			<?php echo form_input('property_name');?><br/>
+			<label for="display_name">Display Name<small>(for messages)</small></label>
+			<?php echo form_input('display_name');?><br/>
 			<label for="management">Property Management</label>
 			<?php echo form_input('management');?><br/>
 			<img src="<?php echo base_url();?>assets/img/profile/none.jpg" style="float:left"/><label for="userfile">Profile Image<small> (optional)</small>

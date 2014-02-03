@@ -1,14 +1,30 @@
 <h2><?php echo $property['company'];?></h2>
+
 <h3><?php echo $features['management'];?></h3>
+
 <img src="<?php echo $property['file_name'];?>" />
+
 <p>
-<?php echo $property['street'].'<br/>'.$property['city'].', '.$property['state'].' '.$property['zip'].'<br/>'.$property['phone'];?>
+	<?php echo $property['street'].'<br/>'.$property['city'].', '.$property['state'].' '.$property['zip'].'<br/>'.$property['phone'];?>
 </p>
+
+<p>
+	Last updated: <?php 
+	$date = substr(unix_to_human($features['updated']),0,10);
+	$year = substr($date,0,4);
+	$month = substr($date,5,2);
+	$day = substr($date,-2);
+	
+	echo $month.'/'.$day.'/'.$year;?>
+</p>
+
 <form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 	<input type=hidden name="user_id" value="<?php echo $property['id'];?>" />
 	<a href="javascript: void()" onclick="document.getElementById('message').submit()">Send Message</a>
 </form>
+
 <h3>Property Features:</h3>
+
 <ul>
 <?php
 	

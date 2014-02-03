@@ -20,7 +20,12 @@
 ?>
 
 <div class="home-wrapper container effect7">
-	
+		
+		<?php if($this->session->flashdata('login')){
+			
+			echo '<p>'.$this->session->flashdata('login').'</p>';
+		}?>
+				
 		<?php if(!$this->ion_auth->logged_in()):
 			  echo form_open('contact/form');
 			  echo form_fieldset('<h2>Want to know more?</h2>');

@@ -18,6 +18,8 @@
 			<?php echo form_input('first_name');?><br/>
 			<label for="last_name">Last Name</label>
 			<?php echo form_input('last_name');?><br/>
+			<label for="display_name">Display Name<small>(for messages)</small></label>
+			<?php echo form_input('display_name');?><br/>
 			<label for="phone">Phone(include area code)</label>
 			<?php echo form_input('phone');?><br/>
 			<label for="company">Company(optional)</label>
