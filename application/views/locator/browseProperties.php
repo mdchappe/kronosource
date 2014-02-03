@@ -1,6 +1,6 @@
 <div class="container browse-wrap white-gradient">
 	<div class="browse-inner">
-		<h2 class="text-center">Properties List page <?php echo $page;?></h2>
+		<h2 class="text-center">Properties List page <?php echo $page+1;?></h2>
 		
 		<ul class="browse-listings">
 		<?php
