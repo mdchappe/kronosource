@@ -7,7 +7,8 @@
 /*css document*/
 body {
 	padding-top:200px;
-	font-family:'Rokkitt',serif;
+	font-family: 'Open Sans', sans-serif !important;
+	/* font-family:'Rokkitt',serif; */
 	font-size:16px;
 	color:#333;
 	position:relative;
@@ -23,7 +24,6 @@ body {
 }
 
 .btn, button, input.btn {
-	font-family: 'Open Sans', sans-serif;
 	font-weight: 200;
 	color: white;
 	text-shadow: none;
@@ -35,9 +35,12 @@ border: none;
 width: auto !important;
 }
 
+.datepicker { font-size: 12px !important;}
+
 .btn:hover {color: #fff;}
 
-
+.browse-wrap .property-features span,
+label, textarea, input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], input[type=email], input[type=url], input[type=search], input[type=tel], input[type=color], .uneditable-input {font-size: 12px;}
 
 
 
@@ -53,11 +56,12 @@ body:before {
 }
 
 h1,h2,h3,h4,h5,h6 {
-	font-family:'Rokkitt',serif;
 	text-transform:uppercase;
 	color:#333!important;
 	font-weight:700;
 }
+
+h1,h2,h3,h4,h5,h6,legend, footer, header, .navbar, .error {font-family:'Rokkitt',serif !important; }
 
 .nav p {
 	margin:0;
@@ -175,9 +179,13 @@ footer,.navbar-inverse .navbar-inner {
 		margin-left: -325px;
 	}
 	.property-features-dropdowns {text-align: left;}
-	.property-features-dropdowns label {width: 110px;}
+	.property-features-dropdowns label {width: 110px; position: relative; top: -2px;}
+	.property-features-dropdowns label:first-child {top: 1px;}
 	.property-features-dropdowns select {margin-right: 20px;}
+	
+	select {width: 206px;}
 	.property-features-dropdowns select, .property-features-dropdowns input {width: 150px; margin-left: 10px;}
+	.error {padding: 30px;}
 }
 
 .edit-inner,.browse-inner {
@@ -222,9 +230,11 @@ footer,.navbar-inverse .navbar-inner {
 
 .browse-listing {
 	height:100px;
-	border-bottom:1px #fff solid;
+	border-bottom:1px #ccc solid;
 	margin-top:20px;
 }
+
+ul.browse-listings li:last-child {border-bottom: none;}
 
 .browse-listing img {
 	margin-right:30px;
@@ -336,11 +346,13 @@ footer,.navbar-inverse .navbar-inner {
 .home-wrapper .radio-selectors {
 	margin:15px 0;
 	display:block;
+	font-size: 13px;
 }
 
-.home-wrapper p.error {
+.home-wrapper p.error, .error {
 	color:red;
 }
+
 
 .home-wrapper legend,.white-gradient {
 	background:#fff;

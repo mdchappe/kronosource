@@ -7,6 +7,7 @@
  *
  */
 .datepicker {
+	font-family: 'Open Sans', sans-serif !important;
   top: 0;
   left: 0;
   padding: 4px;
@@ -14,6 +15,9 @@
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  -webkit-box-shadow:0 1px 50px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 0, 0, 0.15) inset;
+       -moz-box-shadow:0 1px 50px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 0, 0, 0.15) inset;
+            box-shadow:0 1px 50px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 0, 0, 0.15) inset;
   /*.dow {
     border-top: 1px solid #ddd !important;
   }*/
@@ -24,21 +28,21 @@
   display: inline-block;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-bottom: 7px solid #ccc;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-top: 7px solid #ccc;
+  border-top-color: rgba(0, 0, 0, 0.2);
   position: absolute;
-  top: -7px;
-  left: 6px;
+  bottom: -7px;
+  left: 15px;
 }
 .datepicker:after {
   content: '';
   display: inline-block;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 6px solid #ffffff;
+  border-top: 6px solid #ffffff;
   position: absolute;
-  top: -6px;
-  left: 7px;
+  bottom: -6px;
+  left: 16px;
 }
 .datepicker > div {
   display: none;
@@ -47,6 +51,8 @@
   width: 100%;
   margin: 0;
 }
+
+.datepicker .day {font-size: 12px;}
 .datepicker td,
 .datepicker th {
   text-align: center;
@@ -165,7 +171,7 @@
 }
 .datepicker th.next,
 .datepicker th.prev {
-  font-size: 21px;
+  font-size: 25px;
 }
 .datepicker thead tr:first-child th {
   cursor: pointer;

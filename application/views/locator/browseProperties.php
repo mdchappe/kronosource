@@ -1,8 +1,8 @@
-<div class="container browse-wrap">
+<div class="container browse-wrap white-gradient">
 	<div class="browse-inner">
-		<h2>Properties List page <?php echo $page;?></h2>
+		<h2 class="text-center">Properties List page <?php echo $page;?></h2>
 		
-		<ul>
+		<ul class="browse-listings">
 		<?php
 			foreach($properties as $property) :
 		?>

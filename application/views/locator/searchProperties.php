@@ -8,13 +8,13 @@
 		<?php echo form_open('search/properties');
 			  echo ('<div class="text-left"');
 			  echo form_fieldset('Property Info');?>
-			  <label for="property_name">Property Name</label>
+			  <label for="property_name">Property Name: </label>
 				<?php echo form_input('property_name');?>
-				<label for="management">Property Management</label>
+				<label for="management">Property Management: </label>
 				<?php echo form_input('management');?><br/>
-				<label for="city">City</label>
+				<label for="city">City: </label>
 				<?php echo form_input('city');?>
-				<label for="zip">Zip Code</label>
+				<label for="zip">Zip Code: </label>
 				<?php echo form_input('zip');?></div><br/><br>
 				<div class="checkboxes">
 					<?php 
@@ -38,10 +38,11 @@
 						  echo form_checkbox('cat','Cats',FALSE).' <span>Cats</span>';
 						  echo form_checkbox('dog_park','Dog Park',FALSE).' <span>Dog Park</span><br/><br>';
 						  echo ('<div class="property-features-dropdowns">');
-						  echo form_label('Trash Collection','trash');
+						  echo form_label('Trash Collection: ','trash');
 						  echo form_dropdown('trash',array('any'=>'Any','valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),'any');
-						  echo form_label('Cable Provider(s)','cable');
-						  echo form_input('cable');
+						  $cable_opts = 'placeholder="no preference"';
+						  echo form_label('Cable Provider(s): ','cable');
+						  echo form_input('cable','', $cable_opts);
 						  echo ('</div>');
 						  echo ('</span>');
 						  echo form_fieldset_close(); ?>
@@ -54,28 +55,28 @@
 		
 		<h2>Unit Search</h2>
 			<?php echo form_open('search/units');?>
-				
-				<label for="beds_min">Bedrooms</label><br/>
-				<?php echo form_input('beds_min', 0);?> Minimum <?php echo form_input('beds_max');?> Maximum<br/>
-				<label for="baths_min">Baths</label><br/>
-				<?php echo form_input('baths_min');?> Minimum <?php echo form_input('baths_max');?> Maximum<br/>
-				<label for="size_min">Unit Size</label><br/>
-				<?php echo form_input('size_min');?><small><b>sq. ft.</b></small> Minimum <?php echo form_input('size_max');?><small><b>sq. ft.</b></small> Maximum<br/>
-				<label for="floor">Floor</label><br/>
-				<?php echo form_input('floor');?><br/>
-				<label for="direction">Direction Facing</label>
-				<?php echo form_dropdown('direction', $direction_dropdown);?><br/>
-				<label for="washer">Washer/Dryer</label>
+				<label for="term_min">Lease Term: </label>
+				<?php $term_min_opts = 'placeholder="no minimum"';  echo form_input('term_min','', $term_min_opts);?> <?php $term_min_opts = 'placeholder="no maximum"';  echo form_input('term_max','', $term_min_opts);?><br/>
+				<label for="rent_min">Rent ($): </label>
+				<?php $rent_min_opts = 'placeholder="no minimum"';  echo form_input('rent_min','', $rent_min_opts);?> <?php $rent_min_opts = 'placeholder="no maximum"';  echo form_input('rent_max','', $rent_min_opts);?><br/>
+				<label for="beds_min">Bedrooms: </label>
+				 <?php $beds_min_opts = 'placeholder="no minimum"'; echo form_input('beds_min','', $beds_min_opts);?> <?php $beds_max_opts = 'placeholder="no maximum"'; echo form_input('beds_max','', $beds_max_opts);?><br/>
+				<label for="baths_min">Baths :</label>
+				 <?php $baths_min_opts = 'placeholder="no minimum"'; echo form_input('baths_min','', $baths_min_opts);?> <?php $baths_max_opts = 'placeholder="no maximum"'; echo form_input('baths_max','', $baths_max_opts);?><br/><br>
+				<label for="size_min">Minimum Square Footage: </label>
+				 <?php $size_min_opts = 'placeholder="no minimum"';  echo form_input('size_min','', $size_min_opts);?>
+				<label for="floor">Floor: </label>
+				<?php $floor_opts = 'placeholder="no preference"'; echo form_input('floor','', $floor_opts);?><br/>
+				<label for="direction">Direction Facing: </label>
+				<?php echo form_dropdown('direction', $direction_dropdown);?>
+				<label for="washer">Washer/Dryer: </label>
 				<?php echo form_dropdown('washer', $washer_dropdown);?><br/>
-				<label for="date">Date Available</label><br/>
-				<?php echo form_input($date_input);?><br/>
-				<label for="commission">Commission</label><br/>
-				<?php echo form_input('commission');?><br/>
-				<label for="term_min">Lease Term</label><br/>
-				<?php echo form_input('term_min');?> Minimum <?php echo form_input('term_max');?> Maximum<br/>
-				<label for="rent_min">Rent</label><br/>
-				<?php echo form_input('rent_min');?> Minimum <?php echo form_input('rent_max');?> Maximum<br/>
-				<input class="btn btn-primary edit-btn" type="submit" name="submit_unit" value="unit search" /> 		
+				<label for="date">Date Available: </label>
+				<?php echo form_input($date_input);?>
+				<label for="commission">Commission: </label>
+				<?php $comission_opts = 'placeholder="--"';  echo form_input('commission','', $comission_opts);?><br/>
+				
+				<input class="btn pull-right btn-primary edit-btn" type="submit" name="submit_unit" value="unit search" /> 		<br><br>
 			<?php echo form_close();?>
 	</div>
 </div>

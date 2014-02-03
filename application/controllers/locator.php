@@ -12,7 +12,7 @@
 			
 			$properties = $this->property_model->get_properties();
 			
-			$title = 'Browse Properties page '.(string)($page++);
+			$title = 'Browse Properties page '.(string)($page+1);
 			
 			$data['title'] = $title;
 			$data['page'] = $page;
