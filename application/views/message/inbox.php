@@ -12,7 +12,7 @@
 	
 	<?php 
 		
-		$message_count = 0;
+		$message_count = 0; 
 		
 		foreach($messages as $message) : ?>
 	<tr>

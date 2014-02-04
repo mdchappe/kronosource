@@ -29,7 +29,7 @@
 
 <ul>
 <?php
-	
+	 
 	foreach($features as $feature => $value):
 		
 		if($value && $feature != 'id' && $feature != 'property_id' && $feature != ' management'){ ?>

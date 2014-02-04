@@ -3,7 +3,7 @@
 <h2 class="text-center">ADD UNIT TO <?php echo $the_user->company; ?></h2>
 <hr>
 <?php echo form_open('property/add_unit'); 
-	
+	 
 	  echo form_fieldset('Unit Information');
 ?>
 

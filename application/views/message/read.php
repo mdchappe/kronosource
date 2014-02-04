@@ -12,4 +12,4 @@
 	<input type=hidden name="id" value="<?php echo $message['message_id'];?>" />
 	<a href="javascript: void()" onclick="document.getElementById('delete').submit()">Delete</a>
 </form>
-</div></div>
+</div></div> 
