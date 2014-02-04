@@ -17,6 +17,7 @@
           
           <div class="pull-right nav">
           <?php 
+          	
 			if (!$this->ion_auth->logged_in()) {
 			echo '<p>'.form_open('users/login')?>
 				<?php $username_opts = 'placeholder="Username"'; echo form_input('username', '', $username_opts);?>
@@ -67,7 +68,16 @@
 					  		<li><a href="/index.php/users/logout">Logout</a></li>
 					  	</ul>
 					  </p>';
-			} ?>
+			} else if($the_user->group == 'admin'){
+				echo '<p class="welcome-user">Welcome, <span class="the-user">MASTER</span>! You are logged in to KronoSource!<br/>
+					  	<ul class="logged-in-nav">
+					  		<li><a href="/index.php/message/inbox">Inbox</a></li>
+					  		<li><a href="/index.php/admin/controlPanel">Admin Control Panel</a></li>
+					  		<li><a href="/index.php/users/logout">Logout</a></li>
+					  	</ul>
+					  </p>';
+			}
+			?>
 			</div>
 
         </div><!--/.nav-collapse -->
