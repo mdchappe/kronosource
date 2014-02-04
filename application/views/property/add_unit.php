@@ -1,5 +1,7 @@
-<h2>ADD UNIT TO <?php echo $the_user->company; ?></h2>
-
+<div class="container page-content add-unit"><div class="inner">
+<br>
+<h2 class="text-center">ADD UNIT TO <?php echo $the_user->company; ?></h2>
+<hr>
 <?php echo form_open('property/add_unit'); 
 	
 	  echo form_fieldset('Unit Information');
@@ -56,4 +58,6 @@
 	
 	
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/datepicker.css" type="text/css" media="screen" />
+	
+</div></div>
 	
