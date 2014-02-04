@@ -1,5 +1,7 @@
-<h2><?php echo $property['company'];?></h2>
-
+<div class="container page-content view-property"><div class="inner">
+<br>
+<h2 class="text-center"><?php echo $property['company'];?></h2>
+<hr>
 <h3><?php echo $features['management'];?></h3>
 
 <img src="<?php echo $property['file_name'];?>" />
@@ -62,3 +64,4 @@
 	</tr>
 	<?php endforeach; ?>
 </table>
+</div></div>

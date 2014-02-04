@@ -1,4 +1,7 @@
-<h2><?php echo $unit->name;?></h2>
+<div class="container page-content view-unit"><div class="inner">
+<br>
+<h2 class="text-center"><?php echo $unit->name;?></h2>
+<hr>
 <form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 	<input type=hidden name="user_id" value="<?php echo $unit->property_id;?>" />
 	<a href="javascript: void()" onclick="document.getElementById('message').submit()">Send Message</a>
@@ -35,3 +38,5 @@
 	</tr>
 	<?php endforeach;?>
 </table>
+
+</div></div>

@@ -1,5 +1,6 @@
-<div class="container browse-wrap white-gradient">
+<div class="container page-content browse-wrap">
 	<div class="browse-inner">
+	<br>
 		<h2 class="text-center">Properties List page <?php echo $page+1;?></h2>
 		
 		<ul class="browse-listings">
@@ -9,7 +10,7 @@
 			<li class="browse-listing" style="display:block; clear:both;">
 				<a href="/index.php/locator/viewProperty/<?php echo $property['id'];?>">
 					<img src="<?php echo substr_replace($property['file_name'], '_thumb', -4, 0);?>" style="width:80px;height:80px;float:left;" />
-					<?php echo $property['company'];?>
+					<h4><?php echo $property['company'];?></h4>
 				</a><br/>
 				<?php echo $property['management']; ?><br/>
 				<?php echo $property['street']; ?><br/>

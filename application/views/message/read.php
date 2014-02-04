@@ -1,3 +1,5 @@
+<div class="container page-content message-inbox"><div class="inner">
+<br>
 <p>To: <a href="<?php base_url().'index.php/message/compose/'.$message['to_id'];?>"><?php echo $message['to']?></a></p>
 <p>From: <a href="<?php base_url().'index.php/message/compose/'.$message['from_id'];?>"><?php echo $message['from']?></a></p>
 <p>Subject: <?php echo $message['subject'];?></p>
@@ -10,3 +12,4 @@
 	<input type=hidden name="id" value="<?php echo $message['message_id'];?>" />
 	<a href="javascript: void()" onclick="document.getElementById('delete').submit()">Delete</a>
 </form>
+</div></div>

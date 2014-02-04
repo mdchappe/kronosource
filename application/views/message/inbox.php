@@ -1,5 +1,7 @@
-<h2>KronoSource Message Inbox</h2>
-
+<div class="container page-content message-inbox"><div class="inner">
+<br>
+<h2 class="text-center">KronoSource Message Inbox</h2>
+<hr>
 <span><?php echo $status;?></span>
 <table>
 	<tr>
@@ -30,4 +32,4 @@
 		endforeach;?>
 </table>
 	
-		
+</div></div>

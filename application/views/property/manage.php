@@ -1,11 +1,12 @@
-<div class="container edit-wrap">
+<div class="container page-content property-edit">
 	<div class="edit-inner">
 		
 		<?php if(isset($status)):
 		echo $status;
 		endif; ?>
-		
-		<h2>Property Management</h2>
+		<br>
+		<h2 class="text-center">Property Management</h2>
+		<hr>
 		<?php echo form_error('username','<p>username: ','</p>'); ?>
 		<?php echo form_error('password','<p>password: ','</p>'); ?>
 		<?php echo form_error('email','<p>email: ','</p>'); ?>
@@ -22,38 +23,42 @@
 			  echo form_fieldset('User Information');
 		?>
 		
-			<label for="username">User Name<small><b>(min 6 characters, max 18 characters)</b></small></label>
+			<label for="username">User Name: </label>
 			<?php echo form_input('username', $the_user->username);?><br/>
-			<label for="password">Password<small><b>(min 8 characters, max 18 characters)</b></small></label>
-			<?php echo form_password('password');?><br/>
-			<label for="password">Re-enter Password</label>
+			<label class="pushleft200" for="username"><small><b>(min 6 characters, max 18 characters)</b></small></label><br>
+			<label for="password">Password:</label>
+			<?php echo form_password('password');?>
+			<label class="pushleft200" for="password"><small><b>(min 8 characters, max 18 characters)</b></small></label><br>
+			<label for="password">Re-enter Password: </label>
 			<?php echo form_password('password_verify');?><br/>
-			<label for="email">Email Address</label>
+			<label for="email">Email Address: </label>
 			<?php echo form_input('email', $the_user->email);?><br/>
-			<label for="email">Re-enter Email Address</label>
+			<label for="email">Re-enter Email Address: </label>
 			<?php echo form_input('email_verify', $the_user->email);?><br/>
-			<?php echo form_fieldset_close();
+			<hr>
+			<?php echo form_fieldset_close(); 
 				  echo form_fieldset('Property Information');
 			?>
-			<label for="property_name">Property Name</label>
+			<label for="property_name">Property Name: </label>
 			<?php echo form_input('property_name', $the_user->company);?><br/>
-			<label for="management">Property Management</label>
+			<label for="management">Property Management: </label>
 			<?php echo form_input('management', $management);?><br/>
-			<label for="first_name">Contact's First Name</label>
+			<label for="first_name">Contact's First Name: </label>
 			<?php echo form_input('first_name', $the_user->first_name);?><br/>
-			<label for="last_name">Contact's Last Name</label>
+			<label for="last_name">Contact's Last Name: </label>
 			<?php echo form_input('last_name', $the_user->last_name);?><br/>
-			<label for="phone">Phone(include area code)</label>
+			<label for="phone">Phone(include area code): </label>
 			<?php echo form_input('phone', $the_user->phone);?><br/>
-			<label for="street">Street</label>
+			<label for="street">Street: </label>
 			<?php echo form_input('street', $the_user->street);?><br/>
-			<label for="city">City</label>
+			<label for="city">City: </label>
 			<?php echo form_input('city', $the_user->city);?><br/>
-			<label for="state">State</label>
-			<?php echo form_dropdown('state',array('tx'=>'TX'),$the_user->state);?><br/><br>
-			<label for="zip">Zip Code</label>
+			<label for="state">State: </label>
+			<?php echo form_dropdown('state',array('tx'=>'TX'),$the_user->state);?><br/>
+			<label for="zip">Zip Code: </label>
 			<?php echo form_input('zip', $the_user->zip);?><br/>
 			<?php echo form_fieldset_close(); ?>
+			<hr>
 			<div class="checkboxes">
 			<?php
 				  echo form_fieldset('Property Features');
@@ -80,7 +85,8 @@
 				  echo form_input('cable',$cable);
 				  echo form_fieldset_close(); ?>
 			
-			<input class="btn btn-primary edit-btn" type="submit" name="submit" value="submit" />
+			<input class="btn pull-right btn-primary edit-btn" type="submit" name="submit" value="submit" /><br><br>
+			<hr>
 			</div>
 		</form>
 		

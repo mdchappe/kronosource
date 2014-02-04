@@ -47,7 +47,7 @@
 			
 			else if($the_user->group == 'locator'){
 			
-				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->display_name.'</span>! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
 						<ul class="logged-in-nav">
 							<li><a href="/index.php/message/inbox">Inbox</a></li>
 							<li><a href="/index.php/users/edit">Edit Profile</a></li>
@@ -60,7 +60,7 @@
 			}
 			
 			else if($the_user->group == 'property'){ 
-				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->display_name.'</span>! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
 					  	<ul class="logged-in-nav">
 					  		<li><a href="/index.php/message/inbox">Inbox</a></li>
 					  		<li><a href="/index.php/property/manage">Manage Property Information</a></li>

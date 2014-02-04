@@ -19,19 +19,21 @@
 	$this->db->query($query);
 ?>
 
-<div class="home-wrapper container effect7">
+<div class="container page-content home-wrapper">
 		
 		<?php if($this->session->flashdata('login')){
 			
 			echo '<p>'.$this->session->flashdata('login').'</p>';
 		}?>
-				
+				<br>
 		<?php if(!$this->ion_auth->logged_in()):
 			  echo form_open('contact/form');
-			  echo form_fieldset('<h2>Want to know more?</h2>');
-		?>
+			  echo form_fieldset('<h2 class="text-center">Want to know more?</h2>');
+		?><hr>
 	<div class="row-fluid">
-		<?php echo validation_errors('<p class="error">', '</p>'); ?>
+		<span class="validation-errors">
+			<?php echo validation_errors('<p class="error">', '</p>'); ?>
+		</span>
 		<?php echo '<span>'.$status.'</span>';?>
 		<h4>Please complete all fields below.</h4>
 		<label for="name">Name:</label>
@@ -53,7 +55,7 @@
 			  echo form_radio('contact','Either',set_value('contact')).'Either<br/>';?></span>
 		<label for="captcha">Are You Human?</label>
 		<?php echo $captcha['image'].form_input('captcha');?><br/>
-		<input class="btn" type="submit" name="submit" value="submit" />
+		<input class="btn pull-right" type="submit" name="submit" value="submit" />
 		
 		<?php endif;?>
 	</div>

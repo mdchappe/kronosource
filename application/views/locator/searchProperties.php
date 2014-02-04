@@ -1,10 +1,13 @@
-<div class="container browse-wrap white-gradient">
+<div class="container page-content search-wrap">
 	<div class="browse-inner">
+		<span class="validation-errors">
 		<?php if($status){
 			echo '<div class="error">'.$status.'</div>';
 		}?>
-		
+		</span>
+		<br>
 		<h2 class="text-center">Property Search</h2>
+		<hr>
 		<?php echo form_open('search/properties');
 			  echo ('<div class="text-left"');
 			  echo form_fieldset('Property Info');?>
@@ -17,6 +20,7 @@
 				<label for="zip">Zip Code: </label>
 				<?php echo form_input('zip');?></div><br/><br>
 				<div class="checkboxes">
+				<hr>
 					<?php 
 						echo form_fieldset('Property Features');
 						  echo ('<span class="property-features">');
@@ -38,10 +42,10 @@
 						  echo form_checkbox('cat','Cats',FALSE).' <span>Cats</span>';
 						  echo form_checkbox('dog_park','Dog Park',FALSE).' <span>Dog Park</span><br/><br>';
 						  echo ('<div class="property-features-dropdowns">');
-						  echo form_label('Trash Collection: ','trash');
-						  echo form_dropdown('trash',array('any'=>'Any','valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),'any');
+						  echo form_label('Trash Collection:&nbsp;','trash');
+						  echo form_dropdown('trash ',array('any'=>'Any','valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),'any');
 						  $cable_opts = 'placeholder="no preference"';
-						  echo form_label('Cable Provider(s): ','cable');
+						  echo form_label('Cable Provider(s):&nbsp;','cable');
 						  echo form_input('cable','', $cable_opts);
 						  echo ('</div>');
 						  echo ('</span>');
@@ -50,8 +54,8 @@
 					<input class="btn edit-btn pull-right" type="submit" name="submit" value="property search" />
 					</div>
 				<?php echo form_fieldset_close();
-					  echo form_close(); ?>
-					  
+					  echo form_close(); ?><br>
+					  <hr>
 		
 		<h2>Unit Search</h2>
 			<?php echo form_open('search/units');?>
