@@ -65,19 +65,24 @@
 			
 			foreach($params as $key => $value) {
 				
-				if($key!='trash' && $value){
+				if(($key!='trash' && $value) || ($key == 'trash' && $value != 'any')){
 					
 					$results = $this->search_model->properties($params);
 					$data['results'] = $results;
-					$data['title'] = 'KronoSource Search Results';
-					$this->load->view('templates/header',$data);
-					$this->load->view('search/properties', $data);
-					$this->load->view('templates/footer', $data);
 					break;
-				} else {
-					$this->session->set_flashdata('status','Please specify at least one search criterion.');
-					redirect(base_url().'index.php/locator/searchProperties');
 				}
+			}
+			
+			if(isset($data['results'])){
+				
+				$data['title'] = 'KronoSource Search Results';
+				$this->load->view('templates/header',$data);
+				$this->load->view('search/properties', $data);
+				$this->load->view('templates/footer', $data);
+			} else {
+			
+				$this->session->set_flashdata('status','Please specify at least one search criterion.');
+				redirect(base_url().'index.php/locator/searchProperties');
 			}
 		}
 	}
