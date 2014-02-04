@@ -1,6 +1,7 @@
 kronosource
 ===========
-
+<h3>! {LESS} IS REQUIRED, DO NOT UPDATE .css FILES !</h3>
+<hr>
 <h2>Steps to configure for local development:</h2>
 <ul>
 <li>pull to get latest <code>kronosource_local_db.zip</code></li>
