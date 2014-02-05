@@ -49,9 +49,8 @@ h1,h2,h3,h4,h5,h6,legend, footer, header, .navbar, .error { font-family:'Rokkitt
 
 /* all default headlines */
 h1,h2,h3,h4,h5,h6 {
-	text-transform:uppercase;
-	color:#333 !important;
-	font-weight:700;
+	text-shadow: 1px 1px 0 #FFF;
+	color: #868686 !important;
 }
 
 /* all errors */
@@ -98,7 +97,7 @@ label {
 	.navbar-inner {.gradient (@startColor: #222, @endColor: #111);border-color:#252525;width:100%;height:40px;text-align:center;position:relative;
 		.container {margin-bottom:0;}}
 
-	.brand {.border-radius (@radius: 2);background-color:#1b1b1b;}
+	.brand {.border-radius (@radius: 3);background-color:#1b1b1b;}
 	.nav p {margin:0;}
 	.welcome-user {color: #969696;margin-top: 10px !important;}
 	.unregistered {margin-top:20px;color:#969696;text-shadow:inset 0px 1px 0px rgba(0,0,0,0.1);font-size: 17px;}
@@ -108,9 +107,9 @@ label {
 	
 	.nav:before {
 		.z(-1);
-		.border-radius (@radius: 5px);
-		.drop-shadow (@x: 0, @y: 1px, @blur: 50px, @spread: 0, @alpha: 0.4);
-		.inner-shadow (@x: 0, @y: 1px, @blur: 20px, @spread: 0, @alpha: 0.15);
+		.border-radius (@radius: 3px);
+		.drop-shadow (@x: 0, @y: 1px, @blur: 50px, @spread: 0, @alpha: 0.2);
+		
 		content:"";
 		display:block;
 		position:absolute;
@@ -149,14 +148,14 @@ footer {
 /* basic layout for every page */
 .page-content {
 	.white-gradient();
-	.drop-shadow (@x: 0, @y: 1px, @blur: 50px, @spread: 0, @alpha: 0.4);
-	.inner-shadow (@x: 0, @y: 1px, @blur: 20px, @spread: 0, @alpha: 0.15);
-	.border-radius (@radius: 5px);
+	.drop-shadow (@x: 0, @y: 1px, @blur: 50px, @spread: 0, @alpha: 0.3);
+	/* .inner-shadow (@x: 0, @y: 1px, @blur: 20px, @spread: 0, @alpha: 0.15); */
+	.border-radius (@radius: 3px);
 	position: relative;
 	border:1px solid #5C5C5C;
 	margin-bottom:50px;
 	
-	> div {padding: 0 30px;}
+	> div {padding: 30px;}
 }
 
 /*****************************************               *****************************************/
@@ -191,13 +190,14 @@ footer {
 
 /* home page */
 .home-wrapper {
-	max-width:740px;
+	max-width:755px;
 	
 	img {margin-right: 15px; position: relative;top: 2px;}
 	input[type='radio'] {margin:0 5px 0 11px;position:relative;top:-2px;}
 	.radio-label {margin-right: 0; top: 0;}
 	.radio-selectors {margin:15px 0; display:block; font-size: 13px;}
-	.row-fluid {padding:0 20px; width: auto;}
+	.row-fluid {width: auto;}
+	form {margin: 0;}
 }
 
 /* edit profile page */
@@ -220,10 +220,38 @@ footer {
 .view-unit {}
 
 /* compose message page */
-.compose-message {}
+.compose-message {
+	
+	textarea { 
+		width: 600px;
+		height: 150px;
+		border: 1px solid #cccccc;
+		padding: 5px;
+	}
+}
 
 /* messages inbox page */
-.message-inbox {}
+.message-inbox {
+	 
+	table {width: 100%; font-size: 12px;}
+	table tr th {width: 33%;}
+	.top-row {background: #D1DDEB;}
+	tr.message-row:nth-child(odd) {background: rgb(231, 231, 231);}
+	tr.message-row:last-child {margin-bottom: 20px;}
+	.from {padding-left: 20px; text-align: left;}
+	.sent-on {padding-right: 20px; text-align: right;}
+	.dynamic-subject {margin: 3px 0; float: left !important;}
+	tr.message-row:hover {background: rgb(209, 209, 209);}
+	
+	.message {background: white; padding: 30px; border: 1px solid #ccc;}
+	form {display: inline; float: right;}
+	.reply-btn {margin-right: 10px;}
+	.header-info { 
+		margin-bottom: 10px;
+		p {margin: 0;}
+	}
+	
+}
 
 /* add unit page */
 .add-unit {}

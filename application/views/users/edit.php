@@ -1,7 +1,6 @@
 <div class="container page-content edit-wrap">
 	<div class="edit-inner">
-		<br>
-		<h2 class="text-center">Edit Profile</h2>
+		<h2 class="text-center"><i class="icon-pencil"></i>  Edit Profile</h2>
 		<hr>
 		
 		<?php echo form_open('users/edit'); ?>
@@ -46,7 +45,7 @@
 			
 			<?php } ?>
 			
-			<a class="btn cancel pull-right" href="/index.php">cancel</a> <input class="btn edit-btn pull-right submit-btn" type="submit" name="submit" value="submit" />
+			<a class="btn cancel pull-right" href="/index.php"><i class="icon-trash"></i> discard changes</a> <button class="btn edit-btn pull-right submit-btn" type="submit" name="submit"><i class="icon-save"></i> save changes</button>
 		</form>
 	</div>		
 </div>

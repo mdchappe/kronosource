@@ -3,6 +3,7 @@
 <head>
 	<title><?php echo $title ?></title>
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/kronos.css" type="text/css" media="screen" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Abel|Rokkitt:400,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	
 </head>
@@ -22,7 +23,7 @@
 			echo '<p>'.form_open('users/login')?>
 				<?php $username_opts = 'placeholder="Username"'; echo form_input('username', '', $username_opts);?>
 				<?php $password_opts = 'placeholder="Password"'; echo form_password('password', '', $password_opts);?>
-				<input class="btn btn-primary" type="submit" name="submit" value="log in" />
+				<button class="btn" type="submit" name="submit">log in <i class="icon-caret-right"></i></button>
 				</form>
 			</p>
 		
@@ -40,7 +41,7 @@
 					  endif ?>
 					  
 				<?php $registration_code_opts = 'placeholder="Registration Code"'; echo form_open('pages/register').form_input('regcode', $regcode, $registration_code_opts);?>
-				<input class="btn btn-primary" type="submit" name="submit_register" value="register" />
+				<button class="btn" type="submit" name="submit_register">register <i class="icon-caret-right"></i></button>
 				</form>
 			</p>
 			<?php endif;?>
@@ -48,7 +49,7 @@
 			
 			else if($the_user->group == 'locator'){
 			
-				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome, <span class="the-user"> <i class="icon-user"></i> '.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
 						<ul class="logged-in-nav">
 							<li><a href="/index.php/message/inbox">Inbox</a></li>
 							<li><a href="/index.php/users/edit">Edit Profile</a></li>
@@ -61,7 +62,7 @@
 			}
 			
 			else if($the_user->group == 'property'){ 
-				echo '<p class="welcome-user">Welcome, <span class="the-user">'.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome, <span class="the-user"> <i class="icon-user"></i> '.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
 					  	<ul class="logged-in-nav">
 					  		<li><a href="/index.php/message/inbox">Inbox</a></li>
 					  		<li><a href="/index.php/property/manage">Manage Property Information</a></li>
@@ -69,7 +70,7 @@
 					  	</ul>
 					  </p>';
 			} else if($the_user->group == 'admin'){
-				echo '<p class="welcome-user">Welcome, <span class="the-user">MASTER</span>! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome, <span class="the-user"> <i class="icon-user"></i> MASTER</span>! You are logged in to KronoSource!<br/>
 					  	<ul class="logged-in-nav">
 					  		<li><a href="/index.php/message/inbox">Inbox</a></li>
 					  		<li><a href="/index.php/admin/controlPanel">Admin Control Panel</a></li>

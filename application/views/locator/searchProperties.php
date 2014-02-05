@@ -5,8 +5,7 @@
 			echo '<div class="error">'.$status.'</div>';
 		}?>
 		</span>
-		<br>
-		<h2 class="text-center">Property Search</h2>
+		<h2 class="text-center"><i class="icon-search"></i> Property Search</h2>
 		<hr>
 		<?php echo form_open('search/properties');
 			  echo ('<div class="text-left"');
@@ -50,8 +49,8 @@
 						  echo ('</div>');
 						  echo ('</span>');
 						  echo form_fieldset_close(); ?>
-						  
-					<input class="btn edit-btn pull-right" type="submit" name="submit" value="property search" />
+						  <br>
+					<button class="btn edit-btn pull-right" type="submit" name="submit"><i class="icon-search"></i> property search </button>
 					</div>
 				<?php echo form_fieldset_close();
 					  echo form_close(); ?><br>
@@ -80,7 +79,7 @@
 				<label for="commission">Commission: </label>
 				<?php $comission_opts = 'placeholder="--"';  echo form_input('commission','', $comission_opts);?><br/>
 				
-				<input class="btn pull-right btn-primary edit-btn" type="submit" name="submit_unit" value="unit search" /> 		<br><br>
+				<button class="btn pull-right btn-primary edit-btn" type="submit" name="submit_unit"><i class="icon-search"></i> unit search </button> 
 			<?php echo form_close();?>
 	</div>
 </div>

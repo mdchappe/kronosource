@@ -1,7 +1,6 @@
 <div class="container page-content browse-wrap">
 	<div class="browse-inner">
-	<br>
-		<h2 class="text-center">Properties List page <?php echo $page+1;?></h2>
+		<h2 class="text-center"><i class="icon-search"></i>  Properties <?php echo $page+1;?></h2>
 		
 		<ul class="browse-listings">
 		<?php
