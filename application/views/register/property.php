@@ -1,7 +1,8 @@
-<div class="container edit-wrap">
+<div class="container page-content register-wrap">
 	<div class="edit-inner">
-		<h2>Property Registration</h2><br><br>
-		<?php echo validation_errors(); ?>
+		<h2 class="text-center">Property Registration</h2>
+		<hr>
+		<p class="error"><?php echo validation_errors('<p class="error">', '</p>'); ?></p>
 		<?php echo form_open_multipart('users/register_property'); 
 			
 			  echo form_fieldset('User Information');
@@ -67,9 +68,13 @@
 				  echo form_label('Cable Provider(s)','cable');
 				  echo form_input('cable');
 				  echo form_fieldset_close(); ?>
-			<input class="btn btn-primary edit-btn" type="submit" name="submit" value="submit" />
+			<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i> submit</button>
 			</div>
 		</form>
 	</div>
 </div>
+
+<style>
+	.nav:before{display: none !important;}
+</style>
 	

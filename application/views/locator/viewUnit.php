@@ -1,10 +1,9 @@
 <div class="container page-content view-unit"><div class="inner">
-<br>
 <h2 class="text-center"><?php echo $unit->name;?></h2>
 <hr>
 <form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 	<input type=hidden name="user_id" value="<?php echo $unit->property_id;?>" />
-	<a href="javascript: void()" onclick="document.getElementById('message').submit()">Send Message</a>
+	<a class="btn pull-right" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>
 </form>
 <ul>
 	<li>Date Available: <?php echo $unit->date_available;?></li>
@@ -20,8 +19,9 @@
 	<li>Commission: <?php if(!property_exists($unit, 'commission') || $unit->commission == null || $unit->commission == ''){echo 'none';} else {echo $unit->commission;}?></li>
 </ul>
 
+<div class="row">
 <table>
-	<tr>
+	<tr class="top-row">
 		<th>Lease Term</th>
 		<th>Monthly Rent</th>
 		<th>Deposit</th>
@@ -29,7 +29,7 @@
 		<th>Pet Deposit</th>
 	</tr>
 	<?php foreach($terms as $term):?>
-	<tr>
+	<tr class="fee-row">
 		<td><?php echo $term['term'];?></td>
 		<td><?php echo $term['rent'];?></td>
 		<td><?php echo $term['deposit'];?></td>
@@ -38,5 +38,6 @@
 	</tr>
 	<?php endforeach;?>
 </table>
+</div>
  
 </div></div>

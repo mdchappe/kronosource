@@ -5,7 +5,7 @@
 		echo $status;
 		endif; ?>
 		<br>
-		<h2 class="text-center">Property Management</h2>
+		<h2 class="text-center"><i class="icon-cog"></i> Property Management</h2>
 		<hr>
 		<?php echo form_error('username','<p>username: ','</p>'); ?>
 		<?php echo form_error('password','<p>password: ','</p>'); ?>

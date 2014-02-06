@@ -1,6 +1,6 @@
 <div class="container page-content browse-wrap">
 	<div class="browse-inner">
-		<h2 class="text-center">Search Results</h2>
+		<h2 class="text-center"><i class="icon-zoom-in"></i> Search Results</h2>
 		<hr>
 		<? if (empty($results)): ?>
 			<p>Your search returned no results. <a href="<?php echo base_url();?>index.php/locator/searchProperties">Try again.</a></p>

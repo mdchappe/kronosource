@@ -23,7 +23,7 @@
 			echo '<p>'.form_open('users/login')?>
 				<?php $username_opts = 'placeholder="Username"'; echo form_input('username', '', $username_opts);?>
 				<?php $password_opts = 'placeholder="Password"'; echo form_password('password', '', $password_opts);?>
-				<button class="btn" type="submit" name="submit">log in <i class="icon-caret-right"></i></button>
+				<button class="btn" type="submit" name="submit">sign in <i class="icon-caret-right"></i></button>
 				</form>
 			</p>
 		
@@ -49,32 +49,32 @@
 			
 			else if($the_user->group == 'locator'){
 			
-				echo '<p class="welcome-user">Welcome, <span class="the-user"> <i class="icon-user"></i> '.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome,&nbsp; <span class="the-user"> <i class="icon-user"></i> '.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
 						<ul class="logged-in-nav">
-							<li><a href="/index.php/message/inbox">Inbox</a></li>
-							<li><a href="/index.php/users/edit">Edit Profile</a></li>
-							<li><a href="/index.php/locator/browseProperties">Browse</a></li>
-							<li><a href="/index.php/locator/searchProperties">Search</a></li>
-							<li><a href="/index.php/users/logout">Logout</a></li>
+							<li><a href="/index.php/message/inbox"><i class="icon-comments-alt"></i> Messages</a></li>
+							<li><a href="/index.php/users/edit"><i class="icon-pencil"></i> Edit Profile</a></li>
+							<li><a href="/index.php/locator/browseProperties"><i class="icon-search"></i> Browse</a></li>
+							<li><a href="/index.php/locator/searchProperties"><i class="icon-zoom-in"></i> Search</a></li>
+							<li><a href="/index.php/users/logout">Sign Out <i class="icon-signout"></i></a></li>
 						</ul>
 					</p>';
 			
 			}
 			
 			else if($the_user->group == 'property'){ 
-				echo '<p class="welcome-user">Welcome, <span class="the-user"> <i class="icon-user"></i> '.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome,&nbsp; <span class="the-user"> <i class="icon-user"></i> '.$the_user->display_name.'</span> ! You are logged in to KronoSource!<br/>
 					  	<ul class="logged-in-nav">
-					  		<li><a href="/index.php/message/inbox">Inbox</a></li>
-					  		<li><a href="/index.php/property/manage">Manage Property Information</a></li>
-					  		<li><a href="/index.php/users/logout">Logout</a></li>
+					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt"></i> Messages</a></li>
+					  		<li><a href="/index.php/property/manage"><i class="icon-cog"></i> Property Management</a></li>
+					  		<li><a href="/index.php/users/logout">Sign Out <i class="icon-signout"></i></a></li>
 					  	</ul>
 					  </p>';
 			} else if($the_user->group == 'admin'){
-				echo '<p class="welcome-user">Welcome, <span class="the-user"> <i class="icon-user"></i> MASTER</span>! You are logged in to KronoSource!<br/>
+				echo '<p class="welcome-user">Welcome,&nbsp; <span class="the-user"> <i class="icon-user"></i> MASTER</span>! You are logged in to KronoSource!<br/>
 					  	<ul class="logged-in-nav">
-					  		<li><a href="/index.php/message/inbox">Inbox</a></li>
-					  		<li><a href="/index.php/admin/controlPanel">Admin Control Panel</a></li>
-					  		<li><a href="/index.php/users/logout">Logout</a></li>
+					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt"></i> Messages</a></li>
+					  		<li><a href="/index.php/admin/controlPanel"><i class="icon-cog"></i> Admin Control Panel</a></li>
+					  		<li><a href="/index.php/users/logout">Sign Out <i class="icon-signout"></i></a></li>
 					  	</ul>
 					  </p>';
 			}

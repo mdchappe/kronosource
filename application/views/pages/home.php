@@ -31,7 +31,7 @@
 		?><hr>
 	<div class="row-fluid">
 		<span class="validation-errors">
-			<?php echo validation_errors('<p class="error"><i class="icon-warning-sign"></i> ', '</p>'); ?>
+			<?php echo validation_errors('<p class="error">', '</p>'); ?>
 		</span>
 		<?php echo '<span>'.$status.'</span>';?>
 		<h4>Please complete all fields below.</h4>
