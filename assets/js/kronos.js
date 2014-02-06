@@ -3,6 +3,7 @@ var lease_term_count = 1;
 $(document).ready(function(){
 	$('#unit_date').datepicker();
 	$('#add_term').click(add_lease_term);
+	$('#random').click(generate_random);
 });
 
 function add_lease_term(){
@@ -17,4 +18,16 @@ function add_lease_term(){
 	$('#rent_information_table').append(fragment);
 	$('#lease_term_count').attr('value',lease_term_count);
 	lease_term_count++;
+}
+
+function generate_random(){
+	
+	var characters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+	var random_string = "";
+	
+	while(random_string.length < 8){
+		random_string += characters[ Math.floor(Math.random()*characters.length) ];
+	}
+	
+	$('#code').attr('value',random_string);
 }
