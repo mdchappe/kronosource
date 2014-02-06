@@ -5,6 +5,8 @@
 		public function __construct() {
 			
 			parent::__construct();
+			
+			$this->load->model('admin_model');
 		}
 		
 		public function controlPanel() {
@@ -19,7 +21,6 @@
 		public function regcodes($function = 'main') {
 			
 			$this->load->helper('form');
-			$this->load->model('admin_model');
 			
 			$status = $this->session->flashdata('status');
 			
@@ -54,8 +55,11 @@
 			$regcodes = $this->admin_model->get_codes();
 			
 			foreach($regcodes as &$regcode) {
-				$exp =  $regcode['expiration'];
-				$regcode['expiration'] = $this->convert_date_to_human($exp);
+				$exp =  $regcode['code_expiration'];
+				$regcode['code_expiration'] = $this->convert_date_to_human($exp);
+				
+				$exp =  $regcode['account_expiration'];
+				$regcode['account_expiration'] = $this->convert_date_to_human($exp);
 			}
 			
 			$data['date_input'] = $date_input;
@@ -68,6 +72,29 @@
 			
 			$this->load->view('templates/header',$data);
 			$this->load->view('admin/regcodes',$data);
+			$this->load->view('templates/footer',$data);
+		}
+		
+		public function accounts($function = 'main') {
+			
+			$this->load->helper('form');
+			
+			$status = $this->session->flashdata('status');
+			
+			$accounts = $this->admin_model->get_accounts();
+			
+			foreach($accounts as &$account) {
+				$exp =  $account['expiration'];
+				$account['expiration'] = $this->convert_date_to_human($exp);
+			}
+			
+			$data['title'] = 'KronoSource Account Administration';
+			
+			$data['accounts'] = $accounts;
+			$data['status'] = $status;
+			
+			$this->load->view('templates/header',$data);
+			$this->load->view('admin/accounts',$data);
 			$this->load->view('templates/footer',$data);
 		}
 		
