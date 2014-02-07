@@ -2,6 +2,7 @@ var lease_term_count = 1;
 
 $(document).ready(function(){
 	$('#unit_date').datepicker();
+	$('.date_input').datepicker();
 	$('#add_term').click(add_lease_term);
 	$('#random').click(generate_random);
 });

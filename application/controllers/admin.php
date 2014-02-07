@@ -27,6 +27,7 @@
 			$date_input = array(
 				'name' => 'exp',
 				'id' => 'unit_date',
+				'class' => 'date_input',
 				'type' => 'text',
 				'placeholder' => 'mm/dd/yyyy'
 			);
@@ -81,6 +82,53 @@
 			
 			$status = $this->session->flashdata('status');
 			
+			if($function == 'disable_account'){
+				
+				$id = $this->input->post('id');
+				$data = array('active'=>0);
+				
+				if($this->ion_auth->update($id, $data)){
+					
+					$this->session->set_flashdata('status','User disabled.');
+					redirect('admin/accounts');
+				} else {
+					$this->session->set_flashdata('status','Disable failed. Try again or contact site support.');
+					redirect('admin/accounts');
+				}
+			}
+			
+			if($function == 'enable_account'){
+				
+				$id = $this->input->post('id');
+				$data = array('active'=>1);
+				
+				if($this->ion_auth->update($id, $data)){
+					
+					$this->session->set_flashdata('status','User enabled.');
+					redirect('admin/accounts');
+				} else {
+					$this->session->set_flashdata('status','Enable failed. Try again or contact site support.');
+					redirect('admin/accounts');
+				}
+			}
+			
+			if($function == 'expiration'){
+				
+				$date = $this->convert_date_to_unix($this->input->post('exp'));
+				
+				$id = $this->input->post('id');
+				$data = array('expiration'=>$date);
+				
+				if($this->ion_auth->update($id, $data)){
+					
+					$this->session->set_flashdata('status','Expiration updated.');
+					redirect('admin/accounts');
+				} else {
+					$this->session->set_flashdata('status','Expiration update failed. Try again or contact site support.');
+					redirect('admin/accounts');
+				}
+			}
+			
 			$accounts = $this->admin_model->get_accounts();
 			
 			foreach($accounts as &$account) {
@@ -88,10 +136,19 @@
 				$account['expiration'] = $this->convert_date_to_human($exp);
 			}
 			
+			$date_input = array(
+				'name' => 'exp',
+				'id' => 'unit_date',
+				'class' => 'date_input',
+				'type' => 'text',
+				'placeholder' => 'mm/dd/yyyy'
+			);
+			
 			$data['title'] = 'KronoSource Account Administration';
 			
 			$data['accounts'] = $accounts;
 			$data['status'] = $status;
+			$data['date_input'] = $date_input;
 			
 			$this->load->view('templates/header',$data);
 			$this->load->view('admin/accounts',$data);
