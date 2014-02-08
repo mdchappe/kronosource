@@ -15,7 +15,8 @@
 		<tr>
 			<th>Code</th>
 			<th>Account Type</th>
-			<th>Expiration Date</th>
+			<th>Code Expiration Date</th>
+			<th>Account Expiration Date</th>
 			<th>Deactivate</th>
 		</tr>
 	<?php 
@@ -26,7 +27,8 @@
 		<tr>
 			<td><?php echo $regcode['code'];?></td>
 			<td><?php echo $regcode['usertype'];?></td>
-			<td><?php echo $regcode['expiration'];?></td>
+			<td><?php echo $regcode['code_expiration'];?></td>
+			<td><?php echo $regcode['account_expiration'];?></td>
 			<td><?php echo form_open('admin/regcodes/deactivate', '', array('deactivate_id' => $regcode['id']));?>
 				<input type="submit" name="subnmit_<?php echo $delete_count?>" value="Deactivate" /></form></td>
 		</tr>

@@ -3,6 +3,5 @@
 	<ul>
 		<li><a href="<?php echo base_url();?>index.php/admin/regcodes">Registration Code Administration</a></li>
 		<li><a href="<?php echo base_url();?>index.php/admin/accounts">Account Administration</a></li>
-		<li><a href="<?php echo base_url();?>index.php/admin/messages">Send Message</a></li>
 	</ul>
 </div>

@@ -38,4 +38,15 @@
 			
 			return 'Registration code '.$code.' activated.';
 		}
+		
+		public function get_accounts() {
+			
+			$this->db->select('*, groups.description, users_groups.group_id');
+			$this->db->from('users');
+			$this->db->join('users_groups', 'users_groups.user_id = users.id');
+			$this->db->join('groups', 'users_groups.group_id = groups.id');
+			$query = $this->db->get();
+			
+			return $query->result_array();
+		}
 	}
