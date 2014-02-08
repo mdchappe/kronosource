@@ -48,6 +48,7 @@
 			}
 			
 			$message_input = array(
+					'required' => 'required',
 					'name' => 'message',
 					'id' => 'message',
 					'rows' => '5',
