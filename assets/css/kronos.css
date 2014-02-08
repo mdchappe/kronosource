@@ -5724,6 +5724,21 @@ footer .footer-toe {
   width: 130px !important;
 }
 /* view unit page */
+.view-unit ul.unit-features {
+  text-align: left;
+}
+.view-unit ul.unit-features li {
+  display: inline-block;
+  width: 30%;
+  margin-bottom: 2px;
+}
+.view-unit ul.unit-features li b {
+  font-size: 14px;
+}
+.view-unit ul.unit-features li i {
+  font-size: smaller;
+  color: #20b120;
+}
 .view-unit .row {
   margin: 0;
   border: 1px solid #E4E2E2;
@@ -5739,6 +5754,14 @@ footer .footer-toe {
 }
 .view-unit .row table .fee-row td {
   border-right: 1px solid #E4E2E2;
+}
+.view-unit .features-row {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+.view-unit ul.unit-features li.longer {
+  width: 100%;
 }
 /* compose message page */
 .compose-message textarea {
@@ -5803,8 +5826,12 @@ footer .footer-toe {
 .message-inbox a {
   text-decoration: none;
 }
-.message-inbox i.icon-comment {
+.message-inbox i.icon-comment,
+.message-inbox i.icon-comment-alt {
   position: relative;
   top: -2px;
+}
+.message-inbox .new {
+  font-weight: bold;
 }
 /* add unit page */

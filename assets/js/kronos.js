@@ -1,3 +1,7 @@
+$(document).ready(function() {
+	$('.dynamic-subject a.new').find('i').removeClass('icon-comment-alt').addClass('icon-comment');	
+})
+
 var lease_term_count = 1;
 
 $(document).ready(function(){

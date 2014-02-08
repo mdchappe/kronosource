@@ -248,12 +248,19 @@ footer {
 /* view unit page */
 .view-unit {
 	
+	ul.unit-features {text-align: left;}
+	
+	ul.unit-features li {display: inline-block; width: 30%; margin-bottom: 2px;}
+	ul.unit-features li b {font-size: 14px;}
+	ul.unit-features li i {font-size: smaller; color: rgb(32, 177, 32);}
 	.row {margin: 0; border: 1px solid #E4E2E2; position: relative;
 		table {width: 100%; font-size: 12px; text-align: center;
 			.top-row {background: #D1DDEB;}
 			.fee-row td {border-right: 1px solid #E4E2E2; }
 		}
 	}
+	.features-row {margin-top: 60px; margin-bottom: 40px; padding: 20px;}
+	ul.unit-features li.longer {width: 100%;}
 }
 
 /* compose message page */
@@ -281,7 +288,8 @@ footer {
 		p {margin: 0;}
 	}
 	a {text-decoration: none;}
-	i.icon-comment {position: relative; top: -2px; }
+	i.icon-comment, i.icon-comment-alt {position: relative; top: -2px; }
+	.new {font-weight: bold;}
 	
 }
 
