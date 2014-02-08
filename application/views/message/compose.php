@@ -6,8 +6,9 @@
 	<label for="id">To: <?php echo $message['from'];?></label><br/>
 	<input type="hidden" name="id" value="<?php echo $message['from_id'];?>" />
 	<label for="subject">Subject: </label> <?php echo form_input('subject', $default_subject);?><br/>
-	<label for="message">Message: </label><?php echo form_textarea($message_input);?><br/>
-	<button class="btn pull-right" type="submit" name="submit"><i class='icon-reply'></i> send</button>
+	<?php echo form_textarea($message_input);?><br/>
+	<a class="btn cancel j-back pull-right"><i class="icon-trash"></i> discard draft</a>
+	<button class="btn pull-right moveleft" type="submit" name="submit"><i class='icon-reply'></i> send</button>
 </form> 
 
 </div></div> 

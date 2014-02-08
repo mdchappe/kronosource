@@ -5331,6 +5331,12 @@ button {
   border: none;
   width: auto !important;
 }
+.btn:focus,
+.btn:hover,
+button:focus,
+button:hover {
+  background-position: 0 0 !important;
+}
 .btn:hover,
 button:hover {
   background-color: #0072bb;
@@ -5362,6 +5368,50 @@ button.cancel:hover {
   background: -moz-linear-gradient(top, #c53727, #c53727);
   background: -ms-linear-gradient(top, #c53727, #c53727);
   background: -o-linear-gradient(top, #c53727, #c53727);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=0);
+  background-repeat: repeat-x;
+}
+.btn.purple,
+button.purple {
+  background-color: #852b99;
+  background: -webkit-gradient(linear, left top, left bottom, from(#852b99), to(#852b99));
+  background: -webkit-linear-gradient(top, #852b99, #852b99);
+  background: -moz-linear-gradient(top, #852b99, #852b99);
+  background: -ms-linear-gradient(top, #852b99, #852b99);
+  background: -o-linear-gradient(top, #852b99, #852b99);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=0);
+  background-repeat: repeat-x;
+}
+.btn.purple:hover,
+button.purple:hover {
+  background-color: #6d1b81;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6d1b81), to(#6d1b81));
+  background: -webkit-linear-gradient(top, #6d1b81, #6d1b81);
+  background: -moz-linear-gradient(top, #6d1b81, #6d1b81);
+  background: -ms-linear-gradient(top, #6d1b81, #6d1b81);
+  background: -o-linear-gradient(top, #6d1b81, #6d1b81);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=0);
+  background-repeat: repeat-x;
+}
+.btn.green,
+button.green {
+  background-color: #35aa47;
+  background: -webkit-gradient(linear, left top, left bottom, from(#35aa47), to(#35aa47));
+  background: -webkit-linear-gradient(top, #35aa47, #35aa47);
+  background: -moz-linear-gradient(top, #35aa47, #35aa47);
+  background: -ms-linear-gradient(top, #35aa47, #35aa47);
+  background: -o-linear-gradient(top, #35aa47, #35aa47);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=0);
+  background-repeat: repeat-x;
+}
+.btn.green:hover,
+button.green:hover {
+  background-color: #1d943b;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1d943b), to(#1d943b));
+  background: -webkit-linear-gradient(top, #1d943b, #1d943b);
+  background: -moz-linear-gradient(top, #1d943b, #1d943b);
+  background: -ms-linear-gradient(top, #1d943b, #1d943b);
+  background: -o-linear-gradient(top, #1d943b, #1d943b);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=0);
   background-repeat: repeat-x;
 }
@@ -5765,10 +5815,19 @@ footer .footer-toe {
 }
 /* compose message page */
 .compose-message textarea {
-  width: 600px;
+  width: 100%;
+  max-width: 100%;
   height: 150px;
   border: 1px solid #cccccc;
   padding: 5px;
+  margin-bottom: 20px;
+}
+.compose-message .moveleft {
+  position: relative;
+  left: -10px;
+}
+.compose-message label {
+  width: auto;
 }
 /* messages inbox page */
 .message-inbox .row {
@@ -5813,6 +5872,9 @@ footer .footer-toe {
 .message-inbox form {
   display: inline;
   float: right;
+}
+.message-inbox .header-info form {
+  float: none;
 }
 .message-inbox .reply-btn {
   margin-right: 10px;

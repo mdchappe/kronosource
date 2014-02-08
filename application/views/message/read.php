@@ -2,12 +2,10 @@
 <h2 class="text-center"><i class="icon-comments-alt"></i> <?php echo $message['subject'];?></h2>
 <hr>
 <div class="header-info">
-	<p>
 		<form method="post" name="message_to" id="message_to" action="<?php echo base_url();?>index.php/message/compose">
 			<input type=hidden name="user_id" value="<?php echo $message['to_id'];?>" />
-			To: <a href="javascript:void()" onclick="document.getElementById('message_to').submit()"><?php echo $message['to']?></a>
+			To: <?php echo $message['to']?> (Me)</a>
 		</form>
-	</p>
 	<p>
 		<form method="post" name="message_from" id="message_from" action="<?php echo base_url();?>index.php/message/compose">
 			<input type=hidden name="user_id" value="<?php echo $message['from_id'];?>" />
@@ -19,7 +17,7 @@
 </div>
 
 <p class="message"><?php echo nl2br($message['message']);?></p>
-
+<a class="btn" href="/index.php/message/inbox"><i class="icon-chevron-left"></i> back to messages</a>
 <form method="post" name="delete" id="delete" action="<?php echo base_url();?>index.php/message/delete">
 	<input type=hidden name="id" value="<?php echo $message['message_id'];?>" />
 	<a class="btn cancel" href="javascript: void()" onclick="document.getElementById('delete').submit()"><i class="icon-trash"></i> Delete</a>

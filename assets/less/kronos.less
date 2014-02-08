@@ -71,9 +71,15 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: 1px;
 	border: none;
 	width: auto !important;}
+.btn:focus, .btn:hover, button:focus, button:hover {background-position: 0 0 !important;}
 .btn:hover, button:hover {.gradient (@startColor: #0072bb, @endColor: #0072bb); color: #fff;}
 .btn.cancel, button.cancel {.gradient (@startColor: #dd4b39, @endColor: #d14836);}
 .btn.cancel:hover, button.cancel:hover {.gradient (@startColor: #c53727, @endColor: #c53727);}
+.btn.purple, button.purple {.gradient (@startColor: #852b99, @endColor: #852b99);}
+.btn.purple:hover, button.purple:hover {.gradient (@startColor: #6d1b81, @endColor: #6d1b81);}
+.btn.green, button.green {.gradient (@startColor: #35aa47, @endColor: #35aa47);}
+.btn.green:hover, button.green:hover {.gradient (@startColor: #1d943b, @endColor: #1d943b);}
+
 
 /* label & input defaults */
 legend {border-bottom: none;}
@@ -266,7 +272,9 @@ footer {
 /* compose message page */
 .compose-message {
 
-	textarea { width: 600px;height: 150px;border: 1px solid #cccccc;padding: 5px;}
+	textarea { width: 100%; max-width: 100%; height: 150px;border: 1px solid #cccccc;padding: 5px; margin-bottom: 20px;}
+	.moveleft {position: relative; left: -10px;}
+	label {width: auto;}
 }
 
 /* messages inbox page */
@@ -282,6 +290,7 @@ footer {
 	.padding20l {padding-left: 20px; }
 	.message {background: white; padding: 30px; border: 1px solid #ccc;}
 	form {display: inline; float: right;}
+	.header-info form {float: none;}
 	.reply-btn {margin-right: 10px;}
 	.header-info { 
 		margin-bottom: 10px;

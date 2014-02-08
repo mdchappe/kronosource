@@ -1,10 +1,13 @@
-$(document).ready(function() {
-	$('.dynamic-subject a.new').find('i').removeClass('icon-comment-alt').addClass('icon-comment');	
-})
-
 var lease_term_count = 1;
 
 $(document).ready(function(){
+	$('.dynamic-subject a.new').find('i').removeClass('icon-comment-alt').addClass('icon-comment');	
+	
+	$('a.j-back').click(function(){
+        parent.history.back();
+        return false;
+    });
+
 	$('#unit_date').datepicker();
 	$('.date_input').datepicker();
 	$('#add_term').click(add_lease_term);
