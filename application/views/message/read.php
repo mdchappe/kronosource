@@ -2,8 +2,18 @@
 <h2 class="text-center"><i class="icon-comments-alt"></i> <?php echo $message['subject'];?></h2>
 <hr>
 <div class="header-info">
-	<p>To: <a href="<?php base_url().'index.php/message/compose/'.$message['to_id'];?>"><?php echo $message['to']?></a></p>
-	<p>From: <a href="<?php base_url().'index.php/message/compose/'.$message['from_id'];?>"><?php echo $message['from']?></a></p>
+	<p>
+		<form method="post" name="message_to" id="message_to" action="<?php echo base_url();?>index.php/message/compose">
+			<input type=hidden name="user_id" value="<?php echo $message['to_id'];?>" />
+			To: <a href="javascript:void()" onclick="document.getElementById('message_to').submit()"><?php echo $message['to']?></a>
+		</form>
+	</p>
+	<p>
+		<form method="post" name="message_from" id="message_from" action="<?php echo base_url();?>index.php/message/compose">
+			<input type=hidden name="user_id" value="<?php echo $message['from_id'];?>" />
+			From: <a href="javascript:void()" onclick="document.getElementById('message_from').submit()"><?php echo $message['from']?></a>
+		</form>
+	</p>
 	<p>Subject: <?php echo $message['subject'];?></p>
 	<p>Sent on: <?php echo $message['sent_on'];?></p>
 </div>

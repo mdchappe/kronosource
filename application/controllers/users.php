@@ -203,7 +203,7 @@
 				
 				if($this->ion_auth->update($id,$update)) {
 				
-				redirect(base_url().'users/edit');
+				redirect(base_url().'index.php/users/edit');
 				}
 			}
 		}
