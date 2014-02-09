@@ -2,10 +2,9 @@
 <h2 class="text-center"><i class="icon-comments-alt"></i> <?php echo $message['subject'];?></h2>
 <hr>
 <div class="header-info">
-		<form method="post" name="message_to" id="message_to" action="<?php echo base_url();?>index.php/message/compose">
-			<input type=hidden name="user_id" value="<?php echo $message['to_id'];?>" />
-			To: <?php echo $message['to']?> (Me)</a>
-		</form>
+		
+			To: <?php echo $message['to']?> (Me)
+		
 	<p>
 		<form method="post" name="message_from" id="message_from" action="<?php echo base_url();?>index.php/message/compose">
 			<input type=hidden name="user_id" value="<?php echo $message['from_id'];?>" />

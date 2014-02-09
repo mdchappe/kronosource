@@ -43,7 +43,7 @@
 				$data['default_subject'] = 'Re: ' . $message['subject'];
 				$data['default_message'] = PHP_EOL . PHP_EOL . 'On ' . $message['sent_on'] . ', '. $message['from'] . ' wrote:' . PHP_EOL . $message['message'];
 			} else {
-				$data['default_subject'] = $message['from'] . ' inquiry.';
+				$data['default_subject'] = '';
 				$data['default_message'] = '';
 			}
 			
@@ -113,7 +113,8 @@
 				$this->message_model->mark_read($message_id);
 				
 			} else {
-				echo 'NOT AUTHORIZED';
+				$this->session->set_flashdata('status','You have tried to access an unauthorized message.');
+				redirect(base_url().'index.php/');
 			}
 		}
 		
