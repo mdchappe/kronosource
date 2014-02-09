@@ -59,58 +59,58 @@
 		}
 		
 		public function units(){
-				
+			
 			$params = array();
 			
-			if($this->input->post('term_min'){	
+			if($this->input->post('term_min')){	
 				$params['term_min'] = $this->input->post('term_min');
 			} else {
 				$params['term_min'] = 0;
 			}
 			
-			if($this->input->post('term_max'){	
+			if($this->input->post('term_max')){	
 				$params['term_max'] = $this->input->post('term_max');
 			} else {
 				$params['term_max'] = 1000000000;
 			}
 			
-			if($this->input->post('rent_min'){	
+			if($this->input->post('rent_min')){	
 				$params['rent_min'] = $this->input->post('rent_min');
 			} else {
 				$params['rent_min'] = 0;
 			}
 			
-			if($this->input->post('rent_max'){	
+			if($this->input->post('rent_max')){	
 				$params['rent_max'] = $this->input->post('rent_max');
 			} else {
 				$params['rent_max'] = 1000000000;
 			}
 			
-			if($this->input->post('beds_min'){	
+			if($this->input->post('beds_min')){	
 				$params['beds_min'] = $this->input->post('beds_min');
 			} else {
 				$params['beds_min'] = 0;
 			}
 			
-			if($this->input->post('beds_max'){	
+			if($this->input->post('beds_max')){	
 				$params['beds_max'] = $this->input->post('beds_max');
 			} else {
 				$params['beds_max'] = 1000000000;
 			}
 			
-			if($this->input->post('baths_min'){	
+			if($this->input->post('baths_min')){	
 				$params['baths_min'] = $this->input->post('baths_min');
 			} else {
 				$params['baths_min'] = 0;
 			}
 			
-			if($this->input->post('baths_max'){	
+			if($this->input->post('baths_max')){	
 				$params['baths_max'] = $this->input->post('baths_max');
 			} else {
 				$params['baths_max'] = 1000000000;
 			}
 			
-			if($this->input->post('size_min'){	
+			if($this->input->post('size_min')){	
 				$params['size_min'] = $this->input->post('size_min');
 			} else {
 				$params['size_min'] = 0;
@@ -139,7 +139,7 @@
 				$this->load->view('search/units', $data);
 				$this->load->view('templates/footer', $data);
 			} else {
-			
+				
 				$this->session->set_flashdata('status','Please specify at least one search criterion.');
 				redirect(base_url().'index.php/locator/searchProperties');
 			}

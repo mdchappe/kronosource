@@ -43,6 +43,7 @@ $route['admin/regcodes'] = 'admin/regcodes';
 $route['admin/regcodes/(:any)'] = 'admin/regcodes/$1';
 $route['admin/controlPanel'] = 'admin/controlPanel';
 $route['search/properties'] = 'search/properties';
+$route['search/units'] = 'search/units';
 $route['contact/form'] = 'pages/contactform';
 $route['message/delete'] = 'message/delete';
 $route['message/read'] = 'message/read';
