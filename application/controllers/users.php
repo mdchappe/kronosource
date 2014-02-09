@@ -217,8 +217,8 @@
 			$this->form_validation->set_rules('password','password','required');
 			
 			if ($this->form_validation->run() === FALSE){
-				
-				redirect('/');
+				$this->session->set_flashdata('login','Please enter a Username and Password.');
+				redirect(base_url().'index.php/');
 			}
 			
 			else {
@@ -234,20 +234,25 @@
 					$data['the_user'] = $this->the_user;
 				
 					$this->load->vars($data);
-					//BACK TO HOME SCREEN
-					redirect('/');
-				}
-				
-				else {
-					redirect('/');
-				}
+					
+					if($this->ion_auth->is_admin()){
+						//CONTROL PANEL
+						redirect(base_url().'index.php/admin/controlPanel');
+					} else {
+						//BACK TO HOME SCREEN
+						redirect(base_url().'index.php/');
+					}
+				} else {
+					$this->session->set_flashdata('login','Login failed. Please check your credentials and try again.');
+					redirect(base_url().'index.php/');
+				} 
 			}
 		}
 		
 		public function logout() {
 			
 			if($this->ion_auth->logout()){
-			redirect('/');
+			redirect(base_url().'index.php/');
 			}
 		}
 	}
