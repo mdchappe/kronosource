@@ -174,9 +174,11 @@
 		public function update_unit($id) {
 			
 			$this->load->helper('form');
+			$this->load->helper('date');
 			$this->load->library('form_validation');
 			
 			$data['title'] = 'Update Unit Details';
+			$data['status'] = $this->session->flashdata('status');
 			
 			$this->form_validation->set_rules('unit_beds','Bedrooms','trim|required');
 			$this->form_validation->set_rules('unit_baths','Baths','trim|required');
@@ -196,10 +198,7 @@
 				
 				$unit = $data['unit'];
 				$db_date = $unit->date_available;
-				$year = substr($db_date,0,4);
-				$month = substr($db_date,5,2);
-				$day = substr($db_date,-2);
-				$data['date'] = $month.'/'.$day.'/'.$year;
+				$data['date'] = $this->convert_date_to_human($db_date);
 				
 				$date_input = array(
 					'name' => 'unit_date',
@@ -257,14 +256,16 @@
 				while($i <= $count) {
 					
 					$params = array();
-					$params['term'] = $this->input->post('lease_term_'.$i);
-					$params['rent'] = $this->input->post('monthly_rent_'.$i);
-					$params['deposit'] = $this->input->post('deposit_'.$i);
-					$params['pet_rent'] = $this->input->post('pet_rent_'.$i);
-					$params['pet_deposit'] = $this->input->post('pet_deposit_'.$i);
-					$params['unit_id'] = $id;
-					
-					$this->property_model->add_lease_term($params);
+					if($this->input->post('lease_term_'.$i) && $this->input->post('monthly_rent_'.$i)){
+						$params['term'] = $this->input->post('lease_term_'.$i);
+						$params['rent'] = $this->input->post('monthly_rent_'.$i);
+						$params['deposit'] = $this->input->post('deposit_'.$i);
+						$params['pet_rent'] = $this->input->post('pet_rent_'.$i);
+						$params['pet_deposit'] = $this->input->post('pet_deposit_'.$i);
+						$params['unit_id'] = $id;
+						
+						$this->property_model->add_lease_term($params);
+					}
 					
 					$i++;
 				}
@@ -272,7 +273,7 @@
 				if($this->property_model->update_unit($id)) {
 					
 					$this->session->set_flashdata('status','Unit successfully updated.');
-					redirect(base_url().'index.php/property/manage');
+					redirect(base_url().'index.php/property/update_unit/'.$id);
 				}
 			}
 		}
@@ -334,13 +335,39 @@
 				redirect(base_url().'index.php/');
 			} else {
 				
+				$unit_id = $this->property_model->check_lease_owner($id)['id'];
+				
 				if($this->property_model->delete_lease_term($id)){
-					
-					$unit_id = $this->property_model->check_lease_owner($id)['id'];
 					
 					$this->session->set_flashdata('status','Lease Term successfully deleted.');
 					redirect(base_url().'index.php/property/update_unit/'.$unit_id);
 				}
 			}
+		}
+		
+		private function convert_date_to_unix($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$year = substr($date, -4);
+			$month = substr($date, 0, 2);
+			$day = substr($date, 3, 2);
+			$date = $year.'-'.$month.'-'.$day.' 11:59:59 PM';
+			
+			return human_to_unix($date);
+		}
+		
+		private function convert_date_to_human($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			
+			$year = substr($date, 0, 4);
+			$month = substr($date, 5, 2);
+			$day = substr($date, 8, 2);
+			$date = $month.'-'.$day.'-'.$year;
+			
+			return $date;
 		}
 	}

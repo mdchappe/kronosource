@@ -43,14 +43,12 @@
 		
 		public function viewUnit($id) {
 			
+			$this->load->helper('date');
+			
 			$unit = $this->property_model->get_unit($id);
 			$terms = $this->property_model->get_rent($id);
 			
-			$db_date = $unit->date_available;
-			$year = substr($db_date,0,4);
-			$month = substr($db_date,5,2);
-			$day = substr($db_date,-2);
-			$unit->date_available = $month.'/'.$day.'/'.$year;
+			$unit['date_available'] = $this->convert_date_to_human($unit['date_available']);
 			
 			$data['title'] = $unit->name;
 			$data['unit'] = $unit;
@@ -102,5 +100,31 @@
 			$this->load->view('templates/header',$data);
 			$this->load->view('locator/searchProperties',$data);
 			$this->load->view('templates/footer',$data);
+		}
+		
+		private function convert_date_to_unix($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$year = substr($date, -4);
+			$month = substr($date, 0, 2);
+			$day = substr($date, 3, 2);
+			$date = $year.'-'.$month.'-'.$day.' 11:59:59 PM';
+			
+			return human_to_unix($date);
+		}
+		
+		private function convert_date_to_human($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			
+			$year = substr($date, 0, 4);
+			$month = substr($date, 5, 2);
+			$day = substr($date, 8, 2);
+			$date = $month.'-'.$day.'-'.$year;
+			
+			return $date;
 		}
 	}
