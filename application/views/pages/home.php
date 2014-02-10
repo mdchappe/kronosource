@@ -36,24 +36,24 @@
 		<?php echo '<span>'.$status.'</span>';?>
 		<h4>Please complete all fields below.</h4>
 		<label for="name">Name:</label>
-		<?php echo form_input('name', set_value('name'));?>
+		<?php $homeForm_opts = 'required="required"'; echo form_input('name','', $homeForm_opts, set_value('name'));?>
 		<label for="phone">Phone Number:</label>
-		<?php echo form_input('phone', set_value('phone'));?>
+		<?php echo form_input('phone','', $homeForm_opts, set_value('phone'));?>
 		<label for="email">Email Address:</label>
-		<?php echo form_input('email', set_value('email'));?>
+		<?php echo form_input('email','', $homeForm_opts, set_value('email'));?>
 		<label for="email_validate">Verify Email Address:</label>
-		<?php echo form_input('email_validate');?>
+		<?php echo form_input('email_validate','', $homeForm_opts);?>
 		<label for="company">Company:</label>
-		<?php echo form_input('company', set_value('company'));?><br><span class="radio-selectors">
+		<?php echo form_input('company','', $homeForm_opts, set_value('company'));?><br><span class="radio-selectors">
 		<label class="radio-label" for="locator">I am or represent a:</label>
-		<?php echo form_radio('account_type','locator',set_value('account_type'));?>Locator
+		<?php echo form_radio('account_type','locator','', $homeForm_opts,set_value('account_type'));?>Locator
 		<?php echo form_radio('account_type','Property',set_value('account_type'));?>Property
 		<label class="radio-label" for="contact_phone">Contact me by:</label>
-		<?php echo form_radio('contact','Phone',set_value('contact')).'Phone';
+		<?php echo form_radio('contact','Phone','', $homeForm_opts,set_value('contact')).'Phone';
 			  echo form_radio('contact','Email',set_value('contact')).'Email';
 			  echo form_radio('contact','Either',set_value('contact')).'Either<br/>';?></span>
 		<label for="captcha">Are You Human?</label>
-		<?php echo $captcha['image'].form_input('captcha');?><br/>
+		<?php echo $captcha['image'].form_input('captcha','', $homeForm_opts);?><br/>
 		<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i>  submit </button>
 		
 		<?php endif;?>

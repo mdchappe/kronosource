@@ -5690,12 +5690,46 @@ footer .footer-toe {
   top: -3px;
 }
 /* property management page */
+.property-edit .row {
+  margin: 0;
+}
 .property-edit input {
   margin-bottom: 0px;
 }
 .property-edit .pushleft200 {
-  margin-left: 200px;
+  margin-left: 157px;
   top: 0;
+  width: auto;
+}
+.property-edit .width50 {
+  width: 49%;
+  display: inline-table;
+}
+.property-edit .unit-label {
+  width: 300px;
+  display: inline-block;
+}
+.property-edit .new-hr {
+  border-top: 1px solid #E2E2E2;
+  margin: 10px 0;
+}
+.property-edit .push-left {
+  position: relative;
+  left: -10px;
+}
+.property-edit .unit-list .btn {
+  position: relative;
+  top: -5px;
+}
+.property-edit .edit-inner {
+  padding-bottom: 50px;
+}
+.property-edit .edit-inner .icon-ok {
+  color: #35aa47;
+}
+.property-edit .checkboxes span {
+  width: 204px;
+  display: inline-block;
 }
 /* view property page */
 .view-property .row {

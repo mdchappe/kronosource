@@ -21,8 +21,8 @@
           	
 			if (!$this->ion_auth->logged_in()) {
 			echo '<p>'.form_open('users/login')?>
-				<?php $username_opts = 'placeholder="Username"'; echo form_input('username', '', $username_opts);?>
-				<?php $password_opts = 'placeholder="Password"'; echo form_password('password', '', $password_opts);?>
+				<?php $username_opts = 'placeholder="Username"'. 'required="required"'; echo form_input('username', '', $username_opts);?>
+				<?php $password_opts = 'placeholder="Password"'. 'required="required"'; echo form_password('password', '', $password_opts);?>
 				<button class="btn" type="submit" name="submit">sign in <i class="icon-caret-right"></i></button>
 				</form>
 			</p>
@@ -40,7 +40,7 @@
 					  
 					  endif ?>
 					  
-				<?php $registration_code_opts = 'placeholder="Registration Code"'; echo form_open('pages/register').form_input('regcode', $regcode, $registration_code_opts);?>
+				<?php $registration_code_opts = 'placeholder="Registration Code"'. 'required="required"'; echo form_open('pages/register').form_input('regcode', $regcode, $registration_code_opts);?>
 				<button class="btn" type="submit" name="submit_register">register <i class="icon-caret-right"></i></button>
 				</form>
 			</p>

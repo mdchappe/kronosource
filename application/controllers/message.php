@@ -51,8 +51,6 @@
 					'required' => 'required',
 					'name' => 'message',
 					'id' => 'message',
-					'rows' => '5',
-					'cols' => '40',
 					'value' => $data['default_message']
 			);
 			

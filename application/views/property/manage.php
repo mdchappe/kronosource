@@ -18,74 +18,76 @@
 		<?php echo form_error('city','<p>city: ','</p>'); ?>
 		<?php echo form_error('state','<p>state: ','</p>'); ?>
 		<?php echo form_error('zip','<p>zip code: ','</p>'); ?>
-		<?php echo form_open('property/manage'); 
-			
-			  echo form_fieldset('User Information');
-		?>
+		<?php echo form_open('property/manage'); ?>
 		
-			<label for="username">User Name: </label>
-			<?php echo form_input('username', $the_user->username);?><br/>
-			<label class="pushleft200" for="username"><small><b>(min 6 characters, max 18 characters)</b></small></label><br>
-			<label for="password">Password:</label>
-			<?php echo form_password('password');?>
-			<label class="pushleft200" for="password"><small><b>(min 8 characters, max 18 characters)</b></small></label><br>
-			<label for="password">Re-enter Password: </label>
-			<?php echo form_password('password_verify');?><br/>
-			<label for="email">Email Address: </label>
-			<?php echo form_input('email', $the_user->email);?><br/>
-			<label for="email">Re-enter Email Address: </label>
-			<?php echo form_input('email_verify', $the_user->email);?><br/>
-			<hr>
-			<?php echo form_fieldset_close(); 
-				  echo form_fieldset('Property Information');
-			?>
-			<label for="property_name">Property Name: </label>
-			<?php echo form_input('property_name', $the_user->company);?><br/>
-			<label for="management">Property Management: </label>
-			<?php echo form_input('management', $management);?><br/>
-			<label for="first_name">Contact's First Name: </label>
-			<?php echo form_input('first_name', $the_user->first_name);?><br/>
-			<label for="last_name">Contact's Last Name: </label>
-			<?php echo form_input('last_name', $the_user->last_name);?><br/>
-			<label for="phone">Phone(include area code): </label>
-			<?php echo form_input('phone', $the_user->phone);?><br/>
-			<label for="street">Street: </label>
-			<?php echo form_input('street', $the_user->street);?><br/>
-			<label for="city">City: </label>
-			<?php echo form_input('city', $the_user->city);?><br/>
-			<label for="state">State: </label>
-			<?php echo form_dropdown('state',array('tx'=>'TX'),$the_user->state);?><br/>
-			<label for="zip">Zip Code: </label>
-			<?php echo form_input('zip', $the_user->zip);?><br/>
-			<?php echo form_fieldset_close(); ?>
+		<div class="row">
+			<div class="width50">
+				<?php echo form_fieldset('User Information');?>
+				<label for="username">User Name: </label>
+				<?php echo form_input('username', $the_user->username);?><br/>
+				<label class="pushleft200" for="username"><small><b>(min 6 characters, max 18 characters)</b></small></label><br>
+				<label for="password">Password:</label>
+				<?php echo form_password('password');?><br>
+				<label class="pushleft200" for="password"><small><b>(min 8 characters, max 18 characters)</b></small></label><br>
+				<label for="password">Re-enter Password: </label>
+				<?php echo form_password('password_verify');?><br/>
+				<label for="email">Email Address: </label>
+				<?php echo form_input('email', $the_user->email);?><br/>
+				<label for="email">Re-enter Email Address: </label>
+				<?php echo form_input('email_verify', $the_user->email);?><br/>
+				<?php echo form_fieldset_close(); ?>
+			</div>
+			<div class="width50">
+				<?php echo form_fieldset('Property Information');?>
+				<label for="property_name">Property Name: </label>
+				<?php echo form_input('property_name', $the_user->company);?><br/>
+				<label for="management">Property Management: </label>
+				<?php echo form_input('management', $management);?><br/>
+				<label for="first_name">Contact's First Name: </label>
+				<?php echo form_input('first_name', $the_user->first_name);?><br/>
+				<label for="last_name">Contact's Last Name: </label>
+				<?php echo form_input('last_name', $the_user->last_name);?><br/>
+				<label for="phone">Phone(include area code): </label>
+				<?php echo form_input('phone', $the_user->phone);?><br/>
+				<label for="street">Street: </label>
+				<?php echo form_input('street', $the_user->street);?><br/>
+				<label for="city">City: </label>
+				<?php echo form_input('city', $the_user->city);?><br/>
+				<label for="state">State: </label>
+				<?php echo form_dropdown('state',array('tx'=>'TX'),$the_user->state);?><br/>
+				<label for="zip">Zip Code: </label>
+				<?php echo form_input('zip', $the_user->zip);?><br/>
+				<?php echo form_fieldset_close(); ?>
+			</div>
+		</div>
 			<hr>
 			<div class="checkboxes">
 			<?php
 				  echo form_fieldset('Property Features');
-				  echo form_checkbox('fitness','24-hour Fitness Center',$fitness).' 24-hour Fitness Center<br/>';
-				  echo form_checkbox('clubhouse','Clubhouse',$clubhouse).' Clubhouse<br/>';
-				  echo form_checkbox('blinds','2-inch Wood Blinds',$blinds).' 2-inch Wood Blinds<br/>';
-				  echo form_checkbox('ceilings','Vaulted Ceilings',$ceilings).' Vaulted Ceilings<br/>';
-				  echo form_checkbox('pool','Pool',$pool).' Pool<br/>';
-				  echo form_checkbox('laundry','On-Site Laundry',$laundry).' On-Site Laundry<br/>';
-				  echo form_checkbox('business','Business Center',$business).' Business Center<br/>';
-				  echo form_checkbox('wifi','Free Wifi',$wifi).' Free Wifi<br/>';
-				  echo form_checkbox('gated','Gated Community',$gated).' Gated Community<br/>';
-				  echo form_checkbox('fireplace','Fireplace',$fireplace).' Fireplace<br/>';
-				  echo form_checkbox('elevator','Elevator Access',$elevator).' Elevator Access<br/>';
-				  echo form_checkbox('storage','Storage Available',$storage).' Storage Available<br/>';
-				  echo form_checkbox('parking','Reserved Parking',$parking).' Reserved Parking<br/>';
-				  echo form_checkbox('court','Sports Courts',$court).' Sports Courts<br/>';
-				  echo form_checkbox('dog','Dogs',$dog).' Dogs<br/>';
-				  echo form_checkbox('cat','Cats',$cat).' Cats<br/>';
-				  echo form_checkbox('dog_park','Dog Park',$dog_park).' Dog Park<br/><br>';
-				  echo form_label('Trash Collection','trash');
-				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),$trash).'<br/><br>';
-				  echo form_label('Cable Provider(s)','cable');
+				  echo form_checkbox('fitness','24-hour Fitness Center',$fitness).' <span>24-hour Fitness Center</span>';
+				  echo form_checkbox('clubhouse','Clubhouse',$clubhouse).' <span>Clubhouse</span>';
+				  echo form_checkbox('blinds','2-inch Wood Blinds',$blinds).' <span>2-inch Wood Blinds</span>';
+				  echo form_checkbox('ceilings','Vaulted Ceilings',$ceilings).' <span>Vaulted Ceilings</span>';
+				  echo form_checkbox('pool','Pool',$pool).' <span>Pool</span>';
+				  echo form_checkbox('laundry','On-Site Laundry',$laundry).' <span>On-Site Laundry</span>';
+				  echo form_checkbox('business','Business Center',$business).' <span>Business Center</span>';
+				  echo form_checkbox('wifi','Free Wifi',$wifi).' <span>Free Wifi</span>';
+				  echo form_checkbox('gated','Gated Community',$gated).' <span>Gated Community</span>';
+				  echo form_checkbox('fireplace','Fireplace',$fireplace).' <span>Fireplace</span>';
+				  echo form_checkbox('elevator','Elevator Access',$elevator).' <span>Elevator Access</span>';
+				  echo form_checkbox('storage','Storage Available',$storage).' <span>Storage Available</span>';
+				  echo form_checkbox('parking','Reserved Parking',$parking).' <span>Reserved Parking</span>';
+				  echo form_checkbox('court','Sports Courts',$court).' <span>Sports Courts</span>';
+				  echo form_checkbox('dog','Dogs',$dog).' <span>Dogs</span>';
+				  echo form_checkbox('cat','Cats',$cat).' <span>Cats</span>';
+				  echo form_checkbox('dog_park','Dog Park',$dog_park).' <span>Dog Park</span><br><br>';
+				  echo form_label('Trash Collection:&nbsp;&nbsp;','trash');
+				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),$trash);
+				  echo form_label('Cable Provider(s):&nbsp;&nbsp;','cable');
 				  echo form_input('cable',$cable);
 				  echo form_fieldset_close(); ?>
 			
-			<input class="btn pull-right btn-primary edit-btn" type="submit" name="submit" value="submit" /><br><br>
+			<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i> save changes</button><br><br>
 			<hr>
 			</div>
 		</form>
@@ -94,15 +96,20 @@
 		<?php
 			if(!empty($units)) {
 				foreach($units as $unit): ?>
-					<p><?php echo $unit['name'] ?> <a href="/index.php/property/update_unit/<?php echo $unit['id'] ?>"><small>edit</small></a> <a href="/index.php/property/delete_unit/<?php echo $unit['id'] ?>"><small>delete</small></a></p>
+					<p class="unit-list">
+						<span class="unit-label"><i class="icon-ok"></i> <?php echo $unit['name'] ?> </span>
+						<a class="btn cancel pull-right" href="/index.php/property/delete_unit/<?php echo $unit['id'] ?>"><i class="icon-trash"></i> delete</a>
+						<a class="btn pull-right push-left" href="/index.php/property/update_unit/<?php echo $unit['id'] ?>"><i class="icon-pencil"></i> edit</a> 
+					</p>
+					<hr class="new-hr">
 				<?php endforeach;
 			} else {
-				echo "<p>No units currently listed.</p>";
+				echo "<p class='error'>No units currently listed.</p>";
 			}
 		?>
 		
 		<ul>
-			<li><a href="/index.php/property/add_unit">Add Unit</a></li>
+			<li><a class="btn green pull-right" href="/index.php/property/add_unit"><i class="icon-plus"></i> Add Unit</a></li>
 		</ul>
 	</div>
 </div>

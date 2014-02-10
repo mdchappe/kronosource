@@ -243,7 +243,7 @@
 						redirect(base_url().'index.php/');
 					}
 				} else {
-					$this->session->set_flashdata('login','Login failed. Please check your credentials and try again.');
+					$this->session->set_flashdata('login','<p class="error"><i class="icon-warning-sign"></i> Login failed. Please check your credentials and try again.</p>');
 					redirect(base_url().'index.php/');
 				} 
 			}
