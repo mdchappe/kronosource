@@ -185,10 +185,9 @@
 			$this->form_validation->set_rules('unit_size','Unit Size','trim|required');
 			
 			if($this->property_model->check_unit_owner($id)['property_id'] != $this->the_user->id){
-				redirect('/');
-			}
-			
-			else if($this->form_validation->run() === FALSE) {
+				$this->session->set_flashdata('login','<p>You have tried to access unauthorized content. Please log in with an authorized account and try again.</p>');
+				redirect(base_url().'index.php/');
+			} else if($this->form_validation->run() === FALSE) {
 				
 				//POPULATE FORM WITH EXISTING VALUES
 				$data['unit_id'] = $id;
@@ -253,8 +252,26 @@
 				
 			} else {
 				
+				$count = $this->input->post('lease_term_count');
+				$i = 1;
+				while($i <= $count) {
+					
+					$params = array();
+					$params['term'] = $this->input->post('lease_term_'.$i);
+					$params['rent'] = $this->input->post('monthly_rent_'.$i);
+					$params['deposit'] = $this->input->post('deposit_'.$i);
+					$params['pet_rent'] = $this->input->post('pet_rent_'.$i);
+					$params['pet_deposit'] = $this->input->post('pet_deposit_'.$i);
+					$params['unit_id'] = $id;
+					
+					$this->property_model->add_lease_term($params);
+					
+					$i++;
+				}
+				
 				if($this->property_model->update_unit($id)) {
 					
+					$this->session->set_flashdata('status','Unit successfully updated.');
 					redirect(base_url().'index.php/property/manage');
 				}
 			}
@@ -271,7 +288,8 @@
 			$data['title'] = 'Update Lease Details';
 			
 			if($this->property_model->check_lease_owner($id)['property_id'] != $this->the_user->id){
-				redirect('/');
+				$this->session->set_flashdata('login','<p>You have tried to access unauthorized content. Please log in with an authorized account and try again.</p>');
+				redirect(base_url().'index.php/');
 			}
 			
 			else if($this->form_validation->run() === FALSE) {
@@ -285,9 +303,43 @@
 			} else {
 				
 				if($this->property_model->update_lease_term($id)) {
-				
+					
+					$this->session->set_flashdata('status','<p>Lease term updated successfully.</p>');
 					$unit_id = $this->property_model->get_lease_term($id)['unit_id'];
 					redirect('/property/update_unit/'.$unit_id);
+				}
+			}
+		}
+		
+		public function delete_unit($id) {
+			
+			if($this->property_model->check_unit_owner($id)['property_id'] != $this->the_user->id){
+				$this->session->set_flashdata('login','<p>You have tried to access unauthorized content. Please log in with an authorized account and try again.</p>');
+				redirect(base_url().'index.php/');
+			}
+			
+			else {
+				if($this->property_model->delete_unit($id)) {
+					
+					$this->session->set_flashdata('status','Unit successfully deleted.');
+					redirect(base_url().'index.php/property/manage');
+				}
+			}
+		}
+		
+		public function delete_lease_term($id) {
+			
+			if($this->property_model->check_lease_owner($id)['property_id'] != $this->the_user->id){
+				$this->session->set_flashdata('login','<p>You have tried to access unauthorized content. Please log in with an authorized account and try again.</p>');
+				redirect(base_url().'index.php/');
+			} else {
+				
+				if($this->property_model->delete_lease_term($id)){
+					
+					$unit_id = $this->property_model->check_lease_owner($id)['id'];
+					
+					$this->session->set_flashdata('status','Lease Term successfully deleted.');
+					redirect(base_url().'index.php/property/update_unit/'.$unit_id);
 				}
 			}
 		}

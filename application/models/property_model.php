@@ -274,7 +274,7 @@
 			
 			$unit_id =  $query->row_array()['unit_id'];
 			
-			$this->db->select('property_id');
+			$this->db->select('property_id, id');
 			
 			$query2 = $this->db->get_where('unit',array('id'=>$unit_id));
 			
@@ -289,7 +289,7 @@
 		
 		public function get_rent($id) {
 			
-			$query = $this->db->get_where('rent',array('unit_id'=>$id));
+			$query = $this->db->select('*')->from('rent')->where('unit_id',$id)->order_by('term','asc')->get();
 			return $query->result_array();
 		}
 		
@@ -405,5 +405,25 @@
 			$data['property_id'] = $id;
 			
 			return $data;
+		}
+		
+		public function delete_unit($id) {
+			
+			$this->db->delete('rent',array('unit_id'=>$id));
+			$this->db->delete('unit',array('id'=>$id));
+			
+			return TRUE;
+		}
+		
+		public function delete_lease_term($id) {
+			
+			$this->db->delete('rent',array('id'=>$id));
+			
+			return TRUE;
+		}
+		
+		public function add_lease_term($params) {
+			
+			$this->db->insert('rent',$params);
 		}
 	}
