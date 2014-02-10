@@ -5931,3 +5931,99 @@ footer .footer-toe {
   font-weight: bold;
 }
 /* add unit page */
+.add-unit .row {
+  margin: 0;
+  border: 1px solid #E4E2E2;
+  position: relative;
+}
+.add-unit .param {
+  margin-left: 107px;
+  position: relative;
+  top: -2px;
+}
+.add-unit table {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+.add-unit table .top-row {
+  background: #D1DDEB;
+}
+.add-unit table input {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.add-unit table tr {
+  border: 1px solid #E4E2E2;
+}
+.add-unit table input {
+  width: 100px;
+}
+.add-unit .add-term {
+  margin: 10px 0;
+}
+/*add unit success page*/
+.add-unit-success h2 {
+  text-transform: uppercase;
+}
+/*update unit page*/
+.update-unit .add-more {
+  margin: 10px 0;
+}
+.update-unit .row {
+  margin: 0;
+  border: 1px solid #E4E2E2;
+  position: relative;
+}
+.update-unit .push-left {
+  position: relative;
+  left: -10px;
+}
+.update-unit table {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+.update-unit table .top-row {
+  background: #D1DDEB;
+}
+.update-unit table .btn,
+.update-unit table input {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.update-unit table tr {
+  border-bottom: 1px solid #E4E2E2;
+}
+.update-unit table input {
+  width: 100px;
+}
+/*update lease terms page*/
+.update-lease-terms .row {
+  margin: 0;
+  border: 1px solid #E4E2E2;
+  position: relative;
+}
+.update-lease-terms table {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+.update-lease-terms table .top-row {
+  background: #D1DDEB;
+}
+.update-lease-terms table .btn,
+.update-lease-terms table input {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.update-lease-terms table input {
+  width: 100px;
+}
+.update-lease-terms .btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.update-lease-terms .btn.cancel {
+  margin-left: 10px;
+}

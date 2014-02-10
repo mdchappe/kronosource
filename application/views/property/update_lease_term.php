@@ -1,7 +1,10 @@
-<h2>UDATE LEASE TERM</h2>
+<div class="container page-content update-lease-terms"><div class="inner">
+<h2 class="text-center">UDATE LEASE TERM</h2>
+<hr>
 	<?php echo form_open('property/update_lease_term/'.$term['id']); ?>
+	<div class="row">
 	<table id="rent_information_table">
-		  	<tr id="rent_info_table_header">
+		  	<tr class="top-row" id="rent_info_table_header">
 		  		<th>Lease Term</th>
 		  		<th>Monthly Rent</th>
 		  		<th>Deposit</th>
@@ -16,5 +19,9 @@
 			  	<td><?php echo form_input('pet_deposit',$term['pet_deposit']);?><input type="hidden" name="lease_term_id" value="<?php echo $term['id'] ?>"/></td>
 			</tr>
 	</table>
-	<input type="submit" name="submit" value="submit" /><a href="/index.php/property/update_unit/<?php echo $term['unit_id']; ?>">cancel</a>
+	</div>
+	<a class="btn cancel pull-right" href="/index.php/property/update_unit/<?php echo $term['unit_id']; ?>"><i class="icon-trash"></i> discard changes</a>
+	<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i> save changes</button> 
 	</form>
+	
+</div></div>

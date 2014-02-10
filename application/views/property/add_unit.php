@@ -7,34 +7,36 @@
 	  echo form_fieldset('Unit Information');
 ?>
 
-	<label for="unit_name">Unit Name/Description<small><b>(32 characters max)</b></small></label><br/>
+	<label for="unit_name">Unit Name/Description:&nbsp;</label>
 	<?php echo form_input('unit_name');?><br/>
-	<label for="unit_beds">Bedrooms</label><br/>
+	<label class="param" for="unit_name"><small><b>(32 characters max)</b></small></label><br/>
+	<label for="unit_beds">Bedrooms:&nbsp;</label>
 	<?php echo form_input('unit_beds');?><br/>
-	<label for="unit_baths">Baths</label><br/>
+	<label for="unit_baths">Baths:&nbsp;</label>
 	<?php echo form_input('unit_baths');?><br/>
-	<label for="unit_size">Unit Size<br/>
-	<?php echo form_input('unit_size');?><small><b>sq. ft.</b></small></label><br/>
-	<label for="unit_floor">Floor</label><br/>
+	<label for="unit_size">Unit Size:&nbsp;</label>
+	<?php echo form_input('unit_size');?><label class="text-left"><small><b>&nbsp; sq. ft.</b></small></label><br/>
+	<label for="unit_floor">Floor:&nbsp;</label>
 	<?php echo form_input('unit_floor');?><br/>
-	<label for="unit_direction">Direction Facing</label>
+	<label for="unit_direction">Direction Facing:&nbsp;</label>
 	<?php echo form_dropdown('unit_direction', $direction_dropdown);?><br/>
-	<label for="unit_washer">Washer/Dryer</label>
+	<label for="unit_washer">Washer/Dryer:&nbsp;</label>
 	<?php echo form_dropdown('unit_washer', $washer_dropdown);?><br/>
-	<label for="unit_furnished">Furnished</label><?php echo form_checkbox('unit_furnished',1,FALSE);?><br/>
-	<label for="unit_requirements">Eligibility Requirements</label>
+	<label for="unit_furnished">Furnished:&nbsp;</label><?php echo form_checkbox('unit_furnished',1,FALSE);?><br/>
+	<label for="unit_requirements">Eligibility Requirements:&nbsp;</label>
 	<?php echo form_textarea($requirements_input); ?><br/>
-	<label for="unit_specials">Current Specials</label>
+	<label for="unit_specials">Current Specials:&nbsp;</label>
 	<?php echo form_textarea($specials_input); ?><br/>
-	<label for="unit_date">Date Available</label><br/>
+	<label for="unit_date">Date Available:&nbsp;</label>
 	<?php echo form_input($date_input);?><br/>
-	<label for="unit_commission">Commission</label><br/>
-	<?php echo form_input('unit_commission');?><br/>
+	<label for="unit_commission">Commission:&nbsp;</label>
+	<?php echo form_input('unit_commission');?><br/><br>
 	
 	<?php echo form_fieldset_close();
 		  echo form_fieldset('Rent Information'); ?>
+		  <div class="row">
 		  <table id="rent_information_table">
-		  	<tr id="rent_info_table_header">
+		  	<tr class="top-row" id="rent_info_table_header">
 		  		<th>Lease Term</th>
 		  		<th>Monthly Rent</th>
 		  		<th>Deposit</th>
@@ -42,18 +44,19 @@
 		  		<th>Pet Deposit</th>
 		  	</tr>
 		  	<tr>
-		  		<td><?php echo form_input('lease_term_0');?></td>
-		  		<td><?php echo form_input('monthly_rent_0');?></td>
-		  		<td><?php echo form_input('deposit_0');?></td>
-		  		<td><?php echo form_input('pet_rent_0');?></td>
-		  		<td><?php echo form_input('pet_deposit_0');?></td>
+		  		<td><?php echo form_input('lease_term_0','','placeholder="0"');?></td>
+		  		<td><?php echo form_input('monthly_rent_0','','placeholder="0"');?></td>
+		  		<td><?php echo form_input('deposit_0','','placeholder="0"');?></td>
+		  		<td><?php echo form_input('pet_rent_0','','placeholder="0"');?></td>
+		  		<td><?php echo form_input('pet_deposit_0','','placeholder="0"');?></td>
 		  	</tr>
 		  	
 		  </table>
-		  <a id="add_term">Add Lease Term Entry</a>
+		  </div>
+		  <a class="btn pull-right add-term green" id="add_term"><i class="icon-plus"></i> Add Lease Term Entry</a>
 	<?php echo form_fieldset_close();?>
 	<input type="hidden" name="lease_term_count" value="0" id="lease_term_count"/>
-	<input type="submit" name="submit" value="submit" />
+	<button class="pull-right submit-unit btn" type="submit" name="submit"><i class="icon-reply"></i> submit</button>
 	</form>
 	
 	
