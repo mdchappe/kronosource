@@ -1,5 +1,5 @@
 <div class="container page-content update-lease-terms"><div class="inner">
-<h2 class="text-center">UDATE LEASE TERM</h2>
+<h2 class="text-center">UPDATE LEASE TERM</h2>
 <hr>
 	<?php echo form_open('property/update_lease_term/'.$term['id']); ?>
 	<div class="row">
@@ -21,7 +21,7 @@
 	</table>
 	</div>
 	<a class="btn cancel pull-right" href="/index.php/property/update_unit/<?php echo $term['unit_id']; ?>"><i class="icon-trash"></i> discard changes</a>
-	<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i> save changes</button> 
+	<button class="btn pull-right" type="submit" name="submit"><i class="icon-save"></i> save changes</button> 
 	</form>
 	
 </div></div>

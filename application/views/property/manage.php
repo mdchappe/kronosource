@@ -87,7 +87,7 @@
 				  echo form_input('cable',$cable);
 				  echo form_fieldset_close(); ?>
 			
-			<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i> save changes</button><br><br>
+			<button class="btn pull-right" type="submit" name="submit"><i class="icon-save"></i> save changes</button><br><br>
 			<hr>
 			</div>
 		</form>
@@ -98,8 +98,8 @@
 				foreach($units as $unit): ?>
 					<p class="unit-list">
 						<span class="unit-label"><i class="icon-ok"></i> <?php echo $unit['name'] ?> </span>
-						<a class="btn cancel pull-right" href="/index.php/property/delete_unit/<?php echo $unit['id'] ?>"><i class="icon-trash"></i> delete</a>
-						<a class="btn pull-right push-left" href="/index.php/property/update_unit/<?php echo $unit['id'] ?>"><i class="icon-pencil"></i> edit</a> 
+						<a class="pull-right just-icon cancel" href="/index.php/property/delete_unit/<?php echo $unit['id'] ?>"><i class="icon-remove-sign icon-large"></i></a>
+						<a class="pull-right push-left just-icon" href="/index.php/property/update_unit/<?php echo $unit['id'] ?>"><i class="icon-pencil icon-large"></i></a> 
 					</p>
 					<hr class="new-hr">
 				<?php endforeach;

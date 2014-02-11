@@ -1,6 +1,6 @@
 <div class="container page-content view-property"><div class="inner">
 <br>
-<h2 class="text-center"><i class="icon-building"></i> <?php echo $property['company'];?></h2>
+<h2 class="text-center"><?php echo $property['company'];?></h2>
 <hr>
 
 <div class="upper">

@@ -2,7 +2,7 @@
 <h2 class="text-center"><?php echo $unit->name;?></h2>
 <hr>
 <div>
-<a class="btn j-back pull-left"><i class="icon-chevron-left"></i> back</a>
+<a class="btn j-back pull-left"><i class="icon-caret-left"></i> back</a>
 <form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 	<input type=hidden name="user_id" value="<?php echo $unit->property_id;?>" />
 	<a class="btn pull-right" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>

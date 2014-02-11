@@ -16,7 +16,7 @@
 </div>
 
 <p class="message"><?php echo nl2br($message['message']);?></p>
-<a class="btn" href="/index.php/message/inbox"><i class="icon-chevron-left"></i> back to messages</a>
+<a class="btn" href="/index.php/message/inbox"><i class="icon-caret-left"></i> back to messages</a>
 <form method="post" name="delete" id="delete" action="<?php echo base_url();?>index.php/message/delete">
 	<input type=hidden name="id" value="<?php echo $message['message_id'];?>" />
 	<a class="btn cancel" href="javascript: void()" onclick="document.getElementById('delete').submit()"><i class="icon-trash"></i> Delete</a>

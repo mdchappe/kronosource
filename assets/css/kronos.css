@@ -5415,6 +5415,16 @@ button.green:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=0);
   background-repeat: repeat-x;
 }
+/* just the icons */
+a.just-icon {
+  color: #868686;
+}
+a.just-icon:hover {
+  color: #0072bb;
+}
+a.just-icon.cancel:hover {
+  color: #c53727;
+}
 /* label & input defaults */
 legend {
   border-bottom: none;
@@ -5836,9 +5846,6 @@ footer .footer-toe {
 .view-unit .row table .top-row {
   background: #D1DDEB;
 }
-.view-unit .row table .fee-row td {
-  border-right: 1px solid #E4E2E2;
-}
 .view-unit .features-row {
   margin-top: 60px;
   margin-bottom: 40px;
@@ -5855,6 +5862,8 @@ footer .footer-toe {
   border: 1px solid #cccccc;
   padding: 5px;
   margin-bottom: 20px;
+  font-size: 12px;
+  padding: 30px;
 }
 .compose-message .moveleft {
   position: relative;
@@ -5970,6 +5979,9 @@ footer .footer-toe {
 .update-unit .add-more {
   margin: 10px 0;
 }
+.update-unit textarea {
+  max-width: 600px;
+}
 .update-unit .row {
   margin: 0;
   border: 1px solid #E4E2E2;
@@ -5978,6 +5990,11 @@ footer .footer-toe {
 .update-unit .push-left {
   position: relative;
   left: -10px;
+}
+.update-unit .push-it {
+  margin-left: 107px;
+  position: relative;
+  top: -2px;
 }
 .update-unit table {
   width: 100%;
