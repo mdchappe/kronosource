@@ -51,6 +51,7 @@
 			$this->db->from('message_traffic');
 			$this->db->where(array('to_id'=>$id,'display'=>1));
 			$this->db->join('messages','messages.id = message_traffic.message_id');
+			$this->db->order_by('messages.sent_on','desc');
 			
 			$query = $this->db->get()->result_array();
 			

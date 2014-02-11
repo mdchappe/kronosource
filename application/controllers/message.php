@@ -12,8 +12,15 @@
 
 			$this->load->helper('form');
 			
+			$messages = $this->message_model->get_messages($this->the_user->id);
+			
+			foreach($messages as &$message) {
+				$date = $message['sent_on'];
+				$message['sent_on'] = $this->convert_date_to_human($date);
+			}
+			
 			$data['title'] = 'KronoSource Messages Inbox';
-			$data['messages'] = $this->message_model->get_messages($this->the_user->id);
+			$data['messages'] = $messages;
 			$data['status'] = $this->session->flashdata('status');
 			
 			$this->load->view('templates/header',$data);
@@ -39,6 +46,8 @@
 			
 			//USED FROM INSTEAD OF TO IN ORDER TO ALLOW THIS FUNCTION TO HANDLE REPLIES AS WELL AS NEW MESSAGES. SAME APPLIES IN THE VIEW.
 			if($this->input->post('message_id')) {
+				
+				$message['sent_on'] = $this->convert_date_to_human($message['sent_on']);
 				
 				$data['default_subject'] = 'Re: ' . $message['subject'];
 				$data['default_message'] = PHP_EOL . PHP_EOL . 'On ' . $message['sent_on'] . ', '. $message['from'] . ' wrote:' . PHP_EOL . $message['message'];
@@ -77,14 +86,11 @@
 				
 				$this->load->helper('date');
 				
-				$now = now();
-				$format = '%Y-%m-%d';
-				
 				$from = $this->the_user->id;
 				$to = $this->input->post('id');
 				$subject = $this->input->post('subject');
 				$message = $this->input->post('message');
-				$date = mdate($format, $now);
+				$date = now();
 				
 				if($this->message_model->send($from, $to, $subject, $message, $date)) {
 					
@@ -100,6 +106,8 @@
 			if($this->message_model->message_auth_check($message_id, $this->the_user->id)) {
 				
 				$message = $this->message_model->get_message($message_id);
+				
+				$message['sent_on'] = $this->convert_date_to_human($message['sent_on']);
 				
 				$data['message'] = $message;
 				$data['title'] = $message['subject'];
@@ -126,5 +134,37 @@
 				
 				redirect(base_url().'index.php/message/inbox/');
 			} 
+		}
+		
+		private function convert_date_to_unix($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$year = substr($date, -4);
+			$month = substr($date, 0, 2);
+			$day = substr($date, 3, 2);
+			$date = $year.'-'.$month.'-'.$day.' 11:59:59 PM';
+			
+			return human_to_unix($date);
+		}
+		
+		private function convert_date_to_human($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			$now = unix_to_human(now());
+			
+			if(substr($now,0,10) == substr($date,0,10)){
+				$date = substr($date,-8);
+			} else {
+			
+				$year = substr($date, 0, 4);
+				$month = substr($date, 5, 2);
+				$day = substr($date, 8, 2);
+				$date = $month.'-'.$day.'-'.$year;
+			}
+			
+			return $date;
 		}
 	}
