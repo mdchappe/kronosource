@@ -52,11 +52,14 @@
 	</tr>
 	<?php foreach($units as $unit):
 		
-		$db_date = $unit['date_available'];
-		$year = substr($db_date,0,4);
-		$month = substr($db_date,5,2);
-		$day = substr($db_date,-2);
-		$date = $month.'/'.$day.'/'.$year;
+		$this->load->helper('date');
+			
+		$date = unix_to_human($unit['date_available']);
+		
+		$year = substr($date, 0, 4);
+		$month = substr($date, 5, 2);
+		$day = substr($date, 8, 2);
+		$date = $month.'-'.$day.'-'.$year;
 	?>
 	<tr class="property-row">
 		<td><a class="margin20l" href="<?php echo base_url();?>index.php/locator/viewUnit/<?php echo $unit['id']?>"><?php echo $unit['name'];?></a></td>
