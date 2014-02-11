@@ -2,14 +2,18 @@
 <div class="edit-inner">
 <h2 class="text-center"><i class="icon-pencil"></i> EDIT <?php echo $unit->name?></h2>
 <hr>
-<?php echo form_open('property/update_unit/'.$unit_id); 
+<?php if($this->session->flashdata('status')){
+		echo '<p>'.$this->session->flashdata('status').'</p>';
+	  }
+	  
+	  echo form_open('property/update_unit/'.$unit_id); 
 	
 	  echo form_fieldset('Unit Information');
 ?>
 
 	<label for="unit_name">Unit Name/Description&nbsp;:&nbsp;</label>
 	<?php echo form_input('unit_name', $unit->name)?><br/>
-	<label class="push-it" for="unit_name"><small><b>(32 characters max)</b></small></label><br>
+	<label for="unit_name"><small><b>(32 characters max)</b></small></label><br>
 	<label for="unit_beds">Bedrooms&nbsp;:&nbsp;</label>
 	<?php echo form_input('unit_beds', $unit->beds);?><br/>
 	<label for="unit_baths">Baths&nbsp;:&nbsp;</label>
@@ -30,7 +34,7 @@
 	<label for="unit_date">Date Available&nbsp;:&nbsp;</label>
 	<?php echo form_input($date_input,$date);?><br/>
 	<label for="unit_commission">Commission&nbsp;:&nbsp;</label>
-	<?php echo form_input('unit_commission',$unit->commission);?><br/><br><br>
+	<?php echo form_input('unit_commission',$unit->commission);?><label class="text-left"><small><b>&nbsp;&nbsp;%</b></small></label><br/><br><br>
 	
 	<?php echo form_fieldset_close();
 		  echo form_fieldset('Rent Information'); ?>
@@ -50,13 +54,13 @@
 		  	foreach($rent as $term): ?>
 		  	
 		  	<tr>
-		  		<td><?php echo $term['term']; ?></td>
-		  		<td><?php echo $term['rent']; ?></td>
-		  		<td><?php echo $term['deposit']; ?></td>
-		  		<td><?php echo $term['pet_rent']; ?></td>
-		  		<td><?php echo $term['pet_deposit']; ?></td>
-		  		<td><a class="just-icon" href="/index.php/property/update_lease_term/<?php echo $term['id']; ?>"><i class="icon-pencil icon-large"></i></a></td>
-		  		<td><a class="just-icon cancel" href="/index.php/property/delete_lease_term/<?php echo $term['id']; ?>"><i class="icon-remove-sign icon-large"></i></a></td>
+		  		<td><?php echo $term['term'].' months'; ?></td>
+		  		<td><?php echo '$'.$term['rent']; ?></td>
+		  		<td><?php echo '$'.$term['deposit']; ?></td>
+		  		<td><?php echo '$'.$term['pet_rent']; ?></td>
+		  		<td><?php echo '$'.$term['pet_deposit']; ?></td>
+		  		<td><a class="btn" href="/index.php/property/update_lease_term/<?php echo $term['id']; ?>"><i class="icon-pencil"></i> edit</a></td>
+		  		<td><a class="btn cancel" href="/index.php/property/delete_lease_term/<?php echo $term['id']; ?>"><i class="icon-trash"></i> delete</a></td>
 		  	</tr>
 		  	<!--
 <tr>
@@ -65,6 +69,8 @@
 		  		<td><?php echo form_input('deposit_'.$term['id'],$term['deposit']);?></td>
 		  		<td><?php echo form_input('pet_rent_'.$term['id'],$term['pet_rent']);?></td>
 		  		<td><?php echo form_input('pet_deposit_'.$term['id'],$term['pet_deposit']);?><input type="hidden" name</td>
+		  		<td></td>
+		  		<td></td>
 		  	</tr>
 -->
 		  	
@@ -76,8 +82,9 @@
 	<?php echo form_fieldset_close();?>
 	
 	<input type="hidden" name="unit_id" value="<?php echo $unit_id ?>" id="unit_id"/> 
-	<a class="btn pull-left" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to properties</a>
-	<button class="pull-right btn" type="submit" name="submit"><i class="icon-save"></i> save changes</button>
+	<input type="hidden" name="lease_term_count" value="0" id="lease_term_count"/>
+	<a class="btn pull-left" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
+	<button class="pull-right btn" type="submit" name="submit"><i class="icon-reply"></i> submit</button>
 	</form>
 	
 	

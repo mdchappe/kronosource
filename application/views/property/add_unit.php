@@ -44,11 +44,11 @@
 		  		<th>Pet Deposit</th>
 		  	</tr>
 		  	<tr>
-		  		<td><?php echo form_input('lease_term_0','','placeholder="0"');?></td>
-		  		<td><?php echo form_input('monthly_rent_0','','placeholder="0"');?></td>
-		  		<td><?php echo form_input('deposit_0','','placeholder="0"');?></td>
-		  		<td><?php echo form_input('pet_rent_0','','placeholder="0"');?></td>
-		  		<td><?php echo form_input('pet_deposit_0','','placeholder="0"');?></td>
+		  		<td><?php echo form_input('lease_term_0','','placeholder="0"');?> months</td>
+		  		<td>$<?php echo form_input('monthly_rent_0','','placeholder="0"');?></td>
+		  		<td>$<?php echo form_input('deposit_0','','placeholder="0"');?></td>
+		  		<td>$<?php echo form_input('pet_rent_0','','placeholder="0"');?></td>
+		  		<td>$<?php echo form_input('pet_deposit_0','','placeholder="0"');?></td>
 		  	</tr>
 		  	
 		  </table>
@@ -56,6 +56,7 @@
 		  <a class="btn pull-right add-term green" id="add_term"><i class="icon-plus"></i> Add Lease Term Entry</a>
 	<?php echo form_fieldset_close();?>
 	<input type="hidden" name="lease_term_count" value="0" id="lease_term_count"/>
+	<a class="btn pull-left" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
 	<button class="pull-right submit-unit btn" type="submit" name="submit"><i class="icon-reply"></i> submit</button>
 	</form>
 	

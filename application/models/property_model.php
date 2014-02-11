@@ -146,12 +146,9 @@
 			//INITIALIZE ARRAYS
 			$unit_data = array();
 			$rent_data = array();
-			//GET THE ENTERED DATE AND REFORMAT FOR MYSQL
-			$available_date = $this->input->post('unit_date');
-			$year = substr($available_date, -4);
-			$month = substr($available_date, 0, 2);
-			$day = substr($available_date, 3, 2);
-			$available_date = $year.'-'.$month.'-'.$day;
+			
+			//GET THE ENTERED DATE AND REFORMAT FOR DB
+			$available_date = $this->convert_date_to_unix($this->input->post('unit_date'));
 			
 			//PUSH UNIT DATA FROM FORM INTO ARRAY
 			$unit_data['property_id'] = $id;
@@ -207,14 +204,12 @@
 		}
 		
 		function update_unit($id) {
+			
 			//INITIALIZE ARRAYS
 			$unit_data = array();
-			//GET THE ENTERED DATE AND REFORMAT FOR MYSQL
-			$available_date = $this->input->post('unit_date');
-			$year = substr($available_date, -4);
-			$month = substr($available_date, 0, 2);
-			$day = substr($available_date, 3, 2);
-			$available_date = $year.'-'.$month.'-'.$day;
+			
+			//GET THE ENTERED DATE AND REFORMAT FOR DB
+			$available_date = $this->convert_date_to_unix($this->input->post('unit_date'));
 			
 			//PUSH UNIT DATA FROM FORM INTO ARRAY
 			
@@ -274,7 +269,7 @@
 			
 			$unit_id =  $query->row_array()['unit_id'];
 			
-			$this->db->select('property_id');
+			$this->db->select('property_id, id');
 			
 			$query2 = $this->db->get_where('unit',array('id'=>$unit_id));
 			
@@ -289,7 +284,7 @@
 		
 		public function get_rent($id) {
 			
-			$query = $this->db->get_where('rent',array('unit_id'=>$id));
+			$query = $this->db->select('*')->from('rent')->where('unit_id',$id)->order_by('term','asc')->get();
 			return $query->result_array();
 		}
 		
@@ -405,5 +400,51 @@
 			$data['property_id'] = $id;
 			
 			return $data;
+		}
+		
+		public function delete_unit($id) {
+			
+			$this->db->delete('rent',array('unit_id'=>$id));
+			$this->db->delete('unit',array('id'=>$id));
+			
+			return TRUE;
+		}
+		
+		public function delete_lease_term($id) {
+			
+			$this->db->delete('rent',array('id'=>$id));
+			
+			return TRUE;
+		}
+		
+		public function add_lease_term($params) {
+			
+			$this->db->insert('rent',$params);
+		}
+		
+		private function convert_date_to_unix($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$year = substr($date, -4);
+			$month = substr($date, 0, 2);
+			$day = substr($date, 3, 2);
+			$date = $year.'-'.$month.'-'.$day.' 11:59:59 PM';
+			
+			return human_to_unix($date);
+		}
+		
+		private function convert_date_to_human($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			
+			$year = substr($date, 0, 4);
+			$month = substr($date, 5, 2);
+			$day = substr($date, 8, 2);
+			$date = $month.'-'.$day.'-'.$year;
+			
+			return $date;
 		}
 	}
