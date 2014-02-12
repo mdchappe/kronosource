@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/kronos.css" type="text/css" media="screen" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Abel|Rokkitt:400,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="<?=base_url()?>/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="<?=base_url()?>/favicon.ico" type="image/x-icon">
 	
 </head>
 

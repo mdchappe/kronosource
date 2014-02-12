@@ -5814,6 +5814,11 @@ footer .footer-toe {
   bottom: 44;
   right: 10;
 }
+.view-property .w-btns .btn.yelp {
+  position: absolute;
+  bottom: 80;
+  right: 10;
+}
 .view-property .w-btns .btn {
   width: 130px !important;
 }
@@ -5971,6 +5976,9 @@ footer .footer-toe {
 .add-unit .add-term {
   margin: 10px 0;
 }
+.add-unit textarea {
+  max-width: 720px;
+}
 /*add unit success page*/
 .add-unit-success h2 {
   text-transform: uppercase;
@@ -5980,7 +5988,7 @@ footer .footer-toe {
   margin: 10px 0;
 }
 .update-unit textarea {
-  max-width: 600px;
+  max-width: 720px;
 }
 .update-unit .row {
   margin: 0;
@@ -6043,4 +6051,11 @@ footer .footer-toe {
 }
 .update-lease-terms .btn.cancel {
   margin-left: 10px;
+}
+/* property registration page */
+.register-wrap .push-it {
+  margin-left: 157px;
+  width: auto;
+  position: relative;
+  top: -2px;
 }
