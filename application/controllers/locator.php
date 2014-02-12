@@ -25,8 +25,6 @@
 		
 		public function viewProperty($id) {
 			
-			$this->load->helper('date');
-			
 			$property = $this->property_model->get_property($id);
 			$features = $this->property_model->get_features($id);
 			$units = $this->property_model->get_units($id);
@@ -43,12 +41,10 @@
 		
 		public function viewUnit($id) {
 			
-			$this->load->helper('date');
-			
 			$unit = $this->property_model->get_unit($id);
 			$terms = $this->property_model->get_rent($id);
 			
-			$unit['date_available'] = $this->convert_date_to_human($unit['date_available']);
+			$unit->date_available = $this->convert_date_to_human($unit->date_available);
 			
 			$data['title'] = $unit->name;
 			$data['unit'] = $unit;
