@@ -23,7 +23,6 @@
 		public function view($page = 'home') {
 			
 			$this->load->helper('form');
-			$this->load->helper('captcha');
 			$this->load->database();
 			$this->load->library('form_validation');
 			

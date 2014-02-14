@@ -15,7 +15,7 @@
  <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="/index.php/"><img src="http://www.frequencycreative.com/codeigniter/assets/img/kronosource_logo.png" /></a>
+        <a class="brand" href="/index.php/"><img src="<?php echo base_url();?>assets/img/kronosource_logo.png" /></a>
         <div class="nav-collapse collapse">
           
           <div class="pull-right nav">

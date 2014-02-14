@@ -1,22 +1,5 @@
 <?php 
-	$captcha_vals = array(
-		'img_path'	 => 'assets/captcha/',
-		'img_url'	 => base_url().'assets/captcha/',
-		'img_width'	 => '150',
-		'img_height' => 30,
-		'expiration' => 7200
-	);
-			
-	$captcha = create_captcha($captcha_vals);
-			
-	$captcha_data = array(
-		'captcha_time'	=> $captcha['time'],
-		'ip_address'	=> $this->input->ip_address(),
-		'word'	 		=> $captcha['word']
-	);
-			
-	$query = $this->db->insert_string('captcha', $captcha_data);
-	$this->db->query($query);
+	
 ?>
 
 <div class="container page-content home-wrapper"><div class="inner">
@@ -26,6 +9,28 @@
 			echo '<p>'.$this->session->flashdata('login').'</p>';
 		}?>
 		<?php if(!$this->ion_auth->logged_in()):
+				
+				$this->load->helper('captcha');
+				
+				$captcha_vals = array(
+					'img_path'	 => 'assets/captcha/',
+					'img_url'	 => base_url().'assets/captcha/',
+					'img_width'	 => '150',
+					'img_height' => '30',
+					'expiration' => '7200'
+				);
+										
+				$captcha = create_captcha($captcha_vals);
+				
+				$captcha_data = array(
+					'captcha_time'	=> $captcha['time'],
+					'ip_address'	=> $this->input->ip_address(),
+					'word'	 		=> $captcha['word']
+				);
+						
+				$query = $this->db->insert_string('captcha', $captcha_data);
+				$this->db->query($query);
+		
 			  echo form_open('contact/form');
 			  echo form_fieldset('<h2 class="text-center">Want to know more?</h2>');
 		?><hr>
