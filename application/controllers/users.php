@@ -238,6 +238,9 @@
 					if($this->ion_auth->is_admin()){
 						//CONTROL PANEL
 						redirect(base_url().'index.php/admin/controlPanel');
+					} else if($this->ion_auth->in_group(3)){
+						//PROPERTY MANAGEMENT SCREEN
+						redirect(base_url().'index.php/property/manage');
 					} else {
 						//BACK TO HOME SCREEN
 						redirect(base_url().'index.php/');

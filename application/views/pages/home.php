@@ -61,6 +61,26 @@
 		<?php echo $captcha['image'].form_input('captcha','', $homeForm_opts);?><br/>
 		<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i>  submit </button>
 		
+		<?php 
+			
+			elseif($this->ion_auth->in_group(2)):?>
+			
+			<table>
+				<tr>
+					<th>Property</th>
+					<th>Announcement</th>
+					<th>Posted</th>
+				</tr>
+		<?php foreach($announcements as $announcement):?>
+		
+				<tr>
+					<td><?php echo $announcement['company']?></td>
+					<td><?php echo $announcement['announcement']?></td>
+					<td><?php echo $announcement['announcement_updated']?></td>
+				</tr>
+		<?php endforeach; ?>
+		
+			</table>
 		<?php endif;?>
 	</div>
 	</div>

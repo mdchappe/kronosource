@@ -44,15 +44,20 @@
 				}
 				
 				$features = $this->property_model->get_features($this->the_user->id);
+				
 				foreach($features as $feature => $value):
-					if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'cable' && $feature != 'trash' && $feature != 'management') {
+					if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'cable' && $feature != 'trash' && $feature != 'management' && $feature != 'pet_policy' && $feature != 'announcement' && $feature != 'announcement_updated') {
 						$data[$feature] = TRUE;
-					} else if($feature == 'cable' || $feature == 'trash' || $feature == 'management'){
+					} else if($feature == 'cable' || $feature == 'trash' || $feature == 'management' || $feature == 'pet_policy' || $feature == 'announcement'){
 						$data[$feature] = $value;
 					} else {
 						$data[$feature] = FALSE;
 					}
 				endforeach;
+				
+				if($data['announcement']){
+					$this->session->set_flashdata('announcement',$data['announcement']);
+				}
 				
 				$units = $this->property_model->get_units($this->the_user->id);
 				$data['units'] = $units;

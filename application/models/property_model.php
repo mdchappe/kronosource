@@ -79,6 +79,10 @@
 			
 			$data['trash'] = $this->input->post('trash');
 			
+			$data['announcement'] = $this->input->post('announcement');
+			
+			$data['pet_policy'] = $this->input->post('pet_policy');
+			
 			$data['property_id'] = $id;
 			
 			$data['updated'] = time();
@@ -130,7 +134,15 @@
 			
 			$data['trash'] = $this->input->post('trash');
 			
+			$data['announcement'] = $this->input->post('announcement');
+			
+			$data['pet_policy'] = $this->input->post('pet_policy');
+			
 			$data['updated'] = time();
+			
+			if($this->session->flashdata('announcement') != $data['announcement']){
+				$data['announcement_updated'] = $data['updated'];
+			}
 			
 			$this->db->where('property_id', $id);
 			$this->db->update('property',$data);
@@ -422,6 +434,30 @@
 			$this->db->insert('rent',$params);
 		}
 		
+		public function get_announcements($limit = TRUE) {
+			
+			$this->db->select('users.company,property.announcement,property.announcement_updated');
+			$this->db->from('property');
+			$this->db->where('announcement IS NOT NULL');
+			$this->db->join('users','users.id = property.property_id');
+			if($limit){
+				$this->db->limit(10);
+			}
+			$query = $this->db->get();
+			
+			$query = $query->result_array();
+			
+			foreach($query as &$row){
+				$row['announcement_updated'] = $this->convert_date_to_human_specific($row['announcement_updated']);
+				
+				if(strlen($row['announcement']) > 50){
+					$row['announcement'] = substr($row['announcement'], 0,50).'...';
+				}
+			}
+			
+			return $query;
+		}
+		
 		private function convert_date_to_unix($date) {
 			//YYYY-MM-DD HH:MM:SS AM/PM
 			$this->load->helper('date');
@@ -445,6 +481,26 @@
 			$day = substr($date, 8, 2);
 			$date = $month.'-'.$day.'-'.$year;
 			
+			return $date;
+		}
+		
+		private function convert_date_to_human_specific($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			$now = unix_to_human(now());
+			
+			if(substr($now,0,10) == substr($date,0,10)){
+				$date = substr($date,-8);
+			} else {
+			
+				$year = substr($date, 0, 4);
+				$month = substr($date, 5, 2);
+				$day = substr($date, 8, 2);
+				$date = $month.'-'.$day.'-'.$year;
+			}
 			return $date;
 		}
 	}

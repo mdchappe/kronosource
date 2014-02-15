@@ -85,7 +85,13 @@
 				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),$trash);
 				  echo form_label('Cable Provider(s):&nbsp;&nbsp;','cable');
 				  echo form_input('cable',$cable);
-				  echo form_fieldset_close(); ?>
+				  echo form_label('Pet Policy:&nbsp;&nbsp;','pet_policy');
+				  echo form_input('pet_policy',$pet_policy);
+				  echo form_fieldset_close(); 
+				  
+				  echo form_fieldset('Property Announcement');
+				  echo form_textarea('announcement',$announcement);
+				  echo form_fieldset_close();?>
 			
 			<button class="btn pull-right" type="submit" name="submit"><i class="icon-save"></i> save changes</button><br><br>
 			<hr>

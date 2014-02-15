@@ -31,6 +31,15 @@
 				show_404();
 			}
 			
+			if($this->ion_auth->logged_in() && $this->ion_auth->in_group(3)){
+				
+				redirect(base_url().'index.php/property/manage');
+			} else if ($this->ion_auth->logged_in() && $this->ion_auth->in_group(2)) {
+				
+				$this->load->model('property_model');
+				$data['announcements'] = $this->property_model->get_announcements();
+			}
+			
 			$data['title'] = 'KronoSource '.ucfirst($page); //make first letter of page name uppercase
 			$data['status'] = $this->session->flashdata('status');
 			$data['regcode'] = ($this->session->flashdata('regcode') ? $this->session->flashdata('regcode') : '');
