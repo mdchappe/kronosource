@@ -27,7 +27,7 @@
 						<button class="btn" type="submit" name="submit">log in <i class="icon-caret-right"></i></button><br>
 						<a class="forgot-pw">forgot your username or password?</span>
 					</form>
-					</div><!-- login-dropdown -->
+				</div><!-- login-dropdown -->
 					
 			<a href="#contact-us" class="nav1-feedback">feedback</a>
 			<a class="nav1-login">log in <i class="icon-caret-down"></i></a>
@@ -65,7 +65,7 @@
 			}
 			?>
 			</div>
-
+		</div>
       </div>
     </div>
   </div>
