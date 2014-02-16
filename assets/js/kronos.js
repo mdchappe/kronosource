@@ -12,6 +12,82 @@ $(document).ready(function(){
 	$('.date_input').datepicker();
 	$('#add_term').click(add_lease_term);
 	$('#random').click(generate_random);
+	
+	
+    $(".reg-box input").focus();
+    
+    /* Scroll event handler */
+    $(window).bind('scroll',function(e){
+    	parallaxScroll();
+    });
+    
+    /* Scroll the background layers */
+	function parallaxScroll(){
+		var scrolled = $(window).scrollTop();
+		$('.hero-inner-wrapper').css('top',(0-(scrolled*-0.75))+'px');
+	}
+	
+	$('.nav1-login').click(function() {
+		$('.login-dropdown').animate({height: 'toggle', opacity: 'toggle'}, 'fast');
+		$('.nav1-login i').toggleClass('rotate');
+     });
+     
+     $('.home-text1 a, .nav1-feedback').click(function() {
+     	 $('body').css('overflow', 'hidden');
+	     $('.overlay, .not-yet').fadeIn(500);
+	     return false;
+     });
+     
+     $('.overlay, .not-yet').click(function() {
+     	 $('body').css('overflow', 'auto');
+	     $('.overlay, .not-yet').fadeOut(500);
+	     if (!$(".home-wrapper textarea").val()) {
+			 $('.flexible-text').slideUp(500); 
+	         $('.detailed').fadeIn(500);
+		 }
+	     return false;
+     });
+     
+     $('.detailed').click(function() {
+	    $('.flexible-text').slideDown(500);
+	    $(this).fadeOut(500); 
+	     $(".home-wrapper textarea").focus();
+     });
+     
+     $(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top - 100
+	        }, 500);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	
+	var logged_in_styles = {
+		background:'none', 
+		padding:'0',
+		width:'auto',
+		top:'0', 
+		width:'500px',
+		textAlign:'right'
+	};
+	
+
+	if ($('.login-dropdown ul').hasClass('logged-in-nav')) {
+		$('.login-dropdown').show().css(logged_in_styles);
+		$('.home-hero, .features, .who-uses, .home-faq, .home-text1').hide();
+		$('.home-all-wrapper').css('padding-top', '0');
+		$('.home-wrapper').css('margin-top', '200px');
+		
+	}
+	
+
 });
 
 function add_lease_term(){
