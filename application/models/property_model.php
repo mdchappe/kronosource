@@ -436,13 +436,15 @@
 		
 		public function get_announcements($limit = TRUE) {
 			
-			$this->db->select('users.company,property.announcement,property.announcement_updated');
+			$this->db->select('users.company,users.id,property.announcement,property.announcement_updated');
 			$this->db->from('property');
 			$this->db->where('announcement IS NOT NULL');
 			$this->db->join('users','users.id = property.property_id');
+			$this->db->order_by('announcement_updated','desc');
 			if($limit){
 				$this->db->limit(10);
 			}
+			
 			$query = $this->db->get();
 			
 			$query = $query->result_array();
@@ -450,10 +452,26 @@
 			foreach($query as &$row){
 				$row['announcement_updated'] = $this->convert_date_to_human_specific($row['announcement_updated']);
 				
-				if(strlen($row['announcement']) > 50){
+				if(strlen($row['announcement']) > 47){
 					$row['announcement'] = substr($row['announcement'], 0,50).'...';
 				}
 			}
+			
+			return $query;
+		}
+		
+		public function get_announcement($id){
+			
+			$this->db->select('users.company,users.id,property.announcement,property.announcement_updated');
+			$this->db->from('property');
+			$this->db->where('property_id',$id);
+			$this->db->join('users','users.id = property.property_id');
+			
+			$query = $this->db->get();
+			
+			$query = $query->row_array();
+			
+			$query['announcement_updated'] = $this->convert_date_to_human_specific($query['announcement_updated']);
 			
 			return $query;
 		}

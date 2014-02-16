@@ -37,6 +37,8 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+$route['locator/viewAnnouncements'] = 'locator/viewAnnouncements';
+$route['locator/viewAnnouncement/(:any)'] = 'locator/viewAnnouncement/$1';
 $route['admin/announcements'] = 'admin/announcements';
 $route['admin/new_admin'] = 'admin/new_admin';
 $route['admin/password'] = 'admin/password';
