@@ -30,22 +30,22 @@
 				//page not found - show 404 page instead
 				show_404();
 			}
-			echo 'check 1';
+			
 			if($this->ion_auth->logged_in() && $this->ion_auth->in_group(3)){
 				
 				redirect(base_url().'index.php/property/manage');
 			} else if ($this->ion_auth->logged_in() && $this->ion_auth->in_group(2)) {
-				echo 'check 1.5';
+				
 				$this->load->model('property_model');
 				$data['announcements'] = $this->property_model->get_announcements();
-				echo 'check 1.75';
+				
 			}
-			echo 'check 2';
+			
 			$data['title'] = 'KronoSource '.ucfirst($page); //make first letter of page name uppercase
 			$data['status'] = $this->session->flashdata('status');
 			$data['regcode'] = ($this->session->flashdata('regcode') ? $this->session->flashdata('regcode') : '');
 			$data['home'] = TRUE;
-			echo 'load view';
+			
 			$this->load->view('templates/header', $data);
 			$this->load->view('pages/'.$page, $data);
 			$this->load->view('templates/footer', $data);
