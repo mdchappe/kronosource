@@ -5244,7 +5244,8 @@ body {
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: 0;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
@@ -5328,14 +5329,7 @@ h6 {
 /* buttons */
 .btn,
 button {
-  background-color: #4d90fe;
-  background: -webkit-gradient(linear, left top, left bottom, from(#4d90fe), to(#4787ed));
-  background: -webkit-linear-gradient(top, #4d90fe, #4787ed);
-  background: -moz-linear-gradient(top, #4d90fe, #4787ed);
-  background: -ms-linear-gradient(top, #4d90fe, #4787ed);
-  background: -o-linear-gradient(top, #4d90fe, #4787ed);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=0);
-  background-repeat: repeat-x;
+  background: #4d90fe;
   font-weight: 200;
   color: #fff !important;
   text-shadow: none;
@@ -5345,7 +5339,6 @@ button {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  height: 29px;
   font-family: 'Open Sans', sans-serif !important;
   font-size: 12px;
   -webkit-transition: all 0.3s ease-out;
@@ -5365,14 +5358,7 @@ button:hover {
 }
 .btn:hover,
 button:hover {
-  background-color: #0072bb;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0072bb), to(#0072bb));
-  background: -webkit-linear-gradient(top, #0072bb, #0072bb);
-  background: -moz-linear-gradient(top, #0072bb, #0072bb);
-  background: -ms-linear-gradient(top, #0072bb, #0072bb);
-  background: -o-linear-gradient(top, #0072bb, #0072bb);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@startColor', endColorstr='@endColor', GradientType=0);
-  background-repeat: repeat-x;
+  background: #0072bb;
   color: #fff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -5925,7 +5911,6 @@ footer .footer-toe {
 }
 .home-wrapper .btn {
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 .home-wrapper img {
   margin-right: 15px;
@@ -5955,12 +5940,12 @@ footer .footer-toe {
 .home-wrapper label {
   width: 180px;
 }
-.home-wrapper legend {
-  margin-bottom: 40px;
+.home-wrapper hr {
+  margin: 0;
 }
 .home-wrapper .detailed {
   position: absolute;
-  right: 5px;
+  right: 30px;
   bottom: 5px;
   cursor: pointer;
 }

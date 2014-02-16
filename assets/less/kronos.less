@@ -23,7 +23,7 @@ body {
 	-moz-font-smoothing: antialiased;
 }
 
-input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:focus, input:focus{outline: 0; box-shadow:none !important; -webkit-box-shadow: none !important; -moz-box-shadow:none !important;}
+input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:focus, input:focus, textarea:focus{outline: 0; box-shadow:none !important; -webkit-box-shadow: none !important; -moz-box-shadow:none !important;}
 
 ::-webkit-input-placeholder {text-shadow: none; font-weight: 200; letter-spacing: 1px;.open-sans(); font-size: 12px;}
 :-moz-placeholder { /* Firefox 18- */ text-shadow: none;  font-weight: 200; letter-spacing: 1px;.open-sans(); font-size: 12px; }
@@ -63,7 +63,7 @@ h1,h2,h3,h4,h5,h6 {
 
 /* buttons */
 .btn, button {
-	.gradient (@startColor: #4d90fe, @endColor: #4787ed);
+	background: #4d90fe;
 	font-weight: 200;
 	color: #fff !important;
 	text-shadow: none;
@@ -73,7 +73,6 @@ h1,h2,h3,h4,h5,h6 {
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow:none;
-	height: 29px;
 	.open-sans();
 	font-size: 12px;
 	-webkit-transition: all .3s ease-out;transition: all .3s ease-out;
@@ -82,7 +81,7 @@ h1,h2,h3,h4,h5,h6 {
 .btn:focus, .btn:hover, button:focus, button:hover {background-position: 0 0 !important;-webkit-transition: all .3s ease-out;
 -moz-transition: all .3s ease-out;transition: all .3s ease-out;
 -o-transition: all .3s ease-out;}
-.btn:hover, button:hover {.gradient (@startColor: #0072bb, @endColor: #0072bb); color: #fff;-webkit-transition: all .3s ease-out;
+.btn:hover, button:hover {background: #0072bb; color: #fff;-webkit-transition: all .3s ease-out;
 -moz-transition: all .3s ease-out;transition: all .3s ease-out;
 -o-transition: all .3s ease-out;}
 .btn.cancel, button.cancel {background: #dd4b39;}
@@ -274,7 +273,7 @@ footer {
 
 /* home page */
 .home-wrapper { margin-bottom: 70px !important; margin-top: 0 !important;
-	.btn {margin-top: 20px; margin-bottom: 20px;}
+	.btn {margin-top: 20px;}
 	img {margin-right: 15px; position: relative;top: 2px;}
 	input[type='radio'] {margin:0 5px 0 11px;position:relative;top:-2px;}
 	.radio-label {margin-right: 0; top: 0;}
@@ -282,8 +281,8 @@ footer {
 	.row-fluid {width: auto;}
 	form {margin: 0;}
 	label {width: 180px;}
-	legend {margin-bottom: 40px;}
-	.detailed {position: absolute; right: 5px; bottom: 5px; cursor: pointer;}
+	hr {margin: 0;}
+	.detailed {position: absolute; right: 30px; bottom: 5px; cursor: pointer;}
 	.flexible-text {max-width: 100% !important; width: 100% !important; height: 100px; display: none; margin: 0 !important;}
 	> div {padding: 30px;}
 }

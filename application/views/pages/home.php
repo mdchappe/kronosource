@@ -87,9 +87,9 @@
 				  echo form_radio('contact','Email',set_value('contact')).'Email';
 				  echo form_radio('contact','Either',set_value('contact')).'Either<br/>';?></span>
 			<label for="captcha">Are You Human?</label>
-			<?php echo $captcha['image'].form_input('captcha','', $homeForm_opts);?><br/>
-			<textarea class="flexible-text"></textarea>
-			<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i>  submit </button>
+			<?php echo $captcha['image'].form_input('captcha','', $homeForm_opts);?><br><br>
+			<textarea class="flexible-text"></textarea><br>
+			<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i>  submit</button>
 			<div class="not-yet">x</div><!-- -->
 			<a class="detailed">need to send a more detailed inquiry? <i class="icon-caret-right"></i></a>
 	
