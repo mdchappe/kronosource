@@ -120,6 +120,17 @@
 			$this->load->view('templates/footer',$data);
 		}
 		
+		public function landing() {
+			
+			$data['title'] = 'KronoSource Locator Homepage';
+			
+			$data['announcements'] = $this->property_model->get_announcements();
+			
+			$this->load->view('templates/header',$data);
+			$this->load->view('locator/viewAnnouncements',$data);
+			$this->load->view('templates/footer',$data);
+		}
+		
 		private function convert_date_to_unix($date) {
 			//YYYY-MM-DD HH:MM:SS AM/PM
 			$this->load->helper('date');
