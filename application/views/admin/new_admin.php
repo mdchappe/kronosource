@@ -1,8 +1,10 @@
-<div class="container edit-wrap">
+<div class="container page-content register-wrap">
 	<div class="edit-inner">
-		<h2>Apartment Locator Registration</h2><br><br>
+		<p><?echo $status;?></p>
+		<p class="error"><?php echo validation_errors('<p class="error">', '</p>'); ?></p>
+		<h2 class="text-center">Add Admin Account</h2><br><br>
 		
-		<?php echo form_open('users/register_locator'); ?>
+		<?php echo form_open('admin/new_admin'); ?>
 		
 			<label for="username">User Name<small><b> (min 6 characters, max 18 characters)</b></small></label>
 			<?php echo form_input('username');?><br/>
@@ -23,7 +25,7 @@
 			<label for="phone">Phone(include area code)</label>
 			<?php echo form_input('phone');?><br/>
 			<label for="company">Company</label>
-			<?php echo form_input('company');?><br/>
+			<?php echo form_input('company','KronoSource');?><br/>
 			<input class="btn btn-primary edit-btn" type="submit" name="submit" value="register" />
 		</form>
 	</div>

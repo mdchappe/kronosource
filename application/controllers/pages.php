@@ -23,13 +23,22 @@
 		public function view($page = 'home') {
 			
 			$this->load->helper('form');
-			$this->load->helper('captcha');
 			$this->load->database();
 			$this->load->library('form_validation');
 			
 			if ( ! file_exists('application/views/pages/'.$page.'.php')) {
 				//page not found - show 404 page instead
 				show_404();
+			}
+			
+			if($this->ion_auth->logged_in() && $this->ion_auth->in_group(3)){
+				
+				redirect(base_url().'index.php/property/manage');
+			} else if ($this->ion_auth->logged_in() && $this->ion_auth->in_group(2)) {
+				
+				$this->load->model('property_model');
+				$data['announcements'] = $this->property_model->get_announcements();
+				
 			}
 			
 			$data['title'] = 'KronoSource '.ucfirst($page); //make first letter of page name uppercase
