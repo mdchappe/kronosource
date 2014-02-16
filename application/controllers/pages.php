@@ -79,7 +79,7 @@
 						$this->load->view('templates/footer',$data);
 					} else {
 						
-						$this->session->set_flashdata('register','<p class="error"><i class="icon-warning-sign"></i> You have entered an invalid registration code.<br/>Please check your code and try again.</p>');
+						$this->session->set_flashdata('register','<p class="error"><i class="icon-warning-sign"></i> Please check your code and try again</p>');
 						$this->session->set_flashdata('regcode',$this->input->post('regcode'));
 						redirect(base_url().'index.php/');
 					}
