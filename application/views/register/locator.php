@@ -24,6 +24,9 @@
 			<?php echo form_input('phone');?><br/>
 			<label for="company">Company</label>
 			<?php echo form_input('company');?><br/>
+			
+			<input type="hidden" name="code" value="<?php echo $code;?>" />
+			
 			<input class="btn btn-primary edit-btn" type="submit" name="submit" value="register" />
 		</form>
 	</div>

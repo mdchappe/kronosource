@@ -70,6 +70,8 @@
 				  echo form_label('Cable Provider(s)&nbsp;:&nbsp;','cable');
 				  echo form_input('cable');
 				  echo form_fieldset_close(); ?>
+				  
+				  <input type="hidden" name="code" value="<?php echo $code?>" />
 			<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i> submit</button>
 			</div>
 		</form>
