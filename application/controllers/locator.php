@@ -6,6 +6,7 @@
 			
 			parent::__construct();
 			$this->load->model('property_model');
+			$this->load->model('gallery_model');
 		}
 		
 		public function browseProperties($page = 0){
@@ -29,6 +30,7 @@
 			$features = $this->property_model->get_features($id);
 			$units = $this->property_model->get_units($id);
 			
+			$data['images'] = $this->gallery_model->get_images('property', $id);
 			$data['title'] = $property['company'];
 			$data['property'] = $property;
 			$data['features'] = $features;
@@ -46,6 +48,7 @@
 			
 			$unit->date_available = $this->convert_date_to_human($unit->date_available);
 			
+			$data['images'] = $this->gallery_model->get_images('unit', $id);
 			$data['title'] = $unit->name;
 			$data['unit'] = $unit;
 			$data['terms'] = $terms;

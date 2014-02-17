@@ -44,5 +44,18 @@
 	<?php endforeach;?>
 </table>
 </div>
+
+<?php if($images):?>
+<h3>Unit Images:</h3>
+<div class="row">
+		<ul>
+		<?php foreach($images as $image):?>
+			<li>
+				<a href="<?php echo base_url().$image['filename'];?>"><img src="<?php echo substr($image['filename'],0,-4).'_thumb'.substr($image['filename'],-4);?>"/></a>
+			</li>
+		<?php endforeach;?>
+		</ul>
+</div>
+	<?php endif;?>
  
 </div></div>
