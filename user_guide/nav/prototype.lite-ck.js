@@ -1,0 +1,9 @@
+/*  Prototype JavaScript framework
+ *  (c) 2005 Sam Stephenson <sam@conio.net>
+ *
+ *  Prototype is freely distributable under the terms of an MIT-style license.
+ *
+ *  For details, see the Prototype web site: http://prototype.conio.net/
+ *
+/*--------------------------------------------------------------------------*///note: this is a stripped down version of prototype, to be used with moo.fx by mad4milk (http://moofx.mad4milk.net).
+function $(){var e=new Array;for(var t=0;t<arguments.length;t++){var n=arguments[t];typeof n=="string"&&(n=document.getElementById(n));if(arguments.length==1)return n;e.push(n)}return e}var Class={create:function(){return function(){this.initialize.apply(this,arguments)}}};Object.extend=function(e,t){for(property in t)e[property]=t[property];return e};Function.prototype.bind=function(e){var t=this;return function(){return t.apply(e,arguments)}};document.getElementsByClassName=function(e){var t=document.getElementsByTagName("*")||document.all,n=new Array;for(var r=0;r<t.length;r++){var i=t[r],s=i.className.split(" ");for(var o=0;o<s.length;o++)if(s[o]==e){n.push(i);break}}return n};if(!window.Element)var Element=new Object;Object.extend(Element,{remove:function(e){e=$(e);e.parentNode.removeChild(e)},hasClassName:function(e,t){e=$(e);if(!e)return;var n=e.className.split(" ");for(var r=0;r<n.length;r++)if(n[r]==t)return!0;return!1},addClassName:function(e,t){e=$(e);Element.removeClassName(e,t);e.className+=" "+t},removeClassName:function(e,t){e=$(e);if(!e)return;var n="",r=e.className.split(" ");for(var i=0;i<r.length;i++)if(r[i]!=t){i>0&&(n+=" ");n+=r[i]}e.className=n},cleanWhitespace:function(e){e=$(e);for(var t=0;t<e.childNodes.length;t++){var n=e.childNodes[t];n.nodeType==3&&!/\S/.test(n.nodeValue)&&Element.remove(n)}}});

@@ -1,5 +1,6 @@
 <div class="container page-content register-wrap">
 	<div class="edit-inner">
+	<span class="validation-errors"></span>
 		<h2 class="text-center">Property Registration</h2>
 		<hr>
 		<p class="error"><?php echo validation_errors('<p class="error">', '</p>'); ?></p>
@@ -77,26 +78,3 @@
 		</form>
 	</div>
 </div>
-
-<style>
-	.nav:before{display: none !important;}
-</style>
-
- The Email Address field is required.
-
- The First Name field is required.
-
- The Last Name field is required.
-
- The Display Name field is required.
-
- The Phone Number field is required.
-
- The Property Name field is required.
-
- The Street field is required.
-
- The City field is required.
-
- The Zip Code field is required.
-	

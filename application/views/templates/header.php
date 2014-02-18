@@ -14,7 +14,7 @@
  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="/index.php/">kronosource</a>
+        <a class="brand" rel="tooltip" title="kronosource home" href="/index.php/">kronosource</a>
           
           <div class="pull-right nav">
           	  <div class="login-dropdown">
@@ -36,7 +36,7 @@
 			
 			else if($the_user->group == 'locator'){
 			
-				echo '<p class="welcome-user wu-locator">'.$the_user->display_name.'</p>
+				echo '<p class="welcome-user wu-locator">'.$the_user->display_name.'&nbsp;&nbsp;<i class="icon-circle"></i></p>
 						<ul class="logged-in-nav">
 							<li><a href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> 14</a></li>
 							<li><a href="/index.php/users/edit">profile</a></li>
@@ -48,7 +48,7 @@
 			}
 			
 			else if($the_user->group == 'property'){ 
-				echo '<p class="welcome-user wu-property">'.$the_user->display_name.'</p>
+				echo '<p class="welcome-user wu-property">'.$the_user->display_name.'&nbsp;&nbsp;<i class="icon-circle"></i></p>
 					  	<ul class="logged-in-nav">
 					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> 14</a></li>
 					  		<li><a href="/index.php/property/manage">manage</a></li>
@@ -56,11 +56,11 @@
 					  	</ul>
 					  	';
 			} else if($the_user->group == 'admin'){
-				echo '<p class="welcome-user wu-admin">admin account</p>
+				echo '<p class="welcome-user wu-admin">admin&nbsp;&nbsp;<i class="icon-circle"></i></p>
 					  	<ul class="logged-in-nav">
-					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt"></i> Messages</a></li>
-					  		<li><a href="/index.php/admin/controlPanel"><i class="icon-cog"></i> Admin Control Panel</a></li>
-					  		<li><a href="/index.php/users/logout">log Out <i class="icon-signout"></i></a></li>
+					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> 14</a></li>
+					  		<li><a href="/index.php/admin/controlPanel">admin</a></li>
+					  		<li><a href="/index.php/users/logout">log Out <i class="icon-caret-right"></i></a></li>
 					  	</ul>';
 			}
 			?>
