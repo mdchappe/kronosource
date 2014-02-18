@@ -1,4 +1,5 @@
 <div class="container page-content view-property"><div class="inner">
+<span class="validation-errors"></span>
 <h2 class="text-center"><?php echo $property['company'];?></h2>
 <hr>
 
@@ -26,7 +27,7 @@
 	</form>
 </div>
 
-<h3>Property Features:</h3>
+<h3>Property Features</h3>
 <div class="row">
 <ul class="features-list">
 <?php
@@ -40,7 +41,7 @@
 	endforeach; ?>
 </ul>
 </div>
-<h3>Available Units:</h3>
+<h3>Available Units</h3>
 <div class="row units-table">
 <table>
 	<tr class="top-row">

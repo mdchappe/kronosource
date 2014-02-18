@@ -1,4 +1,5 @@
 <div class="container page-content view-unit"><div class="inner">
+<span class="validation-errors"></span>
 <h2 class="text-center"><?php echo $unit->name;?></h2>
 <hr>
 <div>

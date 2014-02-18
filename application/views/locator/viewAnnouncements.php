@@ -1,7 +1,9 @@
-<div class="container page-content home-wrapper"><div class="inner">
+<div class="container page-content announcement-wrapper"><div class="inner">
+	<span class="validation-errors"></span>
+	<h2 class="text-center" >Recent Property Announcements</h2>
+	<hr>
 	<table>
-		<h2>Recent Property Announcements</h2>
-		<tr>
+		<tr class="top-row">
 			<th>Property</th>
 			<th>Announcement</th>
 			<th>Posted</th>

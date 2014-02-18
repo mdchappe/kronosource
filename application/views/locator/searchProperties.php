@@ -5,7 +5,7 @@
 			echo '<div class="error">'.$status.'</div>';
 		}?>
 		</span>
-		<h2 class="text-center"><i class="icon-zoom-in"></i> Property Search</h2>
+		<h2 class="text-center"><i class="icon-search"></i> Property Search</h2>
 		<hr>
 		<?php echo form_open('search/properties');
 			  echo ('<div class="text-left"');

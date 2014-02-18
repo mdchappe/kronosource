@@ -1,4 +1,5 @@
 <div class="container page-content compose-message"><div class="inner">
+<span class="validation-errors"></span>
 <h2 class="text-center"><i class="icon-comments-alt"></i> New Message to <?php echo $message['from'];?></h2>
 <hr>
 <?php echo form_open('message/send');?>
