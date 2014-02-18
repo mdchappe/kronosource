@@ -247,7 +247,137 @@
 		}
 		
 		public function announcements() {
-			echo 'Under construction.';
+			
+			$this->load->model('announcement_model');
+			$this->load->helper('form');
+			
+			$date_input = array(
+				'name' => 'expiration',
+				'id' => 'unit_date',
+				'class' => 'date_input',
+				'type' => 'text',
+				'placeholder' => 'mm/dd/yyyy'
+			);
+			
+			$type_dropdown = array(
+				'all'     => 'Global',
+				'locator' => 'Locator',
+				'property' => 'Property',
+				'unregistered' => 'Unregistered Users'
+			);
+			
+			$data['date_input'] = $date_input;
+			$data['type_dropdown'] = $type_dropdown;
+			$data['title'] = "KronoSource Announcements Administration";
+			$data['status'] = $this->session->flashdata('status');
+			
+			if($this->announcement_model->get_announcements('all')){
+				$data['announcements'] = $this->announcement_model->get_announcements('all');
+			} else {
+				$data['announcements'] = FALSE;
+			}
+			
+			if($data['announcements']){
+				foreach($data['announcements'] as &$announcement) {
+					$announcement['expiration'] = $this->convert_date_to_human($announcement['expiration']);
+					
+					if(strlen($announcement['announcement']) > 47){
+						$announcement['announcement'] = substr($announcement['announcement'],0,47).'...';
+					}
+				}
+			}
+			
+			$this->load->view('templates/header',$data);
+			echo 'load 1';
+			$this->load->view('admin/announcements',$data);
+			echo 'load 2';
+			$this->load->view('templates/footer',$data);
+			echo 'load 3';
+		
+		}
+		
+		
+		
+		public function add_announcement() {
+			
+			$this->load->model('announcement_model');
+			
+			$announcement = $this->input->post('announcement');
+			$user = $this->input->post('user');
+			$expiration = $this->input->post('expiration');
+			$expiration = $this->convert_date_to_unix($expiration);
+			
+			if($this->announcement_model->add_announcement($announcement, $user, $expiration)){
+				$this->session->set_flashdata('status', 'Announcement added.');
+				redirect(base_url().'index.php/admin/announcements');
+			} else {
+				$this->session->set_flashdata('status', 'Add failed. Please try again.');
+				redirect(base_url().'index.php/admin/announcements');
+			}
+		}
+		
+		public function delete_announcement() {
+			
+			$this->load->model('announcement_model');
+			
+			$id = $this->input->post('id');
+			
+			if($this->announcement_model->delete_announcement($id)) {
+				$this->session->set_flashdata('status','Announcement deleted.');
+			} else {
+				$this->session->set_flashdata('status','Deletion failed. Please try again.');
+			}
+			
+			redirect(base_url().'index.php/admin/announcements');
+		}
+		
+		public function edit_announcement() {
+			$this->load->model('announcement_model');
+			$this->load->helper('form');
+			
+			$id = $this->input->post('id');
+			
+			$data['announcement'] = $this->announcement_model->get_announcement($id);
+			$data['announcement']['expiration'] = $this->convert_date_to_human($data['announcement']['expiration']);
+			
+			$date_input = array(
+				'name' => 'expiration',
+				'id' => 'unit_date',
+				'class' => 'date_input',
+				'type' => 'text',
+				'placeholder' => 'mm/dd/yyyy',
+				'value' => $data['announcement']['expiration']
+			);
+			
+			$type_dropdown = array(
+				'all'     => 'Global',
+				'locator' => 'Locator',
+				'property' => 'Property',
+				'unregistered' => 'Unregistered Users'
+			);
+			
+			$data['title'] = 'KronoSource Edit Announcement';
+			$data['date_input'] = $date_input;
+			$data['type_dropdown'] = $type_dropdown;
+			
+			if(!$this->input->post('announcement')){
+				$this->load->view('templates/header',$data);
+				$this->load->view('admin/edit_announcement',$data);
+				$this->load->view('templates/footer',$data);
+			} else {
+				$announcement = $this->input->post('announcement');
+				$user = $this->input->post('user');
+				$expiration = $this->input->post('expiration');
+				$expiration = $this->convert_date_to_unix($expiration);
+				
+				if($this->announcement_model->update_announcement($id,$announcement,$user,$expiration)) {
+					$this->session->set_flashdata('status','Announcement updated successfully.');
+					redirect(base_url().'index.php/admin/announcements');
+				} else {
+					$this->session->set_flashdata('status','Update failed. Please try again.');
+					redirect(base_url().'index.php/admin/announcements');
+				}
+			}
 		}
 		
 		private function convert_date_to_unix($date) {

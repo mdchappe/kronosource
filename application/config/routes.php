@@ -40,6 +40,9 @@
 $route['locator/landing'] = 'locator/landing';
 $route['locator/viewAnnouncements'] = 'locator/viewAnnouncements';
 $route['locator/viewAnnouncement/(:any)'] = 'locator/viewAnnouncement/$1';
+$route['admin/add_announcement'] = 'admin/add_announcement';
+$route['admin/delete_announcement'] = 'admin/delete_announcement';
+$route['admin/edit_announcement'] = 'admin/edit_announcement';
 $route['admin/announcements'] = 'admin/announcements';
 $route['admin/new_admin'] = 'admin/new_admin';
 $route['admin/password'] = 'admin/password';
