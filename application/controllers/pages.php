@@ -69,6 +69,7 @@
 					
 					$this->load->model('preregistration_model');
 					$user_type = $this->preregistration_model->check_registration_code($code);
+					$data['code'] = $code;
 					
 					if(!empty($user_type) && $user_type['active'] == 1){
 						

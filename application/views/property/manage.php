@@ -109,7 +109,7 @@
 					</p>
 					<hr class="new-hr">
 				<?php endforeach;
-			} else {
+			} else {	
 				echo "<p class='error'>No units currently listed.</p>";
 			}
 		?>
@@ -117,5 +117,27 @@
 		<ul>
 			<li><a class="btn green pull-right" href="/index.php/property/add_unit"><i class="icon-plus"></i> Add Unit</a></li>
 		</ul>
+		
+		<h3>Gallery Management</h3>
+			<ul>
+				<li>
+					<form name="property_gallery" method="post" action="<?php echo base_url().'index.php/property/gallery'?>" id="property_gallery"> 
+						<input type="hidden" name="type" value="property"/>
+						<input type="hidden" name="id" value="<?php echo $the_user->id;?>"/>
+						<a href="javascript:void();" onclick="document.getElementById('property_gallery').submit()"><?php echo $the_user->company;?></a>
+					</form>
+				</li>
+				<?php if(!empty($units)) :
+					foreach($units as $unit): ?>
+						<li>
+							<form name="unit_gallery_<?php echo $unit['id'];?>" method="post" action="<?php echo base_url().'index.php/property/gallery'?>" id="unit_gallery_<?php echo $unit['id'];?>"> 
+								<input type="hidden" name="type" value="unit"/>
+								<input type="hidden" name="id" value="<?php echo $unit['id'];?>"/>
+								<a href="javascript:void();" onclick="document.getElementById('unit_gallery_<?php echo $unit['id'];?>').submit()"><?php echo $unit['name'];?></a>
+							</form>
+						</li>
+					<?php endforeach;
+				endif;?>
+			</ul>
 	</div>
 </div>

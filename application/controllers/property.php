@@ -350,6 +350,84 @@
 			}
 		}
 		
+		public function gallery() {
+			
+			$data['status'] = $this->session->flashdata('status');
+			
+			$upload_data = Array();
+				
+			$config['upload_path'] = 'assets/img/gallery/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']	= '1024';
+			$config['max_width'] = '1200';
+			$config['encrypt_name'] = TRUE;
+			
+			$this->load->library('upload', $config);
+			$this->load->model('gallery_model');
+			$this->load->helper('form');
+			
+			$type = $this->input->post('type');
+			$id = $this->input->post('id');
+			
+			$data['title'] = 'KronoSource Gallery Management';
+			$data['type'] = $type;
+			$data['id'] = $id;
+			
+			if(!$this->upload->do_upload()){
+				
+				$data['images'] = $this->gallery_model->get_images($type, $id);
+				
+				$this->load->view('templates/header',$data);
+				$this->load->view('property/gallery',$data);
+				$this->load->view('templates/footer',$data);
+				
+			} else {
+					
+				$upload_data = $this->upload->data();
+				
+				$img_config = Array();
+				$img_config['image_library'] = 'gd2';
+				$img_config['source_image']	= $upload_data['full_path'];
+				$img_config['create_thumb'] = TRUE;
+				$img_config['maintain_ratio'] = TRUE;
+				$img_config['width'] = 160;
+				$img_config['height'] = 160;
+				
+				$this->load->library('image_lib', $img_config);
+				$this->image_lib->resize();
+				
+				if($this->gallery_model->add_image('/assets/img/gallery/'.$upload_data['file_name'], $type, $id, $upload_data['image_width'], $upload_data['image_height'],$upload_data['full_path'])) {
+					
+					$data['images'] = $this->gallery_model->get_images($type, $id);
+					
+					$this->load->view('templates/header',$data);
+					$this->load->view('property/gallery',$data);
+					$this->load->view('templates/footer',$data);
+				}	
+			}
+		}
+		
+		public function gallery_delete() {
+			
+			$this->load->model('gallery_model');
+			
+			$path = $this->input->post('php_path');
+			$data['type'] = $this->input->post('type');
+			$data['id'] = $this->input->post('id');
+			$image_id = $this->input->post('image_id');
+			
+			if(unlink($path)) {
+				$this->gallery_model->delete_image($image_id);
+				unlink(substr($path,0,-4).'_thumb'.substr($path,-4));
+			} else {
+				$this->session->set_flashdata('status','Delete failed.');
+			}
+			
+			$this->load->view('templates/header',$data);
+			$this->load->view('property/gallery_delete',$data);
+			$this->load->view('templates/footer',$data);
+		}
+		
 		private function convert_date_to_unix($date) {
 			//YYYY-MM-DD HH:MM:SS AM/PM
 			$this->load->helper('date');

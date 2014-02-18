@@ -65,7 +65,9 @@
 						$data['the_user'] = $this->the_user;
 					
 						$this->load->vars($data);
-					
+						$this->load->model('preregistration_model');
+						$this->preregistration_model->disable_registration_code($code);
+						
 						redirect('/','refresh');
 					}
 				} else {
@@ -165,6 +167,9 @@
 						$data['the_user'] = $this->the_user;
 						
 						$this->load->vars($data);
+						
+						$this->load->model('preregistration_model');
+						$this->preregistration_model->disable_registration_code($code);
 						
 						redirect('/','refresh');
 					}
