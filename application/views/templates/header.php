@@ -58,9 +58,9 @@
 			} else if($the_user->group == 'admin'){
 				echo '<p class="welcome-user wu-admin">admin&nbsp;&nbsp;<i class="icon-circle"></i></p>
 					  	<ul class="logged-in-nav">
-					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt"></i> Messages</a></li>
-					  		<li><a href="/index.php/admin/controlPanel"><i class="icon-cog"></i> Admin Control Panel</a></li>
-					  		<li><a href="/index.php/users/logout">log Out <i class="icon-signout"></i></a></li>
+					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> 14</a></li>
+					  		<li><a href="/index.php/admin/controlPanel">admin</a></li>
+					  		<li><a href="/index.php/users/logout">log Out <i class="icon-caret-right"></i></a></li>
 					  	</ul>';
 			}
 			?>

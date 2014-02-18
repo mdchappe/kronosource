@@ -5601,6 +5601,9 @@ label {
 .navbar .wu-property {
   right: 215px;
 }
+.navbar .wu-admin {
+  right: 215px;
+}
 .navbar .logged-in-nav li {
   display: inline-block;
   margin: 0;

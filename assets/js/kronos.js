@@ -92,6 +92,8 @@ $(document).ready(function(){
 	
 	if(window.location.href.indexOf("locator") > -1) {
     	$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
+	}else if (window.location.href.indexOf("admin") > -1) {
+		$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
 	}
 	
 	$(function() {
