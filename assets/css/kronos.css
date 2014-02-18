@@ -5228,12 +5228,15 @@ a.badge:focus {
 /*****************************************               *****************************************/
 /***************************************** global styles *****************************************/
 /*****************************************               *****************************************/
+html,
+body {
+  height: 100%;
+}
 body {
   /*this is where you can change the background image*/
   /* .bg-cover ('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c574c2b2c73_1.JPG'); */
   background: #efeae3;
   font-family: 'Open Sans', sans-serif !important;
-  /* padding-top:200px; */
   font-size: 12px;
   color: #333;
   position: relative;
@@ -5297,6 +5300,15 @@ ul {
   padding: 0;
   margin: 0;
 }
+div.tooltip-inner {
+  text-align: center;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  width: 130px;
+}
 /* required for sticky footer */
 .push {
   height: 300px;
@@ -5321,10 +5333,12 @@ h6 {
 /* all errors */
 .validation-errors {
   display: inline-block;
+  font-weight: 200;
 }
 .error {
   color: red;
   font-size: 16px;
+  font-weight: 200;
 }
 /* buttons */
 .btn,
@@ -5572,6 +5586,14 @@ label {
   text-align: right;
   overflow: visible;
   position: absolute;
+}
+.navbar .welcome-user .icon-circle {
+  font-size: 75%;
+  position: relative;
+  top: -1px;
+  color: #24ad56;
+  text-shadow: 0 0 9px #86fa77;
+  cursor: pointer;
 }
 .navbar .wu-locator {
   right: 360px;
@@ -5855,13 +5877,13 @@ footer .footer-toe {
 .page-content {
   position: relative;
   border: 1px solid #ccc;
-  margin-top: 140px;
-  margin-bottom: 100px;
   background: #fff;
+  top: 120px;
+  margin-bottom: 200px;
   z-index: 5;
 }
 .page-content > div {
-  padding: 100px 30px;
+  padding: 0 30px 30px;
 }
 /*****************************************               *****************************************/
 /*****************************************  page styles  *****************************************/
@@ -5904,10 +5926,13 @@ footer .footer-toe {
 .search-wrap span.property-features .property-features-dropdowns select {
   margin-right: 20px;
 }
+.search-wrap span.property-features select {
+  width: 205px;
+}
 /* home page */
 .home-wrapper {
-  margin-bottom: 70px !important;
-  margin-top: 0 !important;
+  top: 0px;
+  margin-bottom: 90px;
 }
 .home-wrapper .btn {
   margin-top: 20px;
@@ -6030,8 +6055,8 @@ footer .footer-toe {
 }
 .view-property .row form {
   position: absolute;
-  right: 10;
-  bottom: -10;
+  right: 10px;
+  bottom: -10px;
 }
 .view-property .upper {
   margin-top: 40px;
@@ -6086,13 +6111,13 @@ footer .footer-toe {
 }
 .view-property .w-btns .btn.gmaps {
   position: absolute;
-  bottom: 44;
-  right: 10;
+  bottom: 44px;
+  right: 10px;
 }
 .view-property .w-btns .btn.yelp {
   position: absolute;
-  bottom: 80;
-  right: 10;
+  bottom: 78px;
+  right: 10px;
 }
 .view-property .w-btns .btn {
   width: 130px !important;
@@ -6136,14 +6161,13 @@ footer .footer-toe {
 }
 /* compose message page */
 .compose-message textarea {
-  width: 100%;
-  max-width: 100%;
+  width: 99%;
+  max-width: 99%;
   height: 150px;
   border: 1px solid #cccccc;
   padding: 5px;
   margin-bottom: 20px;
   font-size: 12px;
-  padding: 30px;
 }
 .compose-message .moveleft {
   position: relative;
@@ -6333,4 +6357,12 @@ footer .footer-toe {
   width: auto;
   position: relative;
   top: -2px;
+}
+/* announcement wrapper */
+.announcement-wrapper table {
+  width: 100%;
+  text-align: center;
+}
+.announcement-wrapper .top-row {
+  background: #D1DDEB;
 }

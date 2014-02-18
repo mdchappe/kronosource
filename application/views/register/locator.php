@@ -1,5 +1,6 @@
-<div class="container edit-wrap">
+<div class="container edit-wrap page-content">
 	<div class="edit-inner">
+		<span class="validation-errors"></span>
 		<h2>Apartment Locator Registration</h2><br><br>
 		
 		<?php echo form_open('users/register_locator'); ?>
@@ -24,10 +25,14 @@
 			<?php echo form_input('phone');?><br/>
 			<label for="company">Company</label>
 			<?php echo form_input('company');?><br/>
+<<<<<<< Updated upstream
 			
 			<input type="hidden" name="code" value="<?php echo $code;?>" />
 			
 			<input class="btn btn-primary edit-btn" type="submit" name="submit" value="register" />
+=======
+			<input class="btn pull-right" type="submit" name="submit" value="register" />
+>>>>>>> Stashed changes
 		</form>
 	</div>
 </div>

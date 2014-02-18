@@ -1,4 +1,5 @@
 <div class="container page-content view-property"><div class="inner">
+<span class="validation-errors"></span>
 <h2 class="text-center"><?php echo $property['company'];?></h2>
 <hr>
 
@@ -26,44 +27,21 @@
 	</form>
 </div>
 
-<h3>Property Features:</h3>
+<h3>Property Features</h3>
 <div class="row">
 <ul class="features-list">
 <?php
 	 
 	foreach($features as $feature => $value):
 		
-		if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated' && $feature != 'announcement' && $feature != 'announcement_updated'){ ?>
+		if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated'){ ?>
 	<li><i class="icon-ok"></i> <?php 
-		if($feature == 'cable'){echo 'Cable Providers: ';} else if($feature == 'trash'){echo 'Trash Collection: ';}else if($feature == 'pet_policy'){echo 'Pet Policy: ';}echo $value;?></li>
+		if($feature == 'cable'){echo 'Cable Providers: ';} else if($feature == 'trash'){echo 'Trash Collection: ';}echo $value;?></li>
 	<?php } 
 	endforeach; ?>
 </ul>
-
 </div>
-
-<?php 
-if($features['announcement']):?>
-<h3>Specials:</h3>
-<div class="row">
-<?php echo $features['announcement'];?>
-</div>
-<?php endif;
-
-if($images):?>
-<h3>Property Images:</h3>
-<div class="row">
-		<ul>
-		<?php foreach($images as $image):?>
-			<li>
-				<a href="<?php echo base_url().substr($image['filename'],1);?>"><img src="<?php echo substr($image['filename'],0,-4).'_thumb'.substr($image['filename'],-4);?>"/></a>
-			</li>
-		<?php endforeach;?>
-		</ul>
-</div>
-<?php endif;?>
-	
-<h3>Available Units:</h3>
+<h3>Available Units</h3>
 <div class="row units-table">
 <table>
 	<tr class="top-row">

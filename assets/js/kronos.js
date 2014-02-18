@@ -30,6 +30,7 @@ $(document).ready(function(){
 	$('.nav1-login').click(function() {
 		$('.login-dropdown').animate({height: 'toggle', opacity: 'toggle'}, 'fast');
 		$('.nav1-login i').toggleClass('rotate');
+		$(".login-dropdown input:first-child").focus();
      });
      
      $('.home-text1 a, .nav1-feedback').click(function() {
@@ -37,6 +38,11 @@ $(document).ready(function(){
 	     $('.overlay, .not-yet').fadeIn(500);
 	     return false;
      });
+     
+	    if(window.location.href.indexOf("register") > -1) {
+    	$('.nav1-feedback').hide();
+	} 
+     
      
      $('.overlay, .not-yet').click(function() {
      	 $('body').css('overflow', 'auto');
@@ -82,12 +88,16 @@ $(document).ready(function(){
 	if ($('.login-dropdown ul').hasClass('logged-in-nav')) {
 		$('.login-dropdown').show().css(logged_in_styles);
 		$('.home-hero, .features, .who-uses, .home-faq, .home-text1').hide();
-		$('.home-all-wrapper').css('padding-top', '0');
-		$('.home-wrapper').css('margin-top', '200px');
-		
 	}
 	
-
+	if(window.location.href.indexOf("locator") > -1) {
+    	$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
+	}
+	
+	$(function() {
+		$('[rel="tooltip"]').tooltip({placement:'bottom'});
+	});
+	
 });
 
 function add_lease_term(){

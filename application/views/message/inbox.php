@@ -1,4 +1,5 @@
 <div class="container page-content message-inbox"><div class="inner">
+<span class="validation-errors"></span>
 <h2 class="text-center"><i class="icon-comments-alt"></i> Messages</h2>
 <hr>
 <span><?php echo $status;?></span>
