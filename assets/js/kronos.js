@@ -94,13 +94,23 @@ $(document).ready(function(){
     	$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
 	}else if (window.location.href.indexOf("admin") > -1) {
 		$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
+		$("a.brand").attr("href", "/index.php/admin/controlPanel")
+	}else if (window.location.href.indexOf("property") > -1) {
+		$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
 	}
 	
 	$(function() {
 		$('[rel="tooltip"]').tooltip({placement:'bottom'});
 	});
 	
-});
+	if(window.location.href.indexOf("regcodes") > -1) {
+		$('#random').click();
+		$('.register-wrap #code').prop('disabled', true);
+		$('select').focus();
+	}
+	
+	
+});//doc ready
 
 function add_lease_term(){
 	var fragment = '<tr>';

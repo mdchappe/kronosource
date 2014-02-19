@@ -5325,10 +5325,12 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+legend {
   text-shadow: 1px 1px 0 #FFF;
   color: #868686 !important;
   font-weight: 200;
+  text-transform: lowercase;
 }
 /* all errors */
 .validation-errors {
@@ -5344,7 +5346,7 @@ h6 {
 .btn,
 button {
   background: #4d90fe;
-  font-weight: 200;
+  font-weight: 100 !important;
   color: #fff !important;
   text-shadow: none;
   letter-spacing: 1px;
@@ -5403,6 +5405,30 @@ button.green {
 button.green:hover {
   background: #1d943b;
 }
+.btn.black,
+button.black {
+  background: #333333;
+}
+.btn.black:hover,
+button.black:hover {
+  background: black;
+}
+.cp-btn {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+}
+.cp-btn:before,
+.cp-btn:after {
+  content: " ";
+  border-top: 10px solid #979797;
+  position: absolute;
+  bottom: -10px;
+}
+.cp-btn:before {
+  border-left: 10px solid transparent;
+  left: 0;
+}
 /* just the icons */
 a.just-icon {
   color: #868686;
@@ -5412,6 +5438,10 @@ a.just-icon:hover {
 }
 a.just-icon.cancel:hover {
   color: #c53727;
+}
+.table-condensed th,
+.table-condensed td {
+  cursor: pointer;
 }
 /* label & input defaults */
 legend {
@@ -5447,6 +5477,7 @@ select {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  background: #F8F8F8;
 }
 label {
   cursor: default;
@@ -6118,7 +6149,8 @@ footer .footer-toe {
   font-size: 12px;
 }
 .view-property .units-table table .top-row {
-  background: #D1DDEB;
+  background: #333;
+  color: white;
 }
 .view-property .units-table table tr.property-row td a {
   display: block;
@@ -6175,7 +6207,8 @@ footer .footer-toe {
   text-align: center;
 }
 .view-unit .row table .top-row {
-  background: #D1DDEB;
+  background: #333;
+  color: #fff;
 }
 .view-unit .features-row {
   margin-top: 60px;
@@ -6213,7 +6246,8 @@ footer .footer-toe {
   font-size: 12px;
 }
 .message-inbox .top-row {
-  background: #D1DDEB;
+  background: #333;
+  color: #fff;
 }
 .message-inbox tr.message-row:nth-child(odd) {
   background: #F1F0F0;
@@ -6286,7 +6320,8 @@ footer .footer-toe {
   font-size: 12px;
 }
 .add-unit table .top-row {
-  background: #D1DDEB;
+  background: #333;
+  color: white;
 }
 .add-unit table input {
   margin-bottom: 5px;
@@ -6335,7 +6370,8 @@ footer .footer-toe {
   font-size: 12px;
 }
 .update-unit table .top-row {
-  background: #D1DDEB;
+  background: #333;
+  color: white;
 }
 .update-unit table .btn,
 .update-unit table input {
@@ -6360,7 +6396,8 @@ footer .footer-toe {
   font-size: 12px;
 }
 .update-lease-terms table .top-row {
-  background: #D1DDEB;
+  background: #333;
+  color: white;
 }
 .update-lease-terms table .btn,
 .update-lease-terms table input {
@@ -6394,7 +6431,8 @@ footer .footer-toe {
   margin-top: 10px;
   cursor: pointer;
 }
-.register-wrap input[type="file"]:focus {
+.register-wrap input[type="file"]:focus,
+.register-wrap select:focus {
   outline: none;
 }
 .register-wrap select {
@@ -6416,13 +6454,40 @@ footer .footer-toe {
   bottom: 330px;
   left: 250px;
 }
+.register-wrap .gen.btn {
+  height: 31px;
+  line-height: 31px;
+  position: relative;
+  top: -1px;
+  left: 1px;
+  background: #333;
+}
+.register-wrap .gen.btn:hover {
+  background: black;
+}
+.register-wrap h2,
+.register-wrap h3,
+.register-wrap h4,
+.register-wrap h5 {
+  text-transform: lowercase;
+}
+.register-wrap table {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+.register-wrap table .top-row {
+  background: #333;
+  color: white;
+}
 /* announcement wrapper */
 .announcement-wrapper table {
   width: 100%;
   text-align: center;
 }
 .announcement-wrapper .top-row {
-  background: #D1DDEB;
+  background: #333;
+  color: white;
 }
 /* admin control panel */
 .cp-wrapper ul {

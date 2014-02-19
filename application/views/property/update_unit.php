@@ -1,5 +1,7 @@
 <div class="container page-content update-unit">
+<a class="btn black cp-btn" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
 <div class="edit-inner">
+<span class="validation-errors"></span>
 <h2 class="text-center"><i class="icon-pencil"></i> EDIT <?php echo $unit->name?></h2>
 <hr>
 <?php if($this->session->flashdata('status')){
@@ -83,8 +85,7 @@
 	
 	<input type="hidden" name="unit_id" value="<?php echo $unit_id ?>" id="unit_id"/> 
 	<input type="hidden" name="lease_term_count" value="0" id="lease_term_count"/>
-	<a class="btn pull-left" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
-	<button class="pull-right btn" type="submit" name="submit"><i class="icon-reply"></i> submit</button>
+	<button class="pull-right btn black" type="submit" name="submit">submit <i class="icon-caret-right"></i></button>
 	</form>
 	
 	

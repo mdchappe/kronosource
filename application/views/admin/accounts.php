@@ -1,10 +1,12 @@
-<div class="home-wrapper container page-content">
-	<h2><?echo $title;?></h2>
-	
+<div class="register-wrap container page-content"><div class="inner">
+<a class="btn black cp-btn" href="/index.php/admin/controlPanel"><i class="icon-caret-left"></i> back to control panel</a>
+<span class="validation-errors"></span>
+	<h2 class="text-center"><?echo $title;?></h2>
+	<hr>
 	<?php if(isset($status)){echo '<p>'.$status.'</p>';}?>
 	
 	<table>
-		<tr>
+		<tr class="top-row">
 			<th>Account Type</th>
 			<th>Display Name</th>
 			<th>Company</th>
@@ -34,20 +36,21 @@
 					<td><?php if($account['active']){echo 'yes';} else {echo 'no';}?></td>
 					<td><?php if($account['active']):
 						echo form_open('admin/accounts/disable_account','',array('id'=>$account['user_id']));?>
-						<input name="submit_<?php echo $account['user_id']?>" value="Disable" type="submit"/>
+						<button class="cancel btn" name="submit_<?php echo $account['user_id']?>"type="submit">disable</button>
 						
 						<?php else:
 						echo form_open('admin/accounts/enable_account','',array('id'=>$account['user_id']));?>
-						<input name="submit_<?php echo $account['user_id']?>" value="Enable" type="submit"/>
+						<button class="black btn" name="submit_<?php echo $account['user_id']?>" type="submit">enable</button>
 						
 						<?php endif;?>
 						</form>
 					</td>
 					<td><?php echo $account['expiration'];?></td>
-					<td><?php echo form_open('admin/accounts/expiration','',array('id'=>$account['user_id'])).form_input($date_input);?><input name="date_<?php echo $account['user_id']?>" value="Update" type="submit"/></form></td>
+					<td><?php echo form_open('admin/accounts/expiration','',array('id'=>$account['user_id'])).form_input($date_input);?><button name="date_<?php echo $account['user_id']?>" type="submit">update</button></form></td>
 				</tr>
+				
 				
 		<?php 
 			endforeach; ?>
 	</table>
-</div>
+</div></div>
