@@ -88,15 +88,10 @@ h1,h2,h3,h4,h5,h6,legend {
 	-moz-box-shadow:none;
 	.open-sans();
 	font-size: 12px;
-	-webkit-transition: all .3s ease-out;transition: all .3s ease-out;
-	-moz-transition: all .3s ease-out;
-	-o-transition: all .3s ease-out;}
-.btn:focus, .btn:hover, button:focus, button:hover {background-position: 0 0 !important;-webkit-transition: all .3s ease-out;
--moz-transition: all .3s ease-out;transition: all .3s ease-out;
--o-transition: all .3s ease-out;}
-.btn:hover, button:hover {background: #0072bb; color: #fff;-webkit-transition: all .3s ease-out;
--moz-transition: all .3s ease-out;transition: all .3s ease-out;
--o-transition: all .3s ease-out;}
+	.transition(.3s);
+	-webkit-font-smoothing: auto; }
+.btn:focus, .btn:hover, button:focus, button:hover {background-position: 0 0 !important;.transition(.3s);}
+.btn:hover, button:hover {background: #0072bb; color: #fff;.transition(.3s);}
 .btn.cancel, button.cancel {background: #dd4b39;}
 .btn.cancel:hover, button.cancel:hover {background: #c53727;}
 .btn.purple, button.purple {background: #852b99;}
@@ -502,6 +497,14 @@ footer {
 		i.icon-ok {color: green;}
 		.update.btn {margin-left: 10px;}
 	}
+	#announcement-ta {width: 100%; height: 100px;}
+	#announcement-dd, select[name="user"] {width: 265px;}
+	tr.announce-row:nth-child(odd) {background: #F1F0F0;}
+	tr.announce-row td form {margin: 0;}
+	tr.announce-row {.transition(.1s);height: 30px;}
+	tr.announce-row:hover {.transition(.1s); background: rgb(209, 209, 209); }
+	.good-code {font-size: 20px; font-weight: 200; color: #35aa47; text-align: center;}
+	.code-mask {height: 50px; width: 300px; position: absolute; left: 165px; cursor: not-allowed;}
 }
 
 .account-page {width: 1050px;}

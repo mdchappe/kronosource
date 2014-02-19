@@ -1,21 +1,27 @@
-<div class="register-wrapper container page-content"><div class="inner"></div>
-	<h2>KronoSource Announcements Administration</h2>
-	
+<div class="register-wrap container page-content">
+<a class="btn black cp-btn" href="/index.php/admin/controlPanel"><i class="icon-caret-left"></i> back to control panel</a>
+<div class="inner">
+<span class="validation-errors"><br></span>
+	<h2 class="text-center">Announcements Administration</h2>
+	<hr>
 	<?php if(isset($status)){echo '<p>'.$status.'</p>';}?>
 	
 	<h3>Add New Announcement</h3>
-	<?php echo form_open('admin/add_announcement');
-		  echo form_label('Announcement Content: ','announcement').form_textarea('announcement').'<br/>';
-		  echo form_label('Visibility: ','user').form_dropdown('user',$type_dropdown).'<br/>';
-		  echo form_label('Show Until: ','expiration').form_input($date_input).'<br/>';
-		  echo form_submit('submit','Save Announcement').form_close();;
+	<?php $reg_opts = 'required="required"';
+		  echo form_open('admin/add_announcement');
+		  echo form_label('Announcement Content&nbsp;:&nbsp;','announcement').form_textarea('announcement','','required="required" id="announcement-ta"').'<br/>';
+		  echo form_label('Visibility&nbsp;:&nbsp;','user').form_dropdown('user',$type_dropdown, 'id="announcement-dd"').'<br/>';
+		  echo form_label('Show Until&nbsp;:&nbsp;','expiration').form_input($date_input,'',$reg_opts).'<br/>';
+		  echo '<button class="black btn pull-right" type="submit">Save Announcement <i class="icon-caret-right"></i></button>';
+		  echo form_close();
 	?>
-	
+	<br><br>
+	<hr>
 	<h3>Current Announcements</h3>
 	
 	<?php if($announcements):?>
 			<table>
-		<tr>
+		<tr class="top-row">
 			<th>Anouncement</th>
 			<th>User Group</th>
 			<th>Expiration</th>
@@ -23,7 +29,7 @@
 			<th>Delete</th>
 		</tr>
 		<?php foreach($announcements as $announcement): ?>
-				<tr>
+				<tr class="announce-row">
 					<td><?php echo $announcement['announcement'];?></td>
 					<td><?php echo $announcement['user'];?></td>
 					<td><?php echo $announcement['expiration'];?></td>

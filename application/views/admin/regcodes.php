@@ -3,10 +3,11 @@
 <span class="validation-errors"></span>
 	<h2 class="text-center">registration code administration</h2>
 	<hr>
-	<?php if(isset($status)){echo '<p>'.$status.'</p>';}?>
+	<?php if(isset($status)){echo '<p class="good-code">'.$status.'</p>';}?>
 	<?php $reg_opts = 'required="required"' ?>
 	<?php echo form_open('admin/regcodes/add');?>
 		<h3>Add New Registration Code</h3>
+		<span class="code-mask"></span>
 		<label for="code"><span id="random" class="gen btn">generate code <i class="icon-caret-right"></i></span></label><?php echo form_input(array('id'=>'code','name'=>'code', 'required'=>'required'));?><br/>
 		<label for="type">Account Type&nbsp;:&nbsp;</label><?php echo form_dropdown('type',$type_dropdown);?><br/>
 		<label for="exp">Expiration Date&nbsp;:&nbsp;</label><?php echo form_input($date_input,'', $reg_opts);?><br/><br>

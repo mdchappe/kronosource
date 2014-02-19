@@ -107,11 +107,6 @@ $(document).ready(function(){
 		$('[rel="tooltip-right"]').tooltip({placement:'right'});
 	});
 	
-	if(window.location.href.indexOf("regcodes") > -1) {
-		$('#random').click();
-		$('.register-wrap #code').prop('disabled', true);
-		$('select').focus();
-	}
 	
 	
 });//doc ready
