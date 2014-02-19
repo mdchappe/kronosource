@@ -261,10 +261,12 @@ footer {
 
 /* browse properties page */
 .browse-wrap {
-	
-	.browse-listing {height: 105px; position: relative;border:1px solid transparent; border-bottom: 1px solid #fff; padding-top: 25px;
+	padding-bottom: 30px;
+	ul {margin-left: 1%;}
+	ul li.browse-listing:nth-child(odd){border-right:1px dotted #ccc;}
+	.browse-listing {height: 125px; position: relative; padding-top: 25px; display: inline !important; clear: none !important; width: 49%; float: left;border-bottom: 1px dotted #ccc;
 		h4 {display: inline;}
-		img {margin-left: 20px;}
+		img {margin-left: 20px; margin-right: 30px; min-height: 100px; min-width: 100px;}
 	}
 }
 
@@ -326,7 +328,8 @@ footer {
 /* view property page */ 
 .view-property {
 	
-	.row {margin: 0; padding: 10px; border: 1px solid #E4E2E2; position: relative;}
+	.row {margin: 0; padding: 10px; border: 1px solid #E4E2E2; position: relative; min-height: 100px;}
+	img.profile-img {max-height: 150px; max-width: 150px; height:150px; width:150px; background: url(../img/profile/none.jpg);}
 	.address {display: inline-block; text-align: center; margin-left: 15px;}
 	.row form {position: absolute; right: 10px; bottom: -10px;}
 	.upper {margin-top: 40px;}
@@ -466,3 +469,25 @@ footer {
 	table {width: 100%; text-align: center;}
 	.top-row {background: #D1DDEB;}
 }
+
+/* admin control panel */
+.cp-wrapper {
+	ul {text-align: center;}
+	ul li {line-height: 20px; width: 30%;display: inline-block;text-align: center;margin: 12px; height: 250px;-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-ms-transition: all .3s ease-out;-o-transition: all .3s ease-out;transition: all .3s ease-out;}
+	ul li:hover {-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-ms-transition: all .3s ease-out;-o-transition: all .3s ease-out;transition: all .3s ease-out;}
+	.cpreg {background: #CFA435;}
+	.cpusers {background: #AF4545;}
+	.cpannounce {background: #285A81;}
+	.cppw {background: #5C98C0;}
+	.cpadd {background: #664980;}
+	.cppmt {background: rgb(69, 160, 142);}
+	.cpreg:hover {background: #C0972D;}
+	.cpusers:hover {background: #943434;}
+	.cpannounce:hover {background: #1F4868;}
+	.cppw:hover {background: #4B83A8;}
+	.cpadd:hover {background: #55396F;}
+	.cppmt:hover {background: #388878;}
+	ul li a {color: white; display: block; height: 100%; font-size: 20px; font-weight: 100; padding-top: 30px;}
+}
+
+

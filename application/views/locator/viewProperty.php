@@ -17,7 +17,7 @@
 </div>
 
 <div class="row w-btns">
-	<img src="<?php echo $property['file_name'];?>" />
+	<img class="profile-img" src="<?php echo $property['file_name'];?>" />
 	<div class="address"><?php echo $property['street'].'<br/>'.$property['city'].', '.$property['state'].' '.$property['zip'].'<br/><a href="tel:'.$property['phone'].'"><i class="icon-phone"></i> '.$property['phone'].'</a>';?></div>
 		<a target="_blank" class="btn green gmaps" href="https://maps.google.it/maps?q=<?php echo $property['street'].' '.$property['city'].' '.$property['state'].' '.$property['zip'] ?>"><i class="icon-map-marker"></i> Google maps</a>
 		<a target="_blank" class="btn cancel yelp "href="http://www.yelp.com/biz/<?php echo 'easton'.'-apartments-'.$property['city']?>"><i class="icon-asterisk"></i> yelp reviews</a>
