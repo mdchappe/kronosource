@@ -183,3 +183,11 @@ background: -ms-linear-gradient(top, rgba(254,255,255,1) 0%,rgba(247,247,247,1) 
 background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(247,247,247,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#f7f7f7',GradientType=0 );
 }
+
+.transition(@val) {
+	-webkit-transition: all @val ease-out;
+	-moz-transition: all @val ease-out;
+	-ms-transition: all @val ease-out;
+	-o-transition: all @val ease-out;
+	transition: all @val ease-out;
+}

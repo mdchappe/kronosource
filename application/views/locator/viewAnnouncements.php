@@ -10,7 +10,7 @@
 		</tr>
 	<?php foreach($announcements as $announcement):?>
 	
-		<tr>
+		<tr class="announce-row">
 			<td><a href="<?php echo base_url().'index.php/locator/viewProperty/'.$announcement['id']?>"><?php echo $announcement['company']?></a></td>
 			<td><a href="<?php echo base_url().'index.php/locator/viewAnnouncement/'.$announcement['id'];?>"><?php echo $announcement['announcement']?></a></td>
 			<td><?php echo $announcement['announcement_updated']?></td>

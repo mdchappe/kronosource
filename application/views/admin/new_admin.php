@@ -1,4 +1,5 @@
 <div class="container page-content register-wrap">
+<a class="btn black cp-btn" href="/index.php/admin/controlPanel"><i class="icon-caret-left"></i> back to control panel</a>
 	<div class="edit-inner">
 		<p><?echo $status;?></p>
 		<span class="validation-errors"><?php echo validation_errors('<p class="error">', '</p>'); ?></span>
@@ -29,7 +30,7 @@
 			<?php echo form_input('phone','', $reg_opts);?><br/>
 			<label for="company">Company&nbsp;:&nbsp;</label>
 			<?php echo form_input('company','KronoSource', $reg_opts);?><br/>
-			<button class="btn pull-right" type="submit" name="submit">create admin <i class="icon-caret-right"></i></button>
+			<button class="btn pull-right black" type="submit" name="submit">create admin <i class="icon-caret-right"></i></button>
 		</form>
 	</div>
 </div>

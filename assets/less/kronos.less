@@ -76,6 +76,7 @@ h1,h2,h3,h4,h5,h6,legend {
 /* buttons */
 .btn, button {
 	background: #4d90fe;
+	text-transform: lowercase;
 	font-weight: 100 !important;
 	color: #fff !important;
 	text-shadow: none;
@@ -366,7 +367,8 @@ footer {
 		tr.property-row td a.margin20l {margin-left: 20px;}
 		tr.property-row:nth-child(odd) {background: #F1F0F0;}
 		tr.property-row:last-child {margin-bottom: 20px;}
-		tr.property-row:hover {background: rgb(209, 209, 209);}
+		tr.property-row:hover {background: rgb(209, 209, 209); .transition(.1s);}
+		tr.property-row {.transition(.1s);}
 	}
 	.w-btns {
 		.btn.gmaps {position: absolute;bottom: 44px;right: 10px;}
@@ -383,13 +385,16 @@ footer {
 	ul.unit-features li {display: inline-block; width: 30%; margin-bottom: 2px;}
 	ul.unit-features li b {font-size: 14px;}
 	ul.unit-features li i {font-size: smaller; color: rgb(32, 177, 32);}
-	.row {margin: 0; border: 1px solid #E4E2E2; position: relative;
-		table {width: 100%; font-size: 12px; text-align: center;
+	.row {margin: 0; border: 1px solid #E4E2E2; position: relative;}
+		table {width: 100%; font-size: 12px; text-align: center; margin-bottom: 30px;
 			.top-row {background: #333; color: #fff;}
+			tr.fee-row:nth-child(odd) {background: #F1F0F0;}
+			tr.fee-row {.transition(.1s);}
+			tr.fee-row:hover {.transition(.1s);background: rgb(209, 209, 209); cursor: pointer;}
 		}
-	}
-	.features-row {margin-top: 60px; margin-bottom: 40px; padding: 20px;}
+	.features-row {margin-bottom: 40px; padding: 20px;}
 	ul.unit-features li.longer {width: 100%;}
+	.img-row {padding: 15px;}
 }
 
 /* compose message page */
@@ -402,16 +407,17 @@ footer {
 
 /* messages inbox page */
 .message-inbox {
-	.row {margin: 0; border: 1px solid #E4E2E2; position: relative;}
+	.row {margin: 0; position: relative;}
 	table {width: 100%; font-size: 12px;}
 	.top-row {background: #333; color: #fff;}
 	tr.message-row:nth-child(odd) {background: #F1F0F0;}
 	.dynamic-subject {margin: 3px 0; float: left !important; width: 100%; height: 100%;}
-	tr.message-row:hover {background: rgb(209, 209, 209);}
+	tr.message-row {.transition(.1s);}
+	tr.message-row:hover {background: rgb(209, 209, 209); .transition(.1s);}
 	tr.message-row td a, .dynamic-subject {display: block;}
 	.margin20l a {margin-left: 20px; }
 	.padding20l {padding-left: 20px; }
-	.message {background: white; padding: 30px; border: 1px solid #ccc;}
+	.message {background: #F8F8F8; padding: 30px; border: 1px solid #ccc;}
 	form {display: inline; float: right;}
 	.header-info form {float: none;}
 	.reply-btn {margin-right: 10px;}
@@ -487,20 +493,37 @@ footer {
 	h2,h3,h4,h5 {text-transform: lowercase;}
 	table {width: 100%; text-align: center; font-size: 12px;
 		.top-row {background: #333; color: white;}
+		tr.account-row:nth-child(odd) {background: #F1F0F0;}
+		tr.account-row input {width: 100px;}
+		tr.account-row {.transition(.1s); height: 75px;}
+		tr.account-row:hover {.transition(.1s); background: rgb(209, 209, 209); }
+		tr.account-row td form {margin: 0;}
+		i.icon-warning-sign {color: red;}
+		i.icon-ok {color: green;}
+		.update.btn {margin-left: 10px;}
 	}
 }
 
+.account-page {width: 1050px;}
+
 /* announcement wrapper */
 .announcement-wrapper {
-	table {width: 100%; text-align: center;}
-	.top-row {background: #333; color: white;}
+	table {width: 100%; text-align: center;
+		.top-row {background: #333; color: white;}
+		tr.announce-row:nth-child(odd) {background: #F1F0F0;}
+		tr.announce-row td a {display: block;}
+		tr.announce-row {.transition(.1s);}
+		tr.announce-row:hover {background: rgb(209, 209, 209);.transition(.1s);}
+	}	
+	.display-ib {display: inline-block; font-size: 30px; font-weight: 200; margin-bottom: 20px; text-transform: lowercase;}
 }
+
 
 /* admin control panel */
 .cp-wrapper {
 	ul {text-align: center;}
-	ul li {line-height: 20px; width: 30%;display: inline-block;text-align: center;margin: 12px; height: 250px;-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-ms-transition: all .3s ease-out;-o-transition: all .3s ease-out;transition: all .3s ease-out;}
-	ul li:hover {-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-ms-transition: all .3s ease-out;-o-transition: all .3s ease-out;transition: all .3s ease-out;}
+	ul li {line-height: 20px; width: 30%;display: inline-block;text-align: center;margin: 12px; height: 250px; .transition(.3s);}
+	ul li:hover {.transition(.3s);}
 	.cpreg {background: #CFA435;}
 	.cpusers {background: #AF4545;}
 	.cpannounce {background: #285A81;}

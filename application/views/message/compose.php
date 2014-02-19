@@ -8,8 +8,8 @@
 	<input type="hidden" name="id" value="<?php echo $message['from_id'];?>" />
 	<label for="subject">Subject: </label> <?php echo form_input('subject', $default_subject, 'required="required"');?><br/>
 	<?php echo form_textarea($message_input);?><br/>
-	<a class="btn cancel j-back pull-right"><i class="icon-trash"></i> discard draft</a>
-	<button class="btn pull-right moveleft" type="submit" name="submit"><i class='icon-reply'></i> send</button>
+	<button class="btn black pull-right" type="submit" name="submit">send <i class='icon-caret-right'></i></button>
+	<a class="btn cancel j-back pull-right moveleft"><i class="icon-trash"></i> discard draft</a>
 </form> 
 
 </div></div> 

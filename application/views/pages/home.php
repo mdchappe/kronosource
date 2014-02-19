@@ -89,7 +89,7 @@
 			<label for="captcha">Are You Human?</label>
 			<?php echo $captcha['image'].form_input('captcha','', $homeForm_opts);?><br><br>
 			<textarea class="flexible-text"></textarea><br>
-			<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i>  submit</button>
+			<button class="btn pull-right black" type="submit" name="submit">submit <i class="icon-caret-right"></i></button>
 			<div class="not-yet">x</div><!-- -->
 			<a class="detailed">need to send a more detailed inquiry? <i class="icon-caret-right"></i></a>
 	</div>

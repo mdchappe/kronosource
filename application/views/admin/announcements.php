@@ -1,4 +1,4 @@
-<div class="home-wrapper container page-content">
+<div class="register-wrapper container page-content"><div class="inner"></div>
 	<h2>KronoSource Announcements Administration</h2>
 	
 	<?php if(isset($status)){echo '<p>'.$status.'</p>';}?>
@@ -39,4 +39,4 @@
 
 	endif;?>
 	</table>
-</div>
+</div></div>

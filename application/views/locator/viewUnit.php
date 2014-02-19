@@ -1,14 +1,16 @@
-<div class="container page-content view-unit"><div class="inner">
+<div class="container page-content view-unit">
+<a class="btn j-back black cp-btn"><i class="icon-caret-left"></i> back</a>
+<div class="inner">
 <span class="validation-errors"></span>
 <h2 class="text-center"><?php echo $unit->name;?></h2>
 <hr>
 <div>
-<a class="btn j-back pull-left"><i class="icon-caret-left"></i> back</a>
 <form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 	<input type=hidden name="user_id" value="<?php echo $unit->property_id;?>" />
-	<a class="btn pull-right" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>
+	<a class="btn black pull-right" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>
 </form>
 </div>
+<h3>unit features</h3>
 <div class="row features-row">
 <ul class="unit-features">
 	<li><i class="icon-ok"></i> Available: <b><?php echo $unit->date_available;?></b></li>
@@ -25,7 +27,7 @@
 </ul>
 </div>
 
-<div class="row">
+<h3>lease terms available</h3>
 <table>
 	<tr class="top-row">
 		<th>Lease Term</th>
@@ -44,11 +46,10 @@
 	</tr>
 	<?php endforeach;?>
 </table>
-</div>
 
 <?php if($images):?>
-<h3>Unit Images:</h3>
-<div class="row">
+<h3>Unit Images</h3>
+<div class="row img-row">
 		<ul>
 		<?php foreach($images as $image):?>
 			<li>

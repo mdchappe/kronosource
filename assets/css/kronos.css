@@ -5346,6 +5346,7 @@ legend {
 .btn,
 button {
   background: #4d90fe;
+  text-transform: lowercase;
   font-weight: 100 !important;
   color: #fff !important;
   text-shadow: none;
@@ -6166,6 +6167,26 @@ footer .footer-toe {
 }
 .view-property .units-table table tr.property-row:hover {
   background: #d1d1d1;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.view-property .units-table table tr.property-row {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 .view-property .w-btns .btn.gmaps {
   position: absolute;
@@ -6201,22 +6222,52 @@ footer .footer-toe {
   border: 1px solid #E4E2E2;
   position: relative;
 }
-.view-unit .row table {
+.view-unit table {
   width: 100%;
   font-size: 12px;
   text-align: center;
+  margin-bottom: 30px;
 }
-.view-unit .row table .top-row {
+.view-unit table .top-row {
   background: #333;
   color: #fff;
 }
+.view-unit table tr.fee-row:nth-child(odd) {
+  background: #F1F0F0;
+}
+.view-unit table tr.fee-row {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.view-unit table tr.fee-row:hover {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  background: #d1d1d1;
+  cursor: pointer;
+}
 .view-unit .features-row {
-  margin-top: 60px;
   margin-bottom: 40px;
   padding: 20px;
 }
 .view-unit ul.unit-features li.longer {
   width: 100%;
+}
+.view-unit .img-row {
+  padding: 15px;
 }
 /* compose message page */
 .compose-message textarea {
@@ -6238,7 +6289,6 @@ footer .footer-toe {
 /* messages inbox page */
 .message-inbox .row {
   margin: 0;
-  border: 1px solid #E4E2E2;
   position: relative;
 }
 .message-inbox table {
@@ -6258,8 +6308,28 @@ footer .footer-toe {
   width: 100%;
   height: 100%;
 }
+.message-inbox tr.message-row {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
 .message-inbox tr.message-row:hover {
   background: #d1d1d1;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 .message-inbox tr.message-row td a,
 .message-inbox .dynamic-subject {
@@ -6272,7 +6342,7 @@ footer .footer-toe {
   padding-left: 20px;
 }
 .message-inbox .message {
-  background: white;
+  background: #F8F8F8;
   padding: 30px;
   border: 1px solid #ccc;
 }
@@ -6480,14 +6550,95 @@ footer .footer-toe {
   background: #333;
   color: white;
 }
+.register-wrap table tr.account-row:nth-child(odd) {
+  background: #F1F0F0;
+}
+.register-wrap table tr.account-row input {
+  width: 100px;
+}
+.register-wrap table tr.account-row {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  height: 75px;
+}
+.register-wrap table tr.account-row:hover {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  background: #d1d1d1;
+}
+.register-wrap table tr.account-row td form {
+  margin: 0;
+}
+.register-wrap table i.icon-warning-sign {
+  color: red;
+}
+.register-wrap table i.icon-ok {
+  color: green;
+}
+.register-wrap table .update.btn {
+  margin-left: 10px;
+}
+.account-page {
+  width: 1050px;
+}
 /* announcement wrapper */
 .announcement-wrapper table {
   width: 100%;
   text-align: center;
 }
-.announcement-wrapper .top-row {
+.announcement-wrapper table .top-row {
   background: #333;
   color: white;
+}
+.announcement-wrapper table tr.announce-row:nth-child(odd) {
+  background: #F1F0F0;
+}
+.announcement-wrapper table tr.announce-row td a {
+  display: block;
+}
+.announcement-wrapper table tr.announce-row {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.announcement-wrapper table tr.announce-row:hover {
+  background: #d1d1d1;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.announcement-wrapper .display-ib {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 20px;
+  text-transform: lowercase;
 }
 /* admin control panel */
 .cp-wrapper ul {
@@ -6500,6 +6651,10 @@ footer .footer-toe {
   text-align: center;
   margin: 12px;
   height: 250px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
@@ -6507,6 +6662,10 @@ footer .footer-toe {
   transition: all 0.3s ease-out;
 }
 .cp-wrapper ul li:hover {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;

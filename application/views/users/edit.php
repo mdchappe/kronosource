@@ -46,7 +46,7 @@
 			
 			<?php } ?>
 			
-			<a class="btn cancel pull-right" href="/index.php"><i class="icon-trash"></i> discard changes</a> <button class="btn edit-btn pull-right submit-btn" type="submit" name="submit"><i class="icon-save"></i> save changes</button>
+			<a class="btn cancel pull-right" href="/index.php"><i class="icon-trash"></i> discard changes</a> <button class="btn black pull-right submit-btn" type="submit" name="submit"><i class="icon-save"></i> save changes</button>
 		</form>
 	</div>		
 </div>

@@ -1,4 +1,6 @@
-<div class="container page-content view-property"><div class="inner">
+<div class="container page-content view-property">
+<a class="btn black j-back cp-btn"><i class="icon-caret-left"></i> back</a>
+<div class="inner">
 <span class="validation-errors"></span>
 <h2 class="text-center"><?php echo $property['company'];?></h2>
 <hr>
@@ -23,7 +25,7 @@
 		<a target="_blank" class="btn cancel yelp "href="http://www.yelp.com/biz/<?php echo 'easton'.'-apartments-'.$property['city']?>"><i class="icon-asterisk"></i> yelp reviews</a>
 	<form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 		<input type=hidden name="user_id" value="<?php echo $property['id'];?>" />
-		<a class="btn pull-right" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>
+		<a class="btn pull-right black" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>
 	</form>
 </div>
 
@@ -42,7 +44,7 @@
 </ul>
 </div>
 <h3>Available Units</h3>
-<div class="row units-table">
+<div class="units-table">
 <table>
 	<tr class="top-row">
 		<th>Unit Name/Description</th>

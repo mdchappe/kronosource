@@ -1,4 +1,4 @@
-<div class="register-wrap container page-content"><div class="inner">
+<div class="register-wrap container page-content account-page"><div class="inner">
 <a class="btn black cp-btn" href="/index.php/admin/controlPanel"><i class="icon-caret-left"></i> back to control panel</a>
 <span class="validation-errors"></span>
 	<h2 class="text-center"><?echo $title;?></h2>
@@ -22,7 +22,7 @@
 			
 			foreach($accounts as $account):?>
 				
-				<tr>
+				<tr class="account-row">
 					<td><?php echo $account['description'];?></td>
 					<td>
 						<form method="post" name="message_<?php echo $account['user_id']?>" id="message_<?php echo $account['user_id']?>" action="<?php echo base_url();?>index.php/message/compose">
@@ -33,7 +33,7 @@
 					<td><?php echo $account['company'];?></td>
 					<td><a href="tel:<?php echo $account['phone'];?>"><?php echo $account['phone'];?></a></td>
 					<td><a href="mailto:<?php echo $account['email'];?>"><?php echo $account['email'];?></a></td>
-					<td><?php if($account['active']){echo 'yes';} else {echo 'no';}?></td>
+					<td><?php if($account['active']){echo '<i class="icon-ok"></i>';} else {echo '<i class="icon-warning-sign"></i>';}?></td>
 					<td><?php if($account['active']):
 						echo form_open('admin/accounts/disable_account','',array('id'=>$account['user_id']));?>
 						<button class="cancel btn" name="submit_<?php echo $account['user_id']?>"type="submit">disable</button>
@@ -46,7 +46,7 @@
 						</form>
 					</td>
 					<td><?php echo $account['expiration'];?></td>
-					<td><?php echo form_open('admin/accounts/expiration','',array('id'=>$account['user_id'])).form_input($date_input);?><button name="date_<?php echo $account['user_id']?>" type="submit">update</button></form></td>
+					<td><?php echo form_open('admin/accounts/expiration','',array('id'=>$account['user_id'])).form_input($date_input);?><button class="black update btn" name="date_<?php echo $account['user_id']?>" type="submit">update</button></form></td>
 				</tr>
 				
 				

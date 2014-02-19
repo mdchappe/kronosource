@@ -1,4 +1,6 @@
-<div class="container page-content message-inbox"><div class="inner">
+<div class="container page-content message-inbox">
+<a class="btn black cp-btn" href="/index.php/message/inbox"><i class="icon-caret-left"></i> back to messages</a>
+<div class="inner">
 <span class="validation-errors"></span>
 <h2 class="text-center"><i class="icon-comments-alt"></i> <?php echo $message['subject'];?></h2>
 <hr>
@@ -17,13 +19,12 @@
 </div>
 
 <p class="message"><?php echo nl2br($message['message']);?></p>
-<a class="btn" href="/index.php/message/inbox"><i class="icon-caret-left"></i> back to messages</a>
 <form method="post" name="delete" id="delete" action="<?php echo base_url();?>index.php/message/delete">
 	<input type=hidden name="id" value="<?php echo $message['message_id'];?>" />
 	<a class="btn cancel" href="javascript: void()" onclick="document.getElementById('delete').submit()"><i class="icon-trash"></i> Delete</a>
 </form>
 <form method="post" name="reply" id="reply" action="<?php echo base_url();?>index.php/message/compose">
 	<input type=hidden name="message_id" value="<?php echo $message['message_id'];?>" />
-	<a class="btn reply-btn" href="javascript: void()" onclick="document.getElementById('reply').submit()"><i class="icon-reply"></i> Reply</a>
+	<a class="btn black reply-btn" href="javascript: void()" onclick="document.getElementById('reply').submit()">Reply <i class="icon-caret-right"></i></a>
 </form>
 </div></div> 
