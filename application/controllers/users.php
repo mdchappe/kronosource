@@ -66,6 +66,7 @@
 					
 						$this->load->vars($data);
 						$this->load->model('preregistration_model');
+						$code = $this->input->post('code');
 						$this->preregistration_model->disable_registration_code($code);
 						
 						redirect('/','refresh');
@@ -80,6 +81,7 @@
 			
 			$this->load->helper('form');
 			$this->load->library('form_validation');
+			$this->load->model('preregistration_model');
 			
 			$this->form_validation->set_rules('username','User Name','trim|required|min_length[6]|max_length[18]|xss_clean|is_unique[users.username]');
 			$this->form_validation->set_rules('password','Password','trim|required|min_length[8]|max_length[18]');
@@ -114,12 +116,7 @@
 				$this->load->library('upload', $config);
 				
 				if(!$this->upload->do_upload()) {
-					$error = array('error' => $this->upload->display_errors());
-					foreach($error as $key => $value):
-						echo $key.': '.$value.'<br/>';
-					endforeach;
 					$upload_data['file_name'] = 'none.jpg';
-					return FALSE;
 				} else {
 					
 					$upload_data = $this->upload->data();
@@ -167,8 +164,7 @@
 						$data['the_user'] = $this->the_user;
 						
 						$this->load->vars($data);
-						
-						$this->load->model('preregistration_model');
+						$code = $this->input->post('code');
 						$this->preregistration_model->disable_registration_code($code);
 						
 						redirect('/','refresh');

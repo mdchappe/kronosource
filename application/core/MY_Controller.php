@@ -49,6 +49,10 @@
 				$data['the_user'] = $this->the_user;
 				
 				$this->load->vars($data);
+				
+				$this->load->model('announcement_model');
+				
+				$data['announcement'] = $this->announcement_model->get_announcements('locator');
 			}
 			
 			else {
@@ -75,6 +79,10 @@
 				$data['the_user'] = $this->the_user;
 				
 				$this->load->vars($data);
+				
+				$this->load->model('announcement_model');
+				
+				$data['announcement'] = $this->announcement_model->get_announcements('property');
 			}
 			
 			else {
