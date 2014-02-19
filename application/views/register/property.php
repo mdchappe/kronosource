@@ -21,14 +21,16 @@
 			<?php echo form_input('email','', $reg_opts);?><br/>
 			<label for="email">Re-enter Email Address&nbsp;:&nbsp;</label>
 			<?php echo form_input('email_verify','', $reg_opts);?><br/>
-			<?php echo form_fieldset_close();
+			<?php echo form_fieldset_close();?>
+			<hr>
+			<?php
 				  echo form_fieldset('Property Information');
 			?>
-			<img src="<?php echo base_url();?>assets/img/profile/none.jpg" style="float:left"/><label for="userfile">Profile Image<small> (optional)&nbsp;:&nbsp;</small></label>
-			<?php echo form_upload('userfile');?><br>
+			<img src="<?php echo base_url();?>assets/img/profile/none.jpg"/><span class="img-wrap"><label for="userfile">Profile Image<small> (optional)&nbsp;:&nbsp;</small></label><br>
+			<?php echo form_upload('userfile');?></span><br>
 			<label for="property_name">Property Name&nbsp;:&nbsp;</label>
 			<?php echo form_input('property_name','', $reg_opts);?><br/>
-			<label for="display_name">Display Name<small>(for messages)&nbsp;:&nbsp;</small></label>
+			<label for="display_name">Display Name&nbsp;:&nbsp;</label>
 			<?php echo form_input('display_name','', $reg_opts);?><br/>
 			<label for="management">Property Management&nbsp;:&nbsp;</label>
 			<?php echo form_input('management');?><br/>
@@ -36,17 +38,17 @@
 			<?php echo form_input('first_name','', $reg_opts);?><br/>
 			<label for="last_name">Contact's Last Name&nbsp;:&nbsp;</label>
 			<?php echo form_input('last_name','', $reg_opts);?><br/>
-			<label for="phone">Phone(include area code)&nbsp;:&nbsp;</label>
+			<label for="phone">Phone <small>(with area code)</small>&nbsp;:&nbsp;</label>
 			<?php echo form_input('phone','', $reg_opts);?><br/>
 			<label for="street">Street&nbsp;:&nbsp;</label>
 			<?php echo form_input('street','', $reg_opts);?><br/>
 			<label for="city">City&nbsp;:&nbsp;</label>
 			<?php echo form_input('city','', $reg_opts);?><br/>
 			<label for="state">State&nbsp;:&nbsp;</label>
-			<?php echo form_dropdown('state',array('tx'=>'TX'),'TX', $reg_opts);?><br><br>
+			<?php echo form_dropdown('state',array('tx'=>'TX'),'TX', $reg_opts);?><br>
 			<label for="zip">Zip Code&nbsp;:&nbsp;</label>
 			<?php echo form_input('zip','', $reg_opts);?><br/>
-			<?php echo form_fieldset_close(); ?>
+			<?php echo form_fieldset_close(); ?><hr>
 			<div class="checkboxes">
 			<?php echo form_fieldset('Property Features');
 				  echo form_checkbox('fitness','24-hour Fitness Center',FALSE).' 24-hour Fitness Center<br/>';
@@ -65,15 +67,15 @@
 				  echo form_checkbox('court','Sports Courts',FALSE).' Sports Courts<br/>';
 				  echo form_checkbox('dog','Dogs',FALSE).' Dogs<br/>';
 				  echo form_checkbox('cat','Cats',FALSE).' Cats<br/>';
-				  echo form_checkbox('dog_park','Dog Park',FALSE).' Dog Park<br/><br>';
+				  echo form_checkbox('dog_park','Dog Park',FALSE).' Dog Park<br/><br><span class="trash-cable">';
 				  echo form_label('Trash Collection&nbsp;:&nbsp;','trash');
-				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),'Dumpsters').'<br/><br>';
+				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),'Dumpsters').'<br/>';
 				  echo form_label('Cable Provider(s)&nbsp;:&nbsp;','cable');
 				  echo form_input('cable');
-				  echo form_fieldset_close(); ?>
+				  echo form_fieldset_close('</span>'); ?>
 				  
 				  <input type="hidden" name="code" value="<?php echo $code?>" />
-			<button class="btn pull-right" type="submit" name="submit"><i class="icon-reply"></i> submit</button>
+			<button class="btn pull-right" type="submit" name="submit">register <i class="icon-caret-right"></i></button>
 			</div>
 		</form>
 	</div>

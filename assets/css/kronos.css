@@ -6361,6 +6361,38 @@ footer .footer-toe {
   position: relative;
   top: -2px;
 }
+.register-wrap span.img-wrap {
+  display: inline-block;
+  margin-left: 50px;
+}
+.register-wrap input[type="file"] {
+  height: 30px;
+  line-height: 0px !important;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.register-wrap input[type="file"]:focus {
+  outline: none;
+}
+.register-wrap select {
+  width: 280px;
+  height: 35px;
+}
+.register-wrap input {
+  width: 265px;
+}
+.register-wrap input[type="checkbox"] {
+  width: auto;
+  margin-top: -2px;
+}
+.register-wrap img {
+  margin-bottom: 20px;
+}
+.register-wrap .trash-cable {
+  position: absolute;
+  bottom: 330px;
+  left: 250px;
+}
 /* announcement wrapper */
 .announcement-wrapper table {
   width: 100%;

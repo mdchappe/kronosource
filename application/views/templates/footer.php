@@ -9,7 +9,8 @@
 <span class="overlay"></span>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-<script type=text/javascript src="<?php echo base_url();?>assets/js/bootstrap-datepicker.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap-datepicker.js"></script>
+<script src="<?php echo base_url();?>assets/js/clickoutside.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/kronos.js"></script>
 </body>
 </html>
