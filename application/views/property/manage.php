@@ -1,11 +1,13 @@
 <div class="container page-content property-edit">
+<a class="btn black p-property-switch active-tab">property management</a>
+<a class="btn black p-unit-switch">unit management</a>
 	<div class="edit-inner">
-		
+		<div class="prop-mgmt">
 		<?php if(isset($status)):
 		echo $status;
 		endif; ?>
 		<br>
-		<h2 class="text-center"><i class="icon-cog"></i> Property Management</h2>
+		<h2 class="text-center">Property Management</h2>
 		<hr>
 		<?php echo form_error('username','<p>username: ','</p>'); ?>
 		<?php echo form_error('password','<p>password: ','</p>'); ?>
@@ -62,8 +64,13 @@
 		</div>
 			<hr>
 			<div class="checkboxes">
-			<?php
-				  echo form_fieldset('Property Features');
+			<ul class="manage-tabs">
+				<li class="pf"><a class="btn">features</a></li>
+				<li class="pp"><a class="btn black">pet policy</a></li>
+				<li class="pa"><a class="btn black">announcement</a></li>
+			</ul>
+			<?php echo '<div id="property-features">';
+				  echo form_fieldset('property features');
 				  echo form_checkbox('fitness','24-hour Fitness Center',$fitness).' <span>24-hour Fitness Center</span>';
 				  echo form_checkbox('clubhouse','Clubhouse',$clubhouse).' <span>Clubhouse</span>';
 				  echo form_checkbox('blinds','2-inch Wood Blinds',$blinds).' <span>2-inch Wood Blinds</span>';
@@ -84,60 +91,64 @@
 				  echo form_label('Trash Collection:&nbsp;&nbsp;','trash');
 				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),$trash);
 				  echo form_label('Cable Provider(s):&nbsp;&nbsp;','cable');
-				  echo form_input('cable',$cable);
-				  echo form_label('Pet Policy:&nbsp;&nbsp;','pet_policy');
-				  echo form_input('pet_policy',$pet_policy);
+				  echo form_input('cable',$cable); echo '<br><br>';
+				  echo form_fieldset_close('</div>');
+
+				  echo '<div id="pet-policy">';
+				  echo form_fieldset('pet policy');
+				  echo form_textarea('pet_policy',$pet_policy);
+				  echo '</div>';
 				  echo form_fieldset_close(); 
 				  
-				  echo form_fieldset('Property Announcement');
+				  echo '<div id="announcements1">';
+				  echo form_fieldset('announcements');
 				  echo form_textarea('announcement',$announcement);
+				  echo '</div>';
 				  echo form_fieldset_close();?>
 			
-			<button class="btn pull-right" type="submit" name="submit"><i class="icon-save"></i> save changes</button><br><br>
-			<hr>
+			<button class="btn black pull-right sub-btn" type="submit" name="submit"><i class="icon-save"></i> save changes</button>
 			</div>
 		</form>
-		
-		<h3>Unit Management</h3>
+		</div><!-- end prop-mgmt -->
+		<div class="unit-mgmt">
+		<span class="validation-errors"></span>
+		<h2 class="text-center">Unit Management</h2>
+		<hr>
 		<?php
 			if(!empty($units)) {
 				foreach($units as $unit): ?>
-					<p class="unit-list">
+					<div class="unit-list" style="border-bottom:1px solid #ccc;">
 						<span class="unit-label"><i class="icon-ok"></i> <?php echo $unit['name'] ?> </span>
+						<div class="all-the-icons">
 						<a class="pull-right just-icon cancel" href="/index.php/property/delete_unit/<?php echo $unit['id'] ?>"><i class="icon-remove-sign icon-large"></i></a>
-						<a class="pull-right push-left just-icon" href="/index.php/property/update_unit/<?php echo $unit['id'] ?>"><i class="icon-pencil icon-large"></i></a> 
-					</p>
-					<hr class="new-hr">
+						<a class="pull-right push-left black just-icon" href="/index.php/property/update_unit/<?php echo $unit['id'] ?>"><i class="icon-pencil icon-large"></i></a> 
+						
+						<form class="cam-icon pull-right" name="unit_gallery_<?php echo $unit['id'];?>" method="post" action="<?php echo base_url().'index.php/property/gallery'?>" id="unit_gallery_<?php echo $unit['id'];?>"> 
+							<input type="hidden" name="type" value="unit"/>
+							<input type="hidden" name="id" value="<?php echo $unit['id'];?>"/>
+							<a class="just-icon black" href="javascript:void();" onclick="document.getElementById('unit_gallery_<?php echo $unit['id'];?>').submit()"><i class="icon-camera-retro icon-large"></i></a>
+						</form>
+						</div>
+						</div>
 				<?php endforeach;
 			} else {	
 				echo "<p class='error'>No units currently listed.</p>";
 			}
 		?>
 		
-		<ul>
-			<li><a class="btn green pull-right" href="/index.php/property/add_unit"><i class="icon-plus"></i> Add Unit</a></li>
+		<ul class="low30">
+			<li><a class="btn black pull-right" href="/index.php/property/add_unit"><i class="icon-plus"></i> Add Unit</a></li>
 		</ul>
 		
-		<h3>Gallery Management</h3>
-			<ul>
+			<ul class="low30">
 				<li>
 					<form name="property_gallery" method="post" action="<?php echo base_url().'index.php/property/gallery'?>" id="property_gallery"> 
 						<input type="hidden" name="type" value="property"/>
 						<input type="hidden" name="id" value="<?php echo $the_user->id;?>"/>
-						<a href="javascript:void();" onclick="document.getElementById('property_gallery').submit()"><?php echo $the_user->company;?></a>
+						<a class="btn black" href="javascript:void();" onclick="document.getElementById('property_gallery').submit()"><i class="icon-camera-retro"></i> <?php echo $the_user->company;?> property photos</a>
 					</form>
 				</li>
-				<?php if(!empty($units)) :
-					foreach($units as $unit): ?>
-						<li>
-							<form name="unit_gallery_<?php echo $unit['id'];?>" method="post" action="<?php echo base_url().'index.php/property/gallery'?>" id="unit_gallery_<?php echo $unit['id'];?>"> 
-								<input type="hidden" name="type" value="unit"/>
-								<input type="hidden" name="id" value="<?php echo $unit['id'];?>"/>
-								<a href="javascript:void();" onclick="document.getElementById('unit_gallery_<?php echo $unit['id'];?>').submit()"><?php echo $unit['name'];?></a>
-							</form>
-						</li>
-					<?php endforeach;
-				endif;?>
 			</ul>
+		</div>
 	</div>
 </div>

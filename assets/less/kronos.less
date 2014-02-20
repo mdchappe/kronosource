@@ -288,7 +288,7 @@ footer {
 
 /* search properties page */
 .search-wrap {
-
+	.unit-search {display: none;}
 	span.property-features {
 		width: 650px;
 		display: inline-block;
@@ -299,8 +299,11 @@ footer {
 		span {display: inline-block; text-align: left;width: 200px;position: relative; top: 3px;}
 		.property-features-dropdowns label {width: 110px; position: relative; top: 3px; text-align: right;}
 		.property-features-dropdowns select {margin-right: 20px;}
-		select {width: 205px;}
 	}
+	select {width: 205px !important;}
+	.unit-switch {position: absolute;top: -28px;left: 141px;}
+	.property-switch {position: absolute;top: -28px;left: 10px;}
+	.active-tab {color: #333 !important; background: white !important; border:1px solid #ccc; border-bottom: none;}
 }
 
 /* home page */
@@ -333,12 +336,28 @@ footer {
 	.pushleft200 {margin-left: 157px; top: 0; width: auto;}
 	.width50 {width: 49%; display: inline-table;}
 	.unit-label {width: 300px; display: inline-block;}
-	.new-hr {border-top: 1px solid #E2E2E2; margin: 10px 0;}
+	.unit-list {padding: 5px 0;}
+	.low30 {margin-top: 30px;}
 	.push-left {position: relative; left: -10px;}
 	.unit-list .btn {position: relative; top:-5px;}
 	.edit-inner {padding-bottom: 50px;}
 	.edit-inner .icon-ok {color: #35aa47;}
 	.checkboxes span {width: 204px; display: inline-block;}
+	input[type='text'], input[type='password'] {width: 220px;} select {width: 235px; outline: none;}
+	#pet-policy textarea, #announcements1 textarea {width: 99%; height: 100px; max-width: 99%; margin-bottom: 20px;}
+	#pet-policy, #announcements1 {display: none;}
+	legend{margin-bottom: 10px;}
+	.unit-mgmt {display: none;}
+	ul.manage-tabs {color: white; font-size: 16px;padding-top: 10px; padding-bottom: 10px; margin-bottom: 20px;}
+	ul.manage-tabs li {display: inline-block; text-align: center; cursor: pointer;}
+	ul.manage-tabs li {.transition(.2s);}
+	.sub-btn {position: absolute; right: 30px; bottom: 30px;}
+	.p-unit-switch {position: absolute;top: -28px;left: 182px;}
+	.p-property-switch {position: absolute;top: -28px;left: 10px;}
+	.transition-none {.transition(0s);}
+	.active-tab {color: #333 !important; background: white !important; border:1px solid #ccc; border-bottom: none;}
+	.cam-icon {display: inline; position: relative; left: -20px; margin: 0;}
+	.all-the-icons {position: relative; top:-20px;}
 }
 
 /* view property page */ 

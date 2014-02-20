@@ -1,4 +1,7 @@
-<div class="container page-content home-wrapper"><div class="inner">
+<div class="container page-content">
+<a class="btn black cp-btn" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
+<div class="inner">
+
 	<?php
 		if($status) {
 			echo '<p>'.$status.'</p>';

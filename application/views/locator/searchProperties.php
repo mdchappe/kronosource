@@ -1,11 +1,14 @@
 <div class="container page-content search-wrap">
+<a class="btn black property-switch active-tab">property search</a>
+<a class="btn black unit-switch">unit search</a>
 	<div class="browse-inner">
 		<span class="validation-errors">
 		<?php if($status){
 			echo '<div class="error">'.$status.'</div>';
 		}?>
 		</span>
-		<h2 class="text-center"><i class="icon-search"></i> Property Search</h2>
+	<div class="property-search">
+		<h2 class="text-center">Property Search</h2>
 		<hr>
 		<?php echo form_open('search/properties');
 			  echo ('<div class="text-left"');
@@ -49,14 +52,14 @@
 						  echo ('</div>');
 						  echo ('</span>');
 						  echo form_fieldset_close(); ?>
-						  <br>
-					<button class="btn edit-btn pull-right" type="submit" name="submit"><i class="icon-search"></i> property search </button>
+						  <br><br>
+					<button class="btn black pull-right" type="submit" name="submit">property search <i class="icon-caret-right"></i></button>
 					</div>
 				<?php echo form_fieldset_close();
 					  echo form_close(); ?><br>
-					  <hr>
-		
-		<h2>Unit Search</h2>
+	</div><!-- end property search -->
+	<div class="unit-search">	
+		<h2 class="text-center">Unit Search</h2><hr>
 			<?php echo form_open('search/units');?>
 				<label for="term_min">Lease Term: </label>
 				<?php $term_min_opts = 'placeholder="no minimum"';  echo form_input('term_min','', $term_min_opts);?> <?php $term_min_opts = 'placeholder="no maximum"';  echo form_input('term_max','', $term_min_opts);?><br/>
@@ -77,10 +80,11 @@
 				<label for="date">Date Available: </label>
 				<?php echo form_input($date_input);?>
 				<label for="commission">Commission: </label>
-				<?php $comission_opts = 'placeholder="--"';  echo form_input('commission','', $comission_opts);?><br/>
+				<?php $comission_opts = 'placeholder="--"';  echo form_input('commission','', $comission_opts);?><br/><br>
 				
-				<button class="btn pull-right btn-primary edit-btn" type="submit" name="submit_unit"><i class="icon-search"></i> unit search </button> 
+				<button class="btn black pull-right" type="submit" name="submit_unit">unit search <i class="icon-caret-right"></i></button> 
 			<?php echo form_close();?>
+	</div>
 	</div>
 </div>
 

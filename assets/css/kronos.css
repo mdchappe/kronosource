@@ -5969,6 +5969,9 @@ footer .footer-toe {
   min-width: 100px;
 }
 /* search properties page */
+.search-wrap .unit-search {
+  display: none;
+}
 .search-wrap span.property-features {
   width: 650px;
   display: inline-block;
@@ -5992,8 +5995,24 @@ footer .footer-toe {
 .search-wrap span.property-features .property-features-dropdowns select {
   margin-right: 20px;
 }
-.search-wrap span.property-features select {
-  width: 205px;
+.search-wrap select {
+  width: 205px !important;
+}
+.search-wrap .unit-switch {
+  position: absolute;
+  top: -28px;
+  left: 141px;
+}
+.search-wrap .property-switch {
+  position: absolute;
+  top: -28px;
+  left: 10px;
+}
+.search-wrap .active-tab {
+  color: #333 !important;
+  background: white !important;
+  border: 1px solid #ccc;
+  border-bottom: none;
 }
 /* home page */
 .home-wrapper {
@@ -6085,9 +6104,11 @@ footer .footer-toe {
   width: 300px;
   display: inline-block;
 }
-.property-edit .new-hr {
-  border-top: 1px solid #E2E2E2;
-  margin: 10px 0;
+.property-edit .unit-list {
+  padding: 5px 0;
+}
+.property-edit .low30 {
+  margin-top: 30px;
 }
 .property-edit .push-left {
   position: relative;
@@ -6106,6 +6127,96 @@ footer .footer-toe {
 .property-edit .checkboxes span {
   width: 204px;
   display: inline-block;
+}
+.property-edit input[type='text'],
+.property-edit input[type='password'] {
+  width: 220px;
+}
+.property-edit select {
+  width: 235px;
+  outline: none;
+}
+.property-edit #pet-policy textarea,
+.property-edit #announcements1 textarea {
+  width: 99%;
+  height: 100px;
+  max-width: 99%;
+  margin-bottom: 20px;
+}
+.property-edit #pet-policy,
+.property-edit #announcements1 {
+  display: none;
+}
+.property-edit legend {
+  margin-bottom: 10px;
+}
+.property-edit .unit-mgmt {
+  display: none;
+}
+.property-edit ul.manage-tabs {
+  color: white;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.property-edit ul.manage-tabs li {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+.property-edit ul.manage-tabs li {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.property-edit .sub-btn {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+.property-edit .p-unit-switch {
+  position: absolute;
+  top: -28px;
+  left: 182px;
+}
+.property-edit .p-property-switch {
+  position: absolute;
+  top: -28px;
+  left: 10px;
+}
+.property-edit .transition-none {
+  -webkit-transition: 0s;
+  -moz-transition: 0s;
+  -ms-transition: 0s;
+  -o-transition: 0s;
+  -webkit-transition: all 0s ease-out;
+  -moz-transition: all 0s ease-out;
+  -ms-transition: all 0s ease-out;
+  -o-transition: all 0s ease-out;
+  transition: all 0s ease-out;
+}
+.property-edit .active-tab {
+  color: #333 !important;
+  background: white !important;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+.property-edit .cam-icon {
+  display: inline;
+  position: relative;
+  left: -20px;
+  margin: 0;
+}
+.property-edit .all-the-icons {
+  position: relative;
+  top: -20px;
 }
 /* view property page */
 .view-property .row {

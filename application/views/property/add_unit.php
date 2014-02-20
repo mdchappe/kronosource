@@ -1,4 +1,5 @@
 <div class="container page-content add-unit"><div class="inner">
+<a class="btn black j-back cp-btn"><i class="icon-caret-left"></i> back to property management</a>
 <br>
 <h2 class="text-center">ADD UNIT TO <?php echo $the_user->company; ?></h2>
 <hr>
@@ -53,11 +54,10 @@
 		  	
 		  </table>
 		  </div>
-		  <a class="btn pull-right add-term green" id="add_term"><i class="icon-plus"></i> Add Lease Term Entry</a>
+		  <a class="btn pull-right add-term green" id="add_term"><i class="icon-plus"></i> Add Lease Term</a>
 	<?php echo form_fieldset_close();?>
 	<input type="hidden" name="lease_term_count" value="0" id="lease_term_count"/>
-	<a class="btn pull-left" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
-	<button class="pull-right submit-unit btn" type="submit" name="submit"><i class="icon-reply"></i> submit</button>
+	<button class="pull-right submit-unit btn black" type="submit" name="submit">add unit <i class="icon-caret-right"></i></button>
 	</form>
 	
 	

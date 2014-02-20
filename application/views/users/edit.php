@@ -1,7 +1,7 @@
 <div class="container page-content edit-wrap">
 	<div class="edit-inner">
 		<span class="validation-errors"></span>
-		<h2 class="text-center"><i class="icon-pencil"></i>  Edit Profile</h2>
+		<h2 class="text-center">Edit Profile</h2>
 		<hr>
 		
 		<?php echo form_open('users/edit'); ?>

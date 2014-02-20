@@ -1,7 +1,8 @@
 <div class="container page-content browse-wrap">
+<a class="btn black j-back cp-btn"><i class="icon-caret-left"></i> back to search page</a>
 	<div class="browse-inner">
 		<span class="validation-errors"></span>
-		<h2 class="text-center"><i class="icon-search"></i> Search Results</h2>
+		<h2 class="text-center">unit Search Results</h2>
 		<hr>
 		<? if (empty($results)): ?>
 			<p>Your search returned no results. <a href="<?php echo base_url();?>index.php/locator/searchProperties">Try again.</a></p>

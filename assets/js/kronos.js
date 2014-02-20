@@ -107,7 +107,96 @@ $(document).ready(function(){
 		$('[rel="tooltip-right"]').tooltip({placement:'right'});
 	});
 	
+	//search page
+	$('.unit-switch').click(function() {
+		$('.browse-inner').animate({height:'492px'},400);
+		$('a.btn').removeClass('active-tab');
+		$(this).addClass('active-tab');
+		$('.property-search').fadeOut(400, function() {
+			$('.unit-search').fadeIn(400);
+		});
+	});
 	
+	$('.property-switch').click(function() {
+		$('.browse-inner').animate({height:'666px'},400);
+		$('a.btn').removeClass('active-tab');
+		$(this).addClass('active-tab');
+		$('.unit-search').fadeOut(400, function() {
+			$('.property-search').fadeIn(400);
+		});
+	});
+	
+	//property-management page
+	
+	$('.p-unit-switch').click(function() {
+		if ($(this).hasClass('active-tab')) {
+			return;
+		} else {
+		var unit_mgmt = $('.unit-mgmt').height() - 80;
+
+			$('.edit-inner').animate({height:unit_mgmt},400);
+			$('a.btn').removeClass('active-tab');
+			$(this).addClass('active-tab');
+			$('.prop-mgmt').fadeOut(400, function() {
+				$('.unit-mgmt').fadeIn(400);
+			});
+		}
+	});
+	
+	$('.p-property-switch').click(function() {
+		if ($(this).hasClass('active-tab')) {
+			return;
+		} else {
+			$('.edit-inner').animate({height:'922px'},400);
+			$('a.btn').removeClass('active-tab');
+			$(this).addClass('active-tab');
+			$('.unit-mgmt').fadeOut(400, function() {
+				$('.prop-mgmt').fadeIn(400);
+			});
+		}
+	});
+	
+	$('.manage-tabs .pf').click(function() {
+		$('.manage-tabs li a').addClass('black');
+		$(this).find('a').removeClass('black');
+		$('.edit-inner').animate({height:'922px'},200);
+		$('#pet-policy, #announcements1').fadeOut(200, function() {
+			$('#property-features').delay(200).fadeIn(200);
+		});
+	});
+	
+	$('.manage-tabs .pp').click(function() {
+		$('.manage-tabs li a').addClass('black');
+		$(this).find('a').removeClass('black');
+		$('.edit-inner').animate({height:'870px'},200);
+		$('#property-features, #announcements1').fadeOut(200, function() {
+			$('#pet-policy').delay(200).fadeIn(200);
+		});
+	});
+	
+	$('.manage-tabs .pa').click(function() {
+		$('.manage-tabs li a').addClass('black');
+		$(this).find('a').removeClass('black');
+		$('.edit-inner').animate({height:'870px'},200);
+		$('#property-features, #pet-policy').fadeOut(200, function() {
+			$('#announcements1').delay(200).fadeIn(200);
+		});
+	});
+	
+	
+	if(window.location.href.indexOf("manage") > -1) {
+    	var referrer =  document.referrer;
+		if (referrer.indexOf('gallery') > -1 || 
+			referrer.indexOf('update_unit') > -1 ||
+			referrer.indexOf('add_unit') > -1 ) {
+			$('a.btn').addClass('transition-none').removeClass('active-tab');
+			$('.p-unit-switch').addClass('active-tab transition-none');
+			$('.prop-mgmt').hide();
+			$('.unit-mgmt').show();
+			$('a.btn').removeClass('transition-none');
+			return false;
+		}
+	}
 	
 });//doc ready
 
