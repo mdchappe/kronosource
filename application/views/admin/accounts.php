@@ -3,7 +3,7 @@
 <span class="validation-errors"></span>
 	<h2 class="text-center"><?echo $title;?></h2>
 	<hr>
-	<?php if(isset($status)){echo '<p>'.$status.'</p>';}?>
+	<?php if(isset($status)){echo '<p class="error">'.$status.'</p>';}?>
 	
 	<table>
 		<tr class="top-row">

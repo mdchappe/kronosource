@@ -5254,6 +5254,9 @@ textarea:focus {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
 }
+select {
+  outline: none !important;
+}
 ::-webkit-input-placeholder {
   text-shadow: none;
   font-weight: 200;
@@ -6733,6 +6736,7 @@ footer .footer-toe {
 .register-wrap #announcement-ta {
   width: 100%;
   height: 100px;
+  max-width: 100%;
 }
 .register-wrap #announcement-dd,
 .register-wrap select[name="user"] {
@@ -6780,6 +6784,11 @@ footer .footer-toe {
   position: absolute;
   left: 165px;
   cursor: not-allowed;
+}
+.register-wrap .announce-label {
+  top: 11px;
+  left: 2px;
+  text-align: left;
 }
 .account-page {
   width: 1050px;

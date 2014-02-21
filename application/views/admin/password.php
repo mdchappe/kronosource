@@ -5,15 +5,15 @@
 		<hr>
 		<?php
 			if(isset($status)) {
-				echo '<p>'.$status.'</p>';
+				echo '<p class="error">'.$status.'</p>';
 			}
 			 
 			echo form_open('admin/password');?>
-					<label for="password">Enter New Password</label>
+					<label for="password">Enter New Password&nbsp;:&nbsp;</label>
 					<?php echo form_password('password','','required="required"');?><br/>
-					<label for="verify">Re-enter New Password</label>
-					<?php echo form_password('verify','','required="required"');?><br/>
-					<input type="submit" name="submit" value="Update" />
+					<label for="verify">Re-enter New Password&nbsp;:&nbsp;</label>
+					<?php echo form_password('verify','','required="required"');?><br><br>
+					<button type="submit" name="submit" class="btn black pull-right">update password <i class="icon-caret-right"></i></button>			
 				</fieldset>
 		</form>
 	</div>

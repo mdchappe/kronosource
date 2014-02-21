@@ -28,13 +28,13 @@
 		$delete_count = 0;
 		
 		foreach($regcodes as $regcode): ?>
-		<tr>
+		<tr class="account-row">
 			<td><?php echo $regcode['code'];?></td>
 			<td><?php echo $regcode['usertype'];?></td>
 			<td><?php echo $regcode['code_expiration'];?></td>
 			<td><?php echo $regcode['account_expiration'];?></td>
 			<td><?php echo form_open('admin/regcodes/deactivate', '', array('deactivate_id' => $regcode['id']));?>
-				<input type="submit" name="subnmit_<?php echo $delete_count?>" value="Deactivate" /></form></td>
+				<button class="cancel btn" type="submit" name="subnmit_<?php echo $delete_count?>">deactivate <i class="icon-caret-right"></i></form></td>
 		</tr>
 		
 		<?php $delete_count += 1;
