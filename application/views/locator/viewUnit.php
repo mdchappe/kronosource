@@ -20,7 +20,7 @@
 	<li><i class="icon-ok"></i> Floor: <b><?php echo $unit->floor;?></b></li>
 	<li><i class="icon-ok"></i> Furnished: <b><?php if($unit->furnished){echo 'yes';} else {echo 'no';}?></b></li>
 	<li><i class="icon-ok"></i> Washer/Dryer: <b><?php echo $unit->washer;?></b></li>
-	<li><i class="icon-ok"></i> Direction Facing: <b><?php echo $unit->direction;?></b></li><br><hr>
+	<li><i class="icon-ok"></i> Patio Facing: <b><?php echo $unit->direction;?></b></li><br><hr>
 	<li class="longer"><i class="icon-ok"></i> Requirements: <b><?php if(!property_exists($unit, 'requirements') || $unit->requirements == null || $unit->requirements == ''){echo 'none';} else {echo $unit->requirements;}?></b></li>
 	<li class="longer"><i class="icon-ok"></i> Specials: <b><?php if(!property_exists($unit, 'specials') || $unit->specials == null || $unit->specials == ''){echo 'none';} else {echo $unit->specials;}?></b></li>
 	<li class="longer"><i class="icon-ok"></i> Commission: <b><?php if(!property_exists($unit, 'commission') || $unit->commission == null || $unit->commission == ''){echo 'none';} else {echo $unit->commission;}?></b></li>

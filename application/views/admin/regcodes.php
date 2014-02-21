@@ -7,10 +7,10 @@
 	<?php $reg_opts = 'required="required"' ?>
 	<?php echo form_open('admin/regcodes/add');?>
 		<h3>Add New Registration Code</h3>
-		<span class="code-mask"></span>
-		<label for="code"><span id="random" class="gen btn">generate code <i class="icon-caret-right"></i></span></label><?php echo form_input(array('id'=>'code','name'=>'code', 'required'=>'required'));?><br/>
+		<label for="code"><span id="random" class="gen btn">generate code <i class="icon-caret-right"></i></span></label><?php echo form_input(array('id'=>'code','name'=>'code'));?><br/>
 		<label for="type">Account Type&nbsp;:&nbsp;</label><?php echo form_dropdown('type',$type_dropdown);?><br/>
-		<label for="exp">Expiration Date&nbsp;:&nbsp;</label><?php echo form_input($date_input,'', $reg_opts);?><br/><br>
+		<label for="exp">Code Expiration Date&nbsp;:&nbsp;</label><?php echo form_input($date_input,'', $reg_opts);?><br/>
+		<label for="acct_exp">Account Expiration Date&nbsp;:&nbsp;</label><?php echo form_input($date_input_2,'', $reg_opts);?><br/><br>
 		<button class="btn pull-right black" type="submit" name="submit">add registration code <i class="icon-caret-right"></i></button>
 	<?php echo form_close();?>
 	<br><hr>

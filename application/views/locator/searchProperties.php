@@ -73,7 +73,7 @@
 				 <?php $size_min_opts = 'placeholder="no minimum"';  echo form_input('size_min','', $size_min_opts);?>
 				<label for="floor">Floor: </label>
 				<?php $floor_opts = 'placeholder="no preference"'; echo form_input('floor','', $floor_opts);?><br/>
-				<label for="direction">Direction Facing: </label>
+				<label for="direction">Patio Facing: </label>
 				<?php echo form_dropdown('direction', $direction_dropdown);?>
 				<label for="washer">Washer/Dryer: </label>
 				<?php echo form_dropdown('washer', $washer_dropdown);?><br/>

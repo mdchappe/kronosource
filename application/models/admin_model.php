@@ -25,18 +25,21 @@
 			return 'The chosen registration code has been deactivated.';
 		}
 		
-		public function add_code($code, $usertype, $expiration) {
+		public function add_code($code, $usertype, $expiration, $acct_exp) {
 			
-			$data = array(
-				'code' => $code,
-				'usertype' => $usertype,
-				'expiration' => $expiration
-			);
+			$new_code = array();
+			$new_code['code'] = $code;
+			$new_code['usertype'] = $usertype;
+			$new_code['code_expiration' ]= $expiration;
+			$new_code['account_expiration'] = $acct_exp;
 			
-			$this->db->set($data);
-			$this->db->insert('registration_codes');
 			
-			return 'Registration code '.$code.' activated.';
+			if($this->db->insert('registration_codes',$new_code)){
+			
+				return 'Registration code '.$code.' activated.';
+			} else {
+				return 'Registration code creation failed. Please try again. '.$this->db->last_query();
+			}
 		}
 		
 		public function get_accounts() {

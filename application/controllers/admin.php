@@ -34,6 +34,13 @@
 				'placeholder' => 'mm/dd/yyyy'
 			);
 			
+			$date_input_2 = array(
+				'name' => 'acct_exp',
+				'class' => 'date_input',
+				'type' => 'text',
+				'placeholder' => 'mm/dd/yyyy'
+			);
+			
 			$type_dropdown = array(
 				'locator' => 'Locator',
 				'property' => 'Property'
@@ -49,8 +56,11 @@
 			if($function == 'add') {
 				
 				$exp = $this->convert_date_to_unix($this->input->post('exp'));
+				$acct_exp = $this->convert_date_to_unix($this->input->post('acct_exp'));
+				$code = $this->input->post('code');
+				$type = $this->input->post('type');
 				
-				$activated = $this->admin_model->add_code($this->input->post('code'), $this->input->post('type'), $exp);
+				$activated = $this->admin_model->add_code($code, $type, $exp, $acct_exp);
 				$this->session->set_flashdata('status', $activated);
 				redirect('admin/regcodes');
 			}
@@ -66,6 +76,7 @@
 			}
 			
 			$data['date_input'] = $date_input;
+			$data['date_input_2'] = $date_input_2;
 			$data['type_dropdown'] = $type_dropdown;
 			
 			$data['regcodes'] = $regcodes;
