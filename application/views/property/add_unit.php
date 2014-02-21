@@ -19,7 +19,7 @@
 	<?php echo form_input('unit_size');?><label class="text-left"><small><b>&nbsp; sq. ft.</b></small></label><br/>
 	<label for="unit_floor">Floor:&nbsp;</label>
 	<?php echo form_input('unit_floor');?><br/>
-	<label for="unit_direction">Direction Facing:&nbsp;</label>
+	<label for="unit_direction">Patio Facing:&nbsp;</label>
 	<?php echo form_dropdown('unit_direction', $direction_dropdown);?><br/>
 	<label for="unit_washer">Washer/Dryer:&nbsp;</label>
 	<?php echo form_dropdown('unit_washer', $washer_dropdown);?><br/>

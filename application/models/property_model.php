@@ -79,7 +79,7 @@
 			
 			$data['trash'] = $this->input->post('trash');
 			
-			$data['announcement'] = $this->input->post('announcement');
+			//$data['announcement'] = $this->input->post('announcement');
 			
 			$data['pet_policy'] = $this->input->post('pet_policy');
 			

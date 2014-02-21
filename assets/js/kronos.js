@@ -222,6 +222,5 @@ function generate_random(){
 	while(random_string.length < 8){
 		random_string += characters[ Math.floor(Math.random()*characters.length) ];
 	}
-	
-	$('#code').attr('value',random_string);
+	$('#code').val(random_string);
 }

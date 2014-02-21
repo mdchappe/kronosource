@@ -36,7 +36,7 @@
 	 
 	foreach($features as $feature => $value):
 		
-		if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated'){ ?>
+		if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated' && $feature != 'announcement' && $feature != 'announcement_updated'){ ?>
 	<li><i class="icon-ok"></i> <?php 
 		if($feature == 'cable'){echo 'Cable Providers: ';} else if($feature == 'trash'){echo 'Trash Collection: ';}echo $value;?></li>
 	<?php } 
@@ -73,5 +73,9 @@
 	</tr>
 	<?php endforeach; ?>
 </table>
+<h3>Announcement</h3>
+<div class="row">
+<?php echo $features['announcement'];?>
+</div>
 </div>
 </div></div>

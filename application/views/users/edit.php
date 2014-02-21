@@ -41,7 +41,7 @@
 				<?php echo form_input('last_name',$the_user->last_name);?><br/>
 				<label for="phone">Phone(include area code): </label>
 				<?php echo form_input('phone',$the_user->phone);?><br/>
-				<label for="company">Company(optional)</label>
+				<label for="company">Company: </label>
 				<?php echo form_input('company',$the_user->company);?><br/>
 			
 			<?php } ?>
