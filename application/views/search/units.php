@@ -1,5 +1,5 @@
 <div class="container page-content browse-wrap">
-<a class="btn black j-back cp-btn"><i class="icon-caret-left"></i> back to search page</a>
+<a class="btn black cp-btn" href="/index.php/locator/searchProperties"><i class="icon-caret-left"></i> back to search page</a>
 	<div class="browse-inner">
 		<span class="validation-errors"></span>
 		<h2 class="text-center">unit Search Results</h2>

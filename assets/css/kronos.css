@@ -6008,6 +6008,17 @@ footer .footer-toe {
   top: -28px;
   left: 10px;
 }
+.search-wrap .transition-none {
+  -webkit-transition: 0s;
+  -moz-transition: 0s;
+  -ms-transition: 0s;
+  -o-transition: 0s;
+  -webkit-transition: all 0s ease-out;
+  -moz-transition: all 0s ease-out;
+  -ms-transition: all 0s ease-out;
+  -o-transition: all 0s ease-out;
+  transition: all 0s ease-out;
+}
 .search-wrap .active-tab {
   color: #333 !important;
   background: white !important;
