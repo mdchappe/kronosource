@@ -2,10 +2,10 @@
 <a class="btn black cp-btn" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
 <div class="edit-inner">
 <span class="validation-errors"></span>
-<h2 class="text-center"><i class="icon-pencil"></i> EDIT <?php echo $unit->name?></h2>
+<h2 class="text-center">EDIT <?php echo $unit->name?></h2>
 <hr>
 <?php if($this->session->flashdata('status')){
-		echo '<p>'.$this->session->flashdata('status').'</p>';
+		echo '<p class="error update-u">'.$this->session->flashdata('status').'</p>';
 	  }
 	  
 	  echo form_open('property/update_unit/'.$unit_id); 
@@ -38,10 +38,11 @@
 	<label for="unit_commission">Commission&nbsp;:&nbsp;</label>
 	<?php echo form_input('unit_commission',$unit->commission);?><label class="text-left"><small><b>&nbsp;&nbsp;%</b></small></label><br/><br><br>
 	
-	<?php echo form_fieldset_close();
-		  echo form_fieldset('Rent Information'); ?>
-		  <div class="row">
+	<?php echo form_fieldset_close(); ?>
+	
+	<?php echo form_fieldset('Rent Information'); ?>
 		  <table id="rent_information_table">
+		  <a class="btn green add-term pull-right"><i class="icon-plus"></i> Add Lease Term Entry</a>
 		  	<tr class="top-row" id="rent_info_table_header">
 		  		<th>Lease Term</th>
 		  		<th>Monthly Rent</th>
@@ -55,7 +56,7 @@
 		  	$terms = -1;
 		  	foreach($rent as $term): ?>
 		  	
-		  	<tr>
+		  	<tr class="account-row">
 		  		<td><?php echo $term['term'].' months'; ?></td>
 		  		<td><?php echo '$'.$term['rent']; ?></td>
 		  		<td><?php echo '$'.$term['deposit']; ?></td>
@@ -79,13 +80,12 @@
 		  	<?php endforeach;?>
 		  	
 		  </table>
-		  </div>
-		  <a class="btn green pull-right add-more" id="add_term"><i class="icon-plus"></i> Add Lease Term Entry</a>
 	<?php echo form_fieldset_close();?>
 	
 	<input type="hidden" name="unit_id" value="<?php echo $unit_id ?>" id="unit_id"/> 
 	<input type="hidden" name="lease_term_count" value="0" id="lease_term_count"/>
-	<button class="pull-right btn black" type="submit" name="submit">submit <i class="icon-caret-right"></i></button>
+	<a class="btn cancel pull-right" href="/index.php/property/manage"><i class="icon-trash"></i> discard changes</a>
+	<button class="pull-right btn black submit-btn" type="submit" name="submit"><i class="icon-save"> save changes</i></button>
 	</form>
 	
 	

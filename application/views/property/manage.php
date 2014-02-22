@@ -3,9 +3,10 @@
 <a class="btn black p-unit-switch">unit management</a>
 	<div class="edit-inner">
 		<div class="prop-mgmt">
+		<p class="error">
 		<?php if(isset($status)):
 		echo $status;
-		endif; ?>
+		endif; ?></p>
 		<br>
 		<h2 class="text-center">Property Management</h2>
 		<hr>

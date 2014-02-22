@@ -71,7 +71,7 @@ h1,h2,h3,h4,h5,h6,legend {
 
 /* all errors */
 .validation-errors {display: inline-block; font-weight: 200;}
-.error { color: red;font-size: 16px; font-weight: 200;}
+.error { color: red;font-size: 16px; font-weight: 200; position: absolute; top: 52px;}
 
 /* buttons */
 .btn, button {
@@ -454,16 +454,18 @@ footer {
 	table {width: 100%; text-align: center; font-size: 12px;
 		.top-row {background: #333; color: white;}
 		input {margin-bottom: 5px; margin-top: 5px;}
-		tr {border: 1px solid #E4E2E2;}
+		tr.account-row:nth-child(odd) {background: #F1F0F0;}
+		tr.account-row {.transition(.1s);}
+		tr.account-row:hover {.transition(.1s);background: rgb(209, 209, 209); cursor: pointer;}
 	}
 	table input {width: 100px;}
-	.add-term { margin: 10px 0;}
+	.add-term { margin: 10px 0 -50px 0px; position: relative; top:-50px;}
 	textarea {max-width: 720px;}
+	.submit-unit {margin-right: 10px;}
 }
 
 /*add unit success page*/
 .add-unit-success {
-	h2 {text-transform: uppercase;}
 }
 
 /*update unit page*/
@@ -473,12 +475,16 @@ footer {
 	.row {margin: 0; border: 1px solid #E4E2E2; position: relative;}
 	.push-left {position: relative; left: -10px;}
 	.push-it {margin-left: 107px; position: relative; top: -2px;}
-	table {width: 100%; text-align: center; font-size: 12px;
+	table {width: 100%; text-align: center; font-size: 12px; margin-bottom: 10px;
 		.top-row {background: #333; color: white;}
 		.btn, input {margin-bottom: 5px; margin-top: 5px;}
-		tr {border-bottom: 1px solid #E4E2E2;}
+		tr.account-row:nth-child(odd) {background: #F1F0F0;}
+		tr.account-row {.transition(.1s);}
+		tr.account-row:hover {.transition(.1s);background: rgb(209, 209, 209); cursor: pointer;}
 		input {width: 100px;}
 	}
+	.add-term { margin: 10px 0 -50px 0px; position: relative; top:-50px;}
+	.submit-btn {margin-bottom: 30px; margin-right: 10px;}
 }
 
 /*update lease terms page*/
@@ -527,6 +533,9 @@ footer {
 	.good-code {font-size: 20px; font-weight: 200; color: #35aa47; text-align: center;}
 	.code-mask {height: 50px; width: 300px; position: absolute; left: 165px; cursor: not-allowed;}
 	.announce-label {top: 11px; left: 2px; text-align: left;}
+	.gallery label {position: relative; top:0; left: -2px;}
+	.gallery .error {top: 100px;text-align: center;width: 900px;}
+	.error.update-u {}
 }
 
 .account-page {width: 1050px;}

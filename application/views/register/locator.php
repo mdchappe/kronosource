@@ -32,7 +32,7 @@
 			
 			<input type="hidden" name="code" value="<?php echo $code;?>" />
 			
-			<button class="btn pull-right" type="submit" name="submit">register <i class="icon-caret-right"></i></button>
+			<button class="btn black pull-right" type="submit" name="submit">register <i class="icon-caret-right"></i></button>
 		</form>
 	</div>
 </div>

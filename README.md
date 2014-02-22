@@ -11,7 +11,7 @@ kronosource
 <li>create a database named <code>db491689781</code></li>
 <li>click on the newly created db in the left-nav</li>
 <li>click on the import tab</li>
-<li>import the <code>kronosource.sql</code> file in <code>kronosource_local_db.zip</code></li>
+<li>import the <code>db491689781.sql</code> file in <code>kronosource_local_db.zip</code></li>
 <li>cd to <code>your-local-repository/application/config</code></li>
 <li>run: <code>git update-index --assume-unchanged config.php</code></li>
 <li>run: <code>git update-index --assume-unchanged database.php</code></li>

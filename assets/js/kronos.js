@@ -49,7 +49,7 @@ $(document).ready(function(){
      });
      
 	 if(window.location.href.indexOf("register") > -1) {
-    	$('.nav1-feedback').hide();
+    	$('.nav1-feedback').remove();
 	 } 
      
      $('.overlay, .not-yet').click(function() {
