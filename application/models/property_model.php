@@ -194,8 +194,8 @@
 					$rent_data['term'] = $this->input->post('lease_term_'.$term);
 					$rent_data['rent'] = $this->input->post('monthly_rent_'.$term);
 					$rent_data['deposit'] = $this->input->post('deposit_'.$term);
-					$rent_data['pet_rent'] = $this->input->post('pet_rent_'.$term);
-					$rent_data['pet_deposit'] = $this->input->post('pet_deposit_'.$term);
+					//$rent_data['pet_rent'] = $this->input->post('pet_rent_'.$term);
+					//$rent_data['pet_deposit'] = $this->input->post('pet_deposit_'.$term);
 					$this->db->insert('rent',$rent_data);
 					$rent_data = array();
 					$term++;
@@ -207,8 +207,8 @@
 				$rent_data['term'] = $this->input->post('lease_term_0');
 				$rent_data['rent'] = $this->input->post('monthly_rent_0');
 				$rent_data['deposit'] = $this->input->post('deposit_0');
-				$rent_data['pet_rent'] = $this->input->post('pet_rent_0');
-				$rent_data['pet_deposit'] = $this->input->post('pet_deposit_0');
+				//$rent_data['pet_rent'] = $this->input->post('pet_rent_0');
+				//$rent_data['pet_deposit'] = $this->input->post('pet_deposit_0');
 				$this->db->insert('rent',$rent_data);
 			}
 			
@@ -250,8 +250,8 @@
 			$rent_data['term'] = $this->input->post('lease_term');
 			$rent_data['rent'] = $this->input->post('monthly_rent');
 			$rent_data['deposit'] = $this->input->post('deposit');
-			$rent_data['pet_rent'] = $this->input->post('pet_rent');
-			$rent_data['pet_deposit'] = $this->input->post('pet_deposit');
+			//$rent_data['pet_rent'] = $this->input->post('pet_rent');
+			//$rent_data['pet_deposit'] = $this->input->post('pet_deposit');
 			$this->db->where('id',$id);
 			$this->db->update('rent',$rent_data);
 			

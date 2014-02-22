@@ -265,7 +265,7 @@
 						$params['term'] = $this->input->post('lease_term_'.$i);
 						$params['rent'] = $this->input->post('monthly_rent_'.$i);
 						$params['deposit'] = $this->input->post('deposit_'.$i);
-						$params['pet_rent'] = $this->input->post('pet_rent_'.$i);
+						//$params['pet_rent'] = $this->input->post('pet_rent_'.$i);
 						$params['pet_deposit'] = $this->input->post('pet_deposit_'.$i);
 						$params['unit_id'] = $id;
 						

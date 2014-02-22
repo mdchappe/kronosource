@@ -47,8 +47,6 @@
 		  		<th>Lease Term</th>
 		  		<th>Monthly Rent</th>
 		  		<th>Deposit</th>
-		  		<th>Pet Rent</th>
-		  		<th>Pet Deposit</th>
 		  		<th> </th>
 		  		<th> </th>
 		  	</tr>
@@ -60,23 +58,9 @@
 		  		<td><?php echo $term['term'].' months'; ?></td>
 		  		<td><?php echo '$'.$term['rent']; ?></td>
 		  		<td><?php echo '$'.$term['deposit']; ?></td>
-		  		<td><?php echo '$'.$term['pet_rent']; ?></td>
-		  		<td><?php echo '$'.$term['pet_deposit']; ?></td>
 		  		<td><a class="just-icon" href="/index.php/property/update_lease_term/<?php echo $term['id']; ?>"><i class="icon-pencil icon-large"></i></a></td>
 		  		<td><a class="just-icon cancel" href="/index.php/property/delete_lease_term/<?php echo $term['id']; ?>"><i class="icon-trash icon-large"></i></a></td>
-		  	</tr>
-		  	<!--
-<tr>
-		  		<td><?php echo form_input('lease_term_'.$term['id'],$term['term']);?></td>
-		  		<td><?php echo form_input('monthly_rent_'.$term['id'],$term['rent']);?></td>
-		  		<td><?php echo form_input('deposit_'.$term['id'],$term['deposit']);?></td>
-		  		<td><?php echo form_input('pet_rent_'.$term['id'],$term['pet_rent']);?></td>
-		  		<td><?php echo form_input('pet_deposit_'.$term['id'],$term['pet_deposit']);?><input type="hidden" name</td>
-		  		<td></td>
-		  		<td></td>
-		  	</tr>
--->
-		  	
+		  	</tr>		  	
 		  	<?php endforeach;?>
 		  	
 		  </table>

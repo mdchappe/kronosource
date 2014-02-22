@@ -37,16 +37,12 @@
 		<th>Lease Term</th>
 		<th>Monthly Rent</th>
 		<th>Deposit</th>
-		<th>Pet Rent</th>
-		<th>Pet Deposit</th>
 	</tr>
 	<?php foreach($terms as $term):?>
 	<tr class="fee-row">
 		<td><?php echo $term['term'];?> months</td>
 		<td>$<?php echo $term['rent'];?></td>
 		<td>$<?php echo $term['deposit'];?></td>
-		<td>$<?php echo $term['pet_rent'];?></td>
-		<td>$<?php echo $term['pet_deposit'];?></td>
 	</tr>
 	<?php endforeach;?>
 </table>

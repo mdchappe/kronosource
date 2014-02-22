@@ -39,17 +39,27 @@
 	 
 	foreach($features as $feature => $value):
 		
-		if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated' && $feature != 'announcement' && $feature != 'announcement_updated'){ ?>
+		if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated' && $feature != 'announcement' && $feature != 'announcement_updated' && $feature != 'pet_policy'){ ?>
 	<li><i class="icon-ok"></i> <?php 
 		if($feature == 'cable'){echo 'Cable Providers: ';} else if($feature == 'trash'){echo 'Trash Collection: ';}echo $value;?></li>
 	<?php } 
 	endforeach; ?>
 </ul>
 </div>
+
+<?php if ($features['pet_policy'] && $features['pet_policy'] != '0'):?>
+<h3>Pet Policy</h3>
+<div class="row">
+<?php echo $features['pet_policy'];?>
+</div>
+<?php endif;?>
+
+<?php if ($features['announcement']  && $features['announcement'] != '0'):?>
 <h3>Announcement</h3>
 <div class="row">
 <?php echo $features['announcement'];?>
 </div>
+<?php endif;?>
 
 <h3>Available Units</h3>
 <div class="units-table">

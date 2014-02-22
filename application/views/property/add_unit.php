@@ -41,16 +41,12 @@
 		  		<th>Lease Term</th>
 		  		<th>Monthly Rent</th>
 		  		<th>Deposit</th>
-		  		<th>Pet Rent</th>
-		  		<th>Pet Deposit</th>
 		  	</tr>
 		  	<tr class="account-row">
 		  		<?php $regz_opts = 'required="required"'.'placeholder="0"';  ?>
 		  		<td><?php echo form_input('lease_term_0','',$regz_opts);?> months</td>
 		  		<td>$<?php echo form_input('monthly_rent_0','',$regz_opts);?></td>
 		  		<td>$<?php echo form_input('deposit_0','',$regz_opts);?></td>
-		  		<td>$<?php echo form_input('pet_rent_0','');?></td>
-		  		<td>$<?php echo form_input('pet_deposit_0','');?></td>
 		  	</tr>
 		  	
 		  </table>

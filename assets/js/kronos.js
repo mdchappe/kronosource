@@ -236,8 +236,6 @@ function add_lease_term(){
 		fragment += '<td><input type="text" value="" name="lease_term_'+lease_term_count+'"> months</td>';
 		fragment += '<td>$<input type="text" value="" name="monthly_rent_'+lease_term_count+'"></td>';
 		fragment += '<td>$<input type="text" value="" name="deposit_'+lease_term_count+'"></td>';
-		fragment += '<td>$<input type="text" value="" name="pet_rent_'+lease_term_count+'"></td>';
-		fragment += '<td>$<input type="text" value="" name="pet_deposit_'+lease_term_count+'"></td>';
 		fragment += '</tr>';
 	
 	$('#rent_information_table').append(fragment);
