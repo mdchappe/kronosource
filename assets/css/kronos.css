@@ -6862,6 +6862,10 @@ footer .footer-toe {
   text-align: center;
   width: 900px;
 }
+.register-wrap .inner-announce input {
+  height: 20px;
+  width: 250px;
+}
 .account-page {
   width: 1050px;
 }

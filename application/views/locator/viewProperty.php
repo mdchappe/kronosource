@@ -2,7 +2,7 @@
 <a class="btn black j-back cp-btn"><i class="icon-caret-left"></i> back</a>
 <div class="inner">
 <span class="validation-errors"></span>
-<h2 class="text-center"><?php echo $property['company'];?></h2>
+<h2 id="#property-name" class="text-center"><?php echo $property['company'];?></h2>
 <hr>
 
 <div class="upper">
@@ -21,8 +21,8 @@
 <div class="row w-btns">
 	<img class="profile-img" src="<?php echo $property['file_name'];?>" />
 	<div class="address"><?php echo $property['street'].'<br/>'.$property['city'].', '.$property['state'].' '.$property['zip'].'<br/><a href="tel:'.$property['phone'].'"><i class="icon-phone"></i> '.$property['phone'].'</a>';?></div>
-		<a target="_blank" class="btn green gmaps" href="https://maps.google.it/maps?q=<?php echo $property['street'].' '.$property['city'].' '.$property['state'].' '.$property['zip'] ?>"><i class="icon-map-marker"></i> Google maps</a>
-		<a target="_blank" class="btn cancel yelp "href="http://www.yelp.com/biz/<?php echo 'easton'.'-apartments-'.$property['city']?>"><i class="icon-asterisk"></i> yelp reviews</a>
+		<a target="_blank" class="btn green gmaps" href="https://maps.google.com?q=<?php echo $property['street'].' '.$property['city'].' '.$property['state'].' '.$property['zip'] ?>"><i class="icon-map-marker"></i> Google maps</a>
+		<a target="_blank" class="btn cancel yelp "href="http://www.yelp.com/biz/<?php echo $property['company'].'--'.$property['city']?>"><i class="icon-asterisk"></i> yelp reviews</a>
 	<form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 		<input type=hidden name="user_id" value="<?php echo $property['id'];?>" />
 		<a class="btn pull-right black" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>

@@ -2,7 +2,7 @@
 <a class="btn black cp-btn" href="/index.php/admin/controlPanel"><i class="icon-caret-left"></i> back to control panel</a>
 <div class="inner">
 <span class="validation-errors"><br></span>
-	<h2 class="text-center">Announcements Administration</h2>
+	<h2 class="text-center">Announcements</h2>
 	<hr>
 	<?php if(isset($status)){echo '<p class=error>'.$status.'</p>';}?>
 	

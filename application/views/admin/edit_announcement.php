@@ -1,6 +1,6 @@
 <div class="register-wrap container page-content">
 <a class="btn black cp-btn" href="/index.php/admin/announcements"><i class="icon-caret-left"></i> back</a>
-<div class="inner">
+<div class="inner inner-announce">
 <br>
 	<h2 class="text-center">KronoSource Announcement Update</h2>
 	<hr>

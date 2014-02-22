@@ -216,6 +216,18 @@ $(document).ready(function(){
 		}
 	}
 	
+	if(window.location.href.indexOf("viewProperty") > -1) {
+		var yelp_link = $('a.yelp').attr('href').toLowerCase();
+		
+		if (yelp_link.indexOf("apartments") > -1) {
+			var yelp_fix = yelp_link.replace(/\ /g,'-').replace(/\--/g,'-');
+			$('a.yelp').attr('href',yelp_fix);
+		} else {
+			var yelp_fix2 = yelp_link.replace(/\ /g,'-').replace(/\--/g,'-apartments-');
+			$('a.yelp').attr('href',yelp_fix2);
+		}
+	}
+	
 });//doc ready
 
 function add_lease_term(){
