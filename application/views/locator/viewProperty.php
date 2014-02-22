@@ -2,6 +2,9 @@
 <a class="btn black j-back cp-btn"><i class="icon-caret-left"></i> back</a>
 <div class="inner">
 <span class="validation-errors"></span>
+<?php if(isset($status)){
+	echo '<p><br/><br/>'.$status.'</p>';
+}?>
 <h2 id="#property-name" class="text-center"><?php echo $property['company'];?></h2>
 <hr>
 
