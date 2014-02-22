@@ -66,6 +66,7 @@
 			$data['title'] = 'Compose Message';
 			$data['message'] = $message;
 			$data['message_input'] = $message_input;
+			$data['referring'] = $this->input->post('referring');
 			
 			$this->load->view('templates/header', $data);
 			$this->load->view('message/compose', $data);
@@ -94,7 +95,16 @@
 				
 				if($this->message_model->send($from, $to, $subject, $message, $date)) {
 					
-					redirect(base_url().'index.php/message/inbox');
+					$this->session->set_flashdata('status','Message sent.');
+					
+					$referring = $this->input->post('referring');
+					
+					if($referring){
+						
+						redirect(base_url().$this->input->post('referring').$to);
+					} else {
+						redirect(base_url().'index.php/message/inbox');
+					}
 				}
 			}
 		}

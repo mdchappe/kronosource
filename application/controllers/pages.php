@@ -42,6 +42,7 @@
 			$data['title'] = 'KronoSource '.ucfirst($page); //make first letter of page name uppercase
 			$data['status'] = $this->session->flashdata('status');
 			$data['regcode'] = ($this->session->flashdata('regcode') ? $this->session->flashdata('regcode') : '');
+			$data['reset'] = $this->session->flashdata('reset');
 			$data['home'] = TRUE;
 			
 			$this->load->view('templates/header', $data);
@@ -149,6 +150,20 @@
 				
 				$this->session->set_flashdata('status','The username submitted is not on file. Please try again.');
 				redirect(base_url().'index.php/pages/forgot');
+			}
+		}
+		
+		public function reset_password($code) {
+			
+			$reset = $this->ion_auth->forgotten_password_complete($code);
+
+			if ($reset) {  //if the reset worked then send them to the login page
+				$this->session->set_flashdata('reset', 'Your password has been reset. Please check your email.');
+				redirect("/", 'refresh');
+			}
+			else { //if the reset didnt work then send them back to the forgot password page
+				$this->session->set_flashdata('reset', $this->ion_auth->errors());
+				redirect("/", 'refresh');
 			}
 		}
 		

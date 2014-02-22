@@ -181,7 +181,7 @@ textarea {
   img {
     max-width: 100% !important;
   }
-  @page {
+  @page  {
     margin: 0.5cm;
   }
   p,
@@ -918,6 +918,7 @@ input[type="color"],
      -moz-border-radius: 4px;
           border-radius: 4px;
 */
+
 }
 input,
 textarea,
@@ -973,6 +974,7 @@ input[type="color"]:focus,
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */
+
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
@@ -997,8 +999,10 @@ select,
 input[type="file"] {
   height: 30px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
   *margin-top: 4px;
   /* For IE7, add top margin to align select with labels */
+
   line-height: 30px;
 }
 select {
@@ -1545,6 +1549,7 @@ input.search-query {
   padding-left: 14px;
   padding-left: 4px \9;
   /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
   margin-bottom: 0;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -2684,6 +2689,7 @@ button.close {
   background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
   background-repeat: repeat-x;
 */
+
   border: 1px solid #cccccc;
   *border: 0;
   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
@@ -2694,6 +2700,7 @@ button.close {
      -moz-border-radius: 4px;
           border-radius: 4px;
 */
+
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   *zoom: 1;
@@ -3221,6 +3228,7 @@ input[type="submit"].btn.btn-mini {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
+
   *zoom: 1;
 }
 .btn-group-vertical > .btn {
@@ -5234,7 +5242,9 @@ body {
 }
 body {
   /*this is where you can change the background image*/
+
   /* .bg-cover ('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52c574c2b2c73_1.JPG'); */
+
   background: #efeae3;
   font-family: 'Open Sans', sans-serif !important;
   font-size: 12px;
@@ -6238,8 +6248,7 @@ footer .footer-toe {
   position: relative;
   top: -20px;
 }
-/* view property page */
-.view-property .row {
+/* view property page */.view-property .row {
   margin: 0;
   padding: 10px;
   border: 1px solid #E4E2E2;

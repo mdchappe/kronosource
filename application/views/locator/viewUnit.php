@@ -2,11 +2,15 @@
 <a class="btn j-back black cp-btn"><i class="icon-caret-left"></i> back</a>
 <div class="inner">
 <span class="validation-errors"></span>
+<?php if(isset($status)){
+	echo '<p><br/><br/>'.$status.'</p>';
+}?>
 <h2 class="text-center"><?php echo $unit->name;?></h2>
 <hr>
 <div>
 <form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 	<input type=hidden name="user_id" value="<?php echo $unit->property_id;?>" />
+	<input type=hidden name="referring" value="index.php/locator/viewProperty/"/>
 	<a class="btn black pull-right" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>
 </form>
 </div>

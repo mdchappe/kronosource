@@ -6,6 +6,7 @@
 
 	<label for="id">To: <?php echo $message['from'];?></label><br/>
 	<input type="hidden" name="id" value="<?php echo $message['from_id'];?>" />
+	<input type="hidden" name="referring" value="<?php echo $referring;?>" />
 	<label for="subject">Subject: </label> <?php echo form_input('subject', $default_subject, 'required="required"');?><br/>
 	<?php echo form_textarea($message_input);?><br/>
 	<button class="btn black pull-right" type="submit" name="submit">send <i class='icon-caret-right'></i></button>

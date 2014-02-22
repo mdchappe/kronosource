@@ -18,6 +18,10 @@
 				//Put group name into user object.
 				$this->the_user->group = $this->ion_auth->get_users_groups()->result()[0]->name;
 				
+				//get unread message count
+				$this->load->model('message_model');
+				$this->the_user->unread = $this->message_model->count_unread($this->the_user->id);
+				
 				//Store user in $data.
 				$data['the_user'] = $this->the_user;
 				
@@ -45,6 +49,9 @@
 				$this->the_user = $this->ion_auth->user()->row();
 				
 				$this->the_user->group = $this->ion_auth->get_users_groups()->result()[0]->name;
+				
+				$this->load->model('message_model');
+				$this->the_user->unread = $this->message_model->count_unread($this->the_user->id);
 				
 				$data['the_user'] = $this->the_user;
 				
@@ -76,6 +83,9 @@
 				
 				$this->the_user->group = $this->ion_auth->get_users_groups()->result()[0]->name;
 				
+				$this->load->model('message_model');
+				$this->the_user->unread = $this->message_model->count_unread($this->the_user->id);
+				
 				$data['the_user'] = $this->the_user;
 				
 				$this->load->vars($data);
@@ -105,6 +115,9 @@
 				$this->the_user = $this->ion_auth->user()->row();
 				
 				$this->the_user->group = $this->ion_auth->get_users_groups()->result()[0]->name;
+				
+				$this->load->model('message_model');
+				$this->the_user->unread = $this->message_model->count_unread($this->the_user->id);
 				
 				$data['the_user'] = $this->the_user;
 				

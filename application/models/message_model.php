@@ -120,4 +120,15 @@
 			
 			return TRUE;
 		}
+		
+		public function count_unread($id){
+			
+			$data = array('to_id' => $id, 'read' => 0);
+			
+			$this->db->where($data);
+			$this->db->from('message_traffic');
+			$count = $this->db->count_all_results();
+			
+			return $count;
+		}
 }

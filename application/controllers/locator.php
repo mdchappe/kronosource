@@ -35,6 +35,7 @@
 			$data['property'] = $property;
 			$data['features'] = $features;
 			$data['units'] = $units;
+			$data['status'] = $this->session->flashdata('status');
 			
 			$this->load->view('templates/header',$data);
 			$this->load->view('locator/viewProperty',$data);
@@ -52,6 +53,7 @@
 			$data['title'] = $unit->name;
 			$data['unit'] = $unit;
 			$data['terms'] = $terms;
+			$data['status'] = $this->session->flashdata('status');
 			
 			$this->load->view('templates/header',$data);
 			$this->load->view('locator/viewUnit',$data);

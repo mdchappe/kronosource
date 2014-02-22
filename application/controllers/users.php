@@ -193,6 +193,11 @@
 			$this->form_validation->set_rules('last_name','Last Name','trim|required|alpha');
 			$this->form_validation->set_rules('phone','Phone Number','trim|required');
 			
+			if($this->input->post('password')!=''){
+				$this->form_validation->set_rules('password','Password','trim|min_length[8]|max_length[18]');
+				$this->form_validation->set_rules('confirm','Password','matches[password]');
+			}
+			
 			$data['title'] = 'Edit Profile';
 			
 			if ($this->form_validation->run() === FALSE){
