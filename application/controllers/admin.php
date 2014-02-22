@@ -201,7 +201,7 @@
 				
 				$this->load->view('templates/header',$data);
 				$this->load->view('admin/password',$data);
-				$this->load->view('templates/header',$data);
+				$this->load->view('templates/footer',$data);
 			}
 		}
 		
@@ -253,7 +253,7 @@
 				
 				$this->load->view('templates/header',$data);
 				$this->load->view('admin/new_admin',$data);
-				$this->load->view('templates/header',$data);
+				$this->load->view('templates/footer',$data);
 			}
 		}
 		
