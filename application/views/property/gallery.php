@@ -1,7 +1,7 @@
-<div class="container page-content">
+<div class="container page-content register-wrap">
 <a class="btn black cp-btn" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
 <div class="inner">
-
+<br><h2 class="text-center">gallery</h2><hr>
 	<?php
 		if($status) {
 			echo '<p>'.$status.'</p>';
@@ -30,11 +30,12 @@
 	
 	<?php if($images && count($images) >= 5):?>
 	
-	<p>This gallery has the maximum number of images.  Please delete at least one before adding any more.</p>
+	<p class="error">This gallery has the maximum number of images.  Please delete at least one before adding any more.</p>
 	
 	<?php else: 
 		
-		echo form_open_multipart('property/gallery').form_hidden('type',$type).form_hidden('id',$id).form_label('Upload new image:','userfile').form_upload('userfile').'<br/>'.form_submit('submit','save');
+		echo form_open_multipart('property/gallery').form_hidden('type',$type).form_hidden('id',$id).form_label('Upload new image:','userfile').form_upload('userfile').'<br/>';
+		echo '<button class="btn black pull-right" type="submit" name="save">save <i class="icon-caret-right"></i></button>';
 		
 	endif; ?>
 		

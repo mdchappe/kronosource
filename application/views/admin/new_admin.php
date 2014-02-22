@@ -1,7 +1,7 @@
 <div class="container page-content register-wrap">
 <a class="btn black cp-btn" href="/index.php/admin/controlPanel"><i class="icon-caret-left"></i> back to control panel</a>
 	<div class="edit-inner">
-		<p><?echo $status;?></p>
+		<p class="error"><?echo $status;?></p>
 		<span class="validation-errors"><?php echo validation_errors('<p class="error">', '</p>'); ?></span>
 		<h2 class="text-center">Add Admin Account</h2>
 		<hr>

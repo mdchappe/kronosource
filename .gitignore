@@ -24,6 +24,7 @@
 /assets/captcha/1390977076.99.jpg
 /assets/captcha/1390977032.21.jpg
 /assets/captcha/1390975813.33.jpg
+/assets/img/gallery/*
 
 #/application/config/**
 #/application/config/config.php

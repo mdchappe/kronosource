@@ -3,6 +3,12 @@ var lease_term_count = 1;
 $(document).ready(function(){
 	$('.dynamic-subject a.new').find('i').removeClass('icon-comment-alt').addClass('icon-comment');	
 	
+		$( window ).scroll(function() {
+			if ($('.nav1-login i').hasClass('rotate')) {
+				$('.nav1-login').click();
+			}
+		});
+	
 	$('a.j-back').click(function(){
         parent.history.back();
         return false;
@@ -193,6 +199,18 @@ $(document).ready(function(){
 			$('.p-unit-switch').addClass('active-tab transition-none');
 			$('.prop-mgmt').hide();
 			$('.unit-mgmt').show();
+			$('a.btn').removeClass('transition-none');
+			return false;
+		}
+	}
+	
+	if(window.location.href.indexOf("searchProperties") > -1) {
+    	var referrer =  document.referrer;
+		if (referrer.indexOf('units') > -1) {
+			$('a.btn').addClass('transition-none').removeClass('active-tab');
+			$('.unit-switch').addClass('active-tab transition-none');
+			$('.property-search').hide();
+			$('.unit-search').show();
 			$('a.btn').removeClass('transition-none');
 			return false;
 		}

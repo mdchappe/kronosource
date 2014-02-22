@@ -43,6 +43,11 @@
 	endforeach; ?>
 </ul>
 </div>
+<h3>Announcement</h3>
+<div class="row">
+<?php echo $features['announcement'];?>
+</div>
+
 <h3>Available Units</h3>
 <div class="units-table">
 <table>
@@ -73,9 +78,5 @@
 	</tr>
 	<?php endforeach; ?>
 </table>
-<h3>Announcement</h3>
-<div class="row">
-<?php echo $features['announcement'];?>
-</div>
 </div>
 </div></div>
