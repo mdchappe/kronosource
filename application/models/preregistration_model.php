@@ -19,4 +19,5 @@
 			$this->db->where('code',$code);
 			$this->db->update('registration_codes',$data);
 		}
+		
 	}

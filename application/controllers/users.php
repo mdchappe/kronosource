@@ -26,6 +26,8 @@
 			$this->load->helper('form');
 			$this->load->library('form_validation');
 			
+			$data['code'] = $this->input->post('code');
+			
 			$this->form_validation->set_rules('username','User Name','trim|required|min_length[6]|max_length[18]|xss_clean|is_unique[users.username]');
 			$this->form_validation->set_rules('password','Password','trim|required|min_length[8]|max_length[18]');
 			$this->form_validation->set_rules('password_verify','Password','matches[password]');

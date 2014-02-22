@@ -90,6 +90,68 @@
 			}
 		}
 		
+		public function forgot() {
+			
+			$this->load->helper('form');
+			
+			$data['title'] = 'KronoSource User Name or Password Recovery';
+			$data['status'] = $this->session->flashdata('status');
+			
+			$this->load->view('templates/header',$data);
+			$this->load->view('pages/forgot',$data);
+			$this->load->view('templates/footer',$data);
+		}
+		
+		public function send_username() {
+			
+			$this->load->library('email');
+			$this->load->model('admin_model');
+
+			$email = $this->input->post('email');
+			
+			if($this->ion_auth->email_check($email)){
+				
+				$username = $this->admin_model->get_username_from_email($email);
+				
+				$this->email->from('recovery@kronosource.com', 'KronoSource');
+				$this->email->to($email);					
+				$this->email->subject('KronoSource username recovery.');
+				$this->email->message('Your KronoSource username is '.$username.'. Please return to <a href="http://www.kronosource.com">KronoSource</a> to log in.');
+				if($this->email->send()){
+				$this->session->set_flashdata('status','Your username has been emailed to you.');
+				redirect(base_url().'index.php/pages/forgot');
+				} else {
+					$this->session->set_flashdata('status','Username recovery failed. Please try again or contact office@kronosource.com.');
+					redirect(base_url().'index.php/pages/forgot');
+				}
+			} else {
+				$this->session->set_flashdata('status','The email submitted is not on file. Please try again.');
+				redirect(base_url().'index.php/pages/forgot');
+			}
+		}
+		
+		public function forgot_password() {
+			
+			$username = $this->input->post('username');
+			
+			if($this->ion_auth->username_check($username)){
+								
+				if($this->ion_auth->forgotten_password($username)) {
+					
+					$this->session->set_flashdata('status','Please check your email for password reset instructions.');
+					redirect(base_url().'index.php/pages/forgot');
+				} else {
+					$this->session->set_flashdata('status','Password recovery failed. Please try again or contact office@kronosource.com.');
+					redirect(base_url().'index.php/pages/forgot');
+				}
+				
+			} else {
+				
+				$this->session->set_flashdata('status','The username submitted is not on file. Please try again.');
+				redirect(base_url().'index.php/pages/forgot');
+			}
+		}
+		
 		public function contactform() {
 			$this->load->library('form_validation');
 			$this->load->library('email');
@@ -118,7 +180,7 @@
 
 				if ($row->count == 0) {
 					$this->session->set_flashdata('status','Catpcha mismatch. Please try again.');
-					redirect('/');
+					redirect(base_url());
 				} else {
 					
 					$this->email->from($this->input->post('email'), $this->input->post('name'));
@@ -134,16 +196,21 @@
 					$account_type = $this->input->post('account_type');
 					
 					$message = 'Please contact me with more information about KronoSource.com.'.PHP_EOL.'Name: '.$name.PHP_EOL.'Company: '.$company.PHP_EOL.'Phone: '.$phone.PHP_EOL.'Email: '.$email.PHP_EOL.'I am or represent a: '.$account_type.PHP_EOL.'I prefer to communicate via:'.$contact;
+					if($this->input->post('more')){
+						$message = $message.PHP_EOL.'Additional information: '.$this->input->post('more');
+					}
 					
 					$this->email->message($message);	
 					
-					$this->email->send();
+					if($this->email->send()){
 					
-					$data['title'] = 'Contact form submitted successfully.';
-					
-					$this->load->view('templates/header', $data);
-					$this->load->view('templates/contact_success', $data);
-					$this->load->view('templates/footer', $data);
+						$this->session->set_flashdata('status','Your information request has been successfully submitted to KronoSource. We will contact you in the near future.');
+						redirect(base_url());
+					} else {
+						
+						$this->session->set_flashdata('status','Your information request has not been submitted to KronoSource. Please try again.');
+						redirect(base_url());
+					}
 				}
 			}
 		}
