@@ -48,8 +48,9 @@ $(document).ready(function(){
 	     return false;
      });
      
-	 if(window.location.href.indexOf("register") > -1) {
-    	$('.nav1-feedback').remove();
+	 if(window.location.href.indexOf("register") > -1 || 
+	 	window.location.href.indexOf("forgot") > -1) {
+    	$('.nav1-feedback, .nav1-login').remove();
 	 } 
      
      $('.overlay, .not-yet').click(function() {
