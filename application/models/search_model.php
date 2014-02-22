@@ -24,7 +24,7 @@
 		
 		public function units($params) {
 			
-			$this->db->select('unit.*, users.company, users.street, users.city, users.state, users.zip');
+			$this->db->select('unit.*, users.company, users.street, users.city, users.state, users.zip, users.file_name');
 			$this->db->from('unit');
 			$this->db->where('unit.beds >=',$params['beds_min']);
 			$this->db->where('unit.beds <=',$params['beds_max']);
@@ -33,22 +33,22 @@
 			$this->db->where('unit.size >=',$params['size_min']);
 			
 			if($params['floor']){
-				echo 'floor: '.$params['floor'];
+				
 				$this->db->where('unit.floor',$params['floor']);
 			}
 			
 			if(strlen($params['direction']) == 1){
-			echo 'direction: '.$params['direction'];
+			
 				$this->db->where('unit.direction',$params['direction']);
 			}
 			
 			if($params['washer']!='any'){
-			echo 'washer: '.$params['washer'];
+			
 				$this->db->where('unit.washer',$params['washer']);
 			}
 			
 			if($params['unit_date']){
-				echo 'date';
+			
 				$this->db->where('unit.date_available >=',$params['unit_date']);
 			}
 			

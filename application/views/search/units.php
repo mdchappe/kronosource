@@ -14,6 +14,7 @@
 				$result = $results[$i];?>
 				<li class="browse-listing" style="display:block; clear:both;">
 					<a href="/index.php/locator/viewUnit/<?php echo $result['id'];?>">
+						<img src="<?php echo substr_replace($result['file_name'], '_thumb', -4, 0);?>" style="width:80px;height:80px;float:left;" />
 						<h4><?php echo $result['name'];?></h4>
 					</a><br/>
 					<a href="/index.php/locator/viewProperty/<?php echo $result['property_id'];?>"><?php echo $result['company'];?></a><br/>
