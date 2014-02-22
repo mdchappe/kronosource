@@ -3,6 +3,7 @@
 		<span class="validation-errors"></span>
 		<h2 class="text-center">Apartment Locator Registration</h2>
 		<hr>
+		<?php echo validation_errors('<div class="error">', '</div>'); ?>
 		
 		<?php echo form_open('users/register_locator'); ?>
 			<?php $reg_opts = 'required="required"' ?>

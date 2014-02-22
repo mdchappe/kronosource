@@ -25,7 +25,7 @@
 						<?php $username_opts = 'placeholder="Username"'. 'required="required"'; echo form_input('username', '', $username_opts);?>
 						<?php $password_opts = 'placeholder="Password"'. 'required="required"'; echo form_password('password', '', $password_opts);?>
 						<button class="btn black" type="submit" name="submit">log in <i class="icon-caret-right"></i></button><br>
-						<a class="forgot-pw">forgot your username or password?</span>
+						<span class="forgot-pw"><a href="<?base_url();?>pages/forgot">forgot your username or password?</a></span>
 					</form>
 				</div><!-- login-dropdown -->
 					

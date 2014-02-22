@@ -95,6 +95,21 @@
 			
 			$status = $this->session->flashdata('status');
 			
+			if($function == 'delete_account'){
+				
+				$id = $this->input->post('id');
+				
+				if($this->ion_auth->delete_user($id)){
+					
+					$this->session->set_flashdata('status','User deleted.');
+					redirect('admin/accounts');
+				} else {
+					$this->session->set_flashdata('status','Delete failed. Try again or contact site support.');
+					redirect('admin/accounts');
+				}
+				
+			}
+			
 			if($function == 'disable_account'){
 				
 				$id = $this->input->post('id');

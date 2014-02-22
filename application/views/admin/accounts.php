@@ -36,13 +36,17 @@
 					<td><?php if($account['active']){echo '<i class="icon-ok"></i>';} else {echo '<i class="icon-warning-sign"></i>';}?></td>
 					<td><?php if($account['active']):
 						echo form_open('admin/accounts/disable_account','',array('id'=>$account['user_id']));?>
-						<button class="cancel btn" name="submit_<?php echo $account['user_id']?>"type="submit">disable</button>
+							<button class="account cancel btn" name="submit_<?php echo $account['user_id']?>"type="submit">disable</button>
 						
 						<?php else:
 						echo form_open('admin/accounts/enable_account','',array('id'=>$account['user_id']));?>
-						<button class="black btn" name="submit_<?php echo $account['user_id']?>" type="submit">enable</button>
+							<button class="account black btn" name="submit_<?php echo $account['user_id']?>" type="submit">enable</button>
 						
-						<?php endif;?>
+						<?php endif;
+							
+						echo form_close();
+						echo form_open('admin/accounts/delete_account','',array('id'=>$account['user_id']));?>
+							<button class="account cancel btn" name="delete_<?php echo $account['user_id']?>"type="submit">delete</button>
 						</form>
 					</td>
 					<td><?php echo $account['expiration'];?></td>

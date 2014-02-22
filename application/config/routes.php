@@ -78,6 +78,9 @@ $route['users/register_property'] = 'users/register_property';
 $route['users/changePassword'] = 'users/changePassword';
 $route['users/login'] = 'users/login';
 $route['users/logout'] = 'users/logout';
+$route['pages/forgot'] = 'pages/forgot';
+$route['pages/send_username'] = 'pages/send_username';
+$route['pages/forgot_password'] = 'pages/forgot_password';
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = "pages/view";
 

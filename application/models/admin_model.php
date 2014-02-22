@@ -52,4 +52,14 @@
 			
 			return $query->result_array();
 		}
+		
+		public function get_username_from_email($email) {
+			
+			$this->db->select('username');
+			$this->db->from('users');
+			$this->db->where('email',$email);
+			$query = $this->db->get();
+			$query = $query->row_array();
+			return $query['username'];
+		}
 	}
