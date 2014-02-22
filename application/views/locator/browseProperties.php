@@ -1,7 +1,7 @@
 <div class="container page-content browse-wrap">
 	<div class="browse-inner">
 		<span class="validation-errors"></span>
-		<h2 class="text-center">Properties page <?php echo $page+1;?></h2>
+		<h2 class="text-center">Browse Properties</h2>
 		<hr>
 		
 		<ul class="browse-listings">

@@ -28,6 +28,7 @@
 		<a target="_blank" class="btn cancel yelp "href="http://www.yelp.com/biz/<?php echo $property['company'].'--'.$property['city']?>"><i class="icon-asterisk"></i> yelp reviews</a>
 	<form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
 		<input type=hidden name="user_id" value="<?php echo $property['id'];?>" />
+		<input type=hidden name="referring" value="index.php/locator/viewProperty/" />
 		<a class="btn pull-right black" href="javascript: void()" onclick="document.getElementById('message').submit()"><i class="icon-comments-alt"></i> Send Message</a>
 	</form>
 </div>
