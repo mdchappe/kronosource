@@ -9,6 +9,6 @@
 		<li class="cpannounce"><a href="<?php echo base_url();?>index.php/admin/announcements">announcements<br><br><br><i class="icon-bullhorn icon-5x"></i></a></li>
 		<li class="cppw"><a href="<?php echo base_url();?>index.php/admin/password">change password<br><br><br><i class="icon-unlock icon-5x"></i></a></li>
 		<li class="cpadd"><a href="<?php echo base_url();?>index.php/admin/new_admin">add admin account<br><br><br><i class="icon-user icon-5x"></i></a></li>
-		<li class="cppmt"><a href="http://www.paypal.com/">payment system<br><br><br><i class="icon-credit-card icon-5x"></i></a></li>
+		<li class="cppmt"><a target="_blank" href="http://www.paypal.com/">payment system<br><br><br><i class="icon-credit-card icon-5x"></i></a></li>
 	</ul>
 </div></div>
