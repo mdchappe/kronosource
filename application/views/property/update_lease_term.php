@@ -21,7 +21,7 @@
 	</table>
 	</div>
 	<a class="btn cancel pull-right" href="/index.php/property/update_unit/<?php echo $term['unit_id']; ?>"><i class="icon-trash"></i> discard changes</a>
-	<button class="btn pull-right" type="submit" name="submit"><i class="icon-save"></i> save changes</button> 
+	<button class="btn black pull-right" type="submit" name="submit"><i class="icon-save"></i> save changes</button> 
 	</form>
 	
 </div></div>

@@ -1,10 +1,10 @@
 <div class="container page-content register-wrap">
 <a class="btn black cp-btn" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
-<div class="inner">
+<div class="inner gallery">
 <br><h2 class="text-center">gallery</h2><hr>
 	<?php
 		if($status) {
-			echo '<p>'.$status.'</p>';
+			echo '<p class="error">'.$status.'</p>';
 		}
 		
 		if(isset($error)){

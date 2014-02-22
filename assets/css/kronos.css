@@ -5344,6 +5344,8 @@ legend {
   color: red;
   font-size: 16px;
   font-weight: 200;
+  position: absolute;
+  top: 52px;
 }
 /* buttons */
 .btn,
@@ -6538,22 +6540,48 @@ footer .footer-toe {
   margin-bottom: 5px;
   margin-top: 5px;
 }
-.add-unit table tr {
-  border: 1px solid #E4E2E2;
+.add-unit table tr.account-row:nth-child(odd) {
+  background: #F1F0F0;
+}
+.add-unit table tr.account-row {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.add-unit table tr.account-row:hover {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  background: #d1d1d1;
+  cursor: pointer;
 }
 .add-unit table input {
   width: 100px;
 }
 .add-unit .add-term {
-  margin: 10px 0;
+  margin: 10px 0 -50px 0px;
+  position: relative;
+  top: -50px;
 }
 .add-unit textarea {
   max-width: 720px;
 }
-/*add unit success page*/
-.add-unit-success h2 {
-  text-transform: uppercase;
+.add-unit .submit-unit {
+  margin-right: 10px;
 }
+/*add unit success page*/
 /*update unit page*/
 .update-unit .add-more {
   margin: 10px 0;
@@ -6579,6 +6607,7 @@ footer .footer-toe {
   width: 100%;
   text-align: center;
   font-size: 12px;
+  margin-bottom: 10px;
 }
 .update-unit table .top-row {
   background: #333;
@@ -6589,11 +6618,44 @@ footer .footer-toe {
   margin-bottom: 5px;
   margin-top: 5px;
 }
-.update-unit table tr {
-  border-bottom: 1px solid #E4E2E2;
+.update-unit table tr.account-row:nth-child(odd) {
+  background: #F1F0F0;
+}
+.update-unit table tr.account-row {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.update-unit table tr.account-row:hover {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  background: #d1d1d1;
+  cursor: pointer;
 }
 .update-unit table input {
   width: 100px;
+}
+.update-unit .add-term {
+  margin: 10px 0 -50px 0px;
+  position: relative;
+  top: -50px;
+}
+.update-unit .submit-btn {
+  margin-bottom: 30px;
+  margin-right: 10px;
 }
 /*update lease terms page*/
 .update-lease-terms .row {
@@ -6789,6 +6851,16 @@ footer .footer-toe {
   top: 11px;
   left: 2px;
   text-align: left;
+}
+.register-wrap .gallery label {
+  position: relative;
+  top: 0;
+  left: -2px;
+}
+.register-wrap .gallery .error {
+  top: 100px;
+  text-align: center;
+  width: 900px;
 }
 .account-page {
   width: 1050px;

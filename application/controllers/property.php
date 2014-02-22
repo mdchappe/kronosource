@@ -87,7 +87,7 @@
 				$this->property_model->update_features($this->the_user->id);
 				if($this->ion_auth->update($this->the_user->id, $user_data)){
 					
-					$this->session->set_flashdata('status','<p>Property information updated.</p>');
+					$this->session->set_flashdata('status','<p class="error">Property information updated.</p>');
 					redirect(base_url().'index.php/property/manage');
 				}
 			}
@@ -310,7 +310,7 @@
 				
 				if($this->property_model->update_lease_term($id)) {
 					
-					$this->session->set_flashdata('status','<p>Lease term updated successfully.</p>');
+					$this->session->set_flashdata('status','<p class="error">Lease term updated successfully.</p>');
 					$unit_id = $this->property_model->get_lease_term($id)['unit_id'];
 					redirect('/property/update_unit/'.$unit_id);
 				}
