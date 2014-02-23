@@ -14,7 +14,7 @@
  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" rel="tooltip" title="kronosource home" href="/index.php/">kronosource</a>
+        <a class="brand" rel="tooltip-home" title="kronosource home" href="/index.php/">kronosource</a>
           
           <div class="pull-right nav">
           	  <div class="login-dropdown">
@@ -38,7 +38,7 @@
 			
 				echo '<p class="welcome-user wu-locator">'.$the_user->display_name.'&nbsp;&nbsp;<i class="icon-circle"></i></p>
 						<ul class="logged-in-nav">
-							<li><a href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> '.$the_user->unread.'</a></li>
+							<li><a rel="tooltip" title="'.$the_user->unread.' unread message(s)" href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> '.$the_user->unread.'</a></li>
 							<li><a href="/index.php/users/edit">profile</a></li>
 							<li><a href="/index.php/locator/browseProperties">browse</a></li>
 							<li><a href="/index.php/locator/searchProperties">search</a></li>
@@ -50,7 +50,7 @@
 			else if($the_user->group == 'property'){ 
 				echo '<p class="welcome-user wu-property">'.$the_user->display_name.'&nbsp;&nbsp;<i class="icon-circle"></i></p>
 					  	<ul class="logged-in-nav">
-					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> '.$the_user->unread.'</a></li>
+					  		<li><a rel="tooltip" title="'.$the_user->unread.' unread message(s)" href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> '.$the_user->unread.'</a></li>
 					  		<li><a href="/index.php/property/manage">manage</a></li>
 					  		<li><a href="/index.php/users/logout">log out&nbsp;&nbsp;<i class="icon-caret-right"></i></a></li>
 					  	</ul>
@@ -58,7 +58,7 @@
 			} else if($the_user->group == 'admin'){
 				echo '<p class="welcome-user wu-admin">admin&nbsp;&nbsp;<i class="icon-circle"></i></p>
 					  	<ul class="logged-in-nav">
-					  		<li><a href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> '.$the_user->unread.'</a></li>
+					  		<li><a rel="tooltip" title="'.$the_user->unread.' unread message(s)" href="/index.php/message/inbox"><i class="icon-comments-alt icon-2x"></i> '.$the_user->unread.'</a></li>
 					  		<li><a href="/index.php/admin/controlPanel">admin</a></li>
 					  		<li><a href="/index.php/users/logout">log Out <i class="icon-caret-right"></i></a></li>
 					  	</ul>';

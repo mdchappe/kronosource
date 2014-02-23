@@ -107,11 +107,19 @@ $(document).ready(function(){
 	}
 	
 	$(function() {
+		$('[rel="tooltip-home"]').tooltip({placement:'bottom'});
+	});
+	
+	$(function() {
 		$('[rel="tooltip"]').tooltip({placement:'bottom'});
 	});
 	
 	$(function() {
 		$('[rel="tooltip-right"]').tooltip({placement:'right'});
+	});
+	
+	$(function() {
+		$('[rel="tooltip-top"]').tooltip({placement:'top'});
 	});
 	
 	//search page
