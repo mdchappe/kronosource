@@ -3,6 +3,18 @@ var lease_term_count = 1;
 $(document).ready(function(){
 	$('.dynamic-subject a.new').find('i').removeClass('icon-comment-alt').addClass('icon-comment');	
 	
+	if(window.location.href.indexOf("whouses=1") > -1) {
+		$('.who-uses').show();
+	} else {
+		$('.who-uses').remove();
+	}
+	
+	if(window.location.href.indexOf("faq=1") > -1) {
+		$('.home-faq').show();
+	} else {
+		$('.home-faq').remove();
+	}
+	
 		$( window ).scroll(function() {
 			if ($('.nav1-login i').hasClass('rotate')) {
 				$('.nav1-login').click();

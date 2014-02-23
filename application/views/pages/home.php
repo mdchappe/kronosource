@@ -33,9 +33,13 @@
 <div class="home-all-wrapper">
 
 	<div class="home-text1 container">
-			<h2>what is kronosource?</h2>
-			<p>Lorem ipsum dolor sit amet, per odio idque mnesarchum ut, cu cum eligendi salutandi. Solet interpretaris id mei. Ad sit debet movet adipisci, tota option intellegam ne per. Pro essent prompta te, has audiam dolores inimicus cu. Ullum diceret molestie sea ut.Velit accusam no duo, ei usu vero quas, sed an molestie mediocrem. Dicit veniam vim et, nam clita instructior ut. Vis et menandri deserunt conceptam. Pri postulant tincidunt ex. No est eleifend percipitur assueverit, mea quis nibh tractatos no.</p>
-			<p>Eu omnis repudiandae nec. Consul quaestio vel ad, ex postea vidisse theophrastus mea. Te semper voluptatum vel, sea ut stet ferri inermis, tantas decore noluisse no sea. Viderer equidem ocurreret ne vel. Scripserit scribentur at eum, eos lorem deseruisse ex.Postea facilisi mediocrem mea in, quo malis expetenda et. Eum eros solet accommodare ne, nisl nihil sea at. Ad mel vocibus persequeris, duo brute quaestio antiopam cu. Usu an molestie perpetua. For more information, feel free to <a href="#contact-us">contact us <i class="icon-caret-right"></i></a> </p>
+			<h2>efficient communication matters.</h2>
+			<p>Apartment locating in the 21st century lacks the ability for up to the minute, real time communication... until now. With Kronosource you get the information you have to the people who need it at a moment's notice.</p>
+			<br><br>
+			<h3 class="text-center">Efficient Communication. Laser Targeted Prospects. More Leases.</h3>
+			<br><br>
+			If you are an apartment locator or property manager and would like to know how Kronosource can revolutionize your business fill out the form below and one of our agents will contact you. For more information, feel free to <a href="#contact-us">contact us <i class="icon-caret-right"></i></a></p>
+
 	</div><!-- home-text1 container -->
 
 	<div  id="contact-us"  class="container page-content home-wrapper">
@@ -103,17 +107,17 @@
 		<span>
 			<h2>simple</h2>
 			<i class="icon-lightbulb icon-8x"></i>
-			<p>Pri putant mentitum consulatu ne, in nam essent sanctus, etiam electram quo ad. Ut altera ocurreret vituperata qui, per ea wisi legimus nonumes, virtute incorrupte dissentias ei eum.</p>
+			<p>We strive to be simple, uncomplicated, and robust. With KronoSource, we help your business save time and money. Let us know how we can simplify your sales process.</p>
 		</span>
 		<span class="middle-span">
 			<h2>efficient</h2>
 			<i class="icon-cogs icon-8x"></i>
-			<p>Per ad fabellas erroribus, has ad dolore graecis perfecto. Ad nam molestiae definiebas, qui te velit doming, sed quod novum te. legimus nonumes, virtute incorrupte dissentias ei eum.</p>
+			<p>We are all about getting things done faster and with less hassle. Doing more with less has always been the path to success in business. Efficiency is not just an option these days.  </p>
 		</span>
 		<span>
 			<h2>affordable</h2>
 			<i class="icon-usd icon-8x"></i>
-			<p>Simul legimus nonumes est eu, est at graece lucilius adversarium, ne illum quaeque duo. Tritani referrentur eos et. Ad cum apeirian verterem molestiae. At noster aliquid deterruisset quo, te.</p>
+			<p>Get the most out of your marketing or sales budget this year. Develop leads and satisfy clients without breaking the bank. Get your numbers up at a reasonable price point.</p>
 		</span>
 	</div><!-- container -->
 </div><!-- features -->
