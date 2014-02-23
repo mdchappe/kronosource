@@ -16,6 +16,7 @@
 			<th>Disable</th>
 			<th>Expiration</th>
 			<th>Extend</th>
+			<th>delete</th>
 		</tr>
 		
 		<?php 
@@ -44,13 +45,13 @@
 						
 						<?php endif;
 							
-						echo form_close();
-						echo form_open('admin/accounts/delete_account','',array('id'=>$account['user_id']));?>
-							<button class="account cancel btn" name="delete_<?php echo $account['user_id']?>"type="submit">delete</button>
-						</form>
+						echo form_close(); ?>
 					</td>
 					<td><?php echo $account['expiration'];?></td>
 					<td><?php echo form_open('admin/accounts/expiration','',array('id'=>$account['user_id'])).form_input($date_input);?><button class="black update btn" name="date_<?php echo $account['user_id']?>" type="submit">update</button></form></td>
+					<td><?php echo form_open('admin/accounts/delete_account','',array('id'=>$account['user_id']));?>
+							<button class="account cancel just-icon wo-bg" style="cursor:pointer;" name="delete_<?php echo $account['user_id']?>"type="submit"><i class="icon-trash icon-large"></i></button>
+						</form></td>
 				</tr>
 				
 				

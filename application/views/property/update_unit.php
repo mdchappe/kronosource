@@ -1,6 +1,6 @@
 <div class="container page-content update-unit">
 <a class="btn black cp-btn" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
-<div class="edit-inner">
+<div class="edit-inner add-update">
 <span class="validation-errors"></span>
 <h2 class="text-center">EDIT <?php echo $unit->name?></h2>
 <hr>

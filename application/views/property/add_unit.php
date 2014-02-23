@@ -1,4 +1,4 @@
-<div class="container page-content add-unit"><div class="inner">
+<div class="container page-content add-unit"><div class="inner add-update">
 <a class="btn black cp-btn" href="/index.php/property/manage"><i class="icon-caret-left"></i> back to property management</a>
 <br>
 <h2 class="text-center">ADD UNIT TO <?php echo $the_user->company; ?></h2>

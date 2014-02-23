@@ -117,9 +117,9 @@ h1,h2,h3,h4,h5,h6,legend {
 			
 
 /* just the icons */
-a.just-icon {color: #868686;}
-a.just-icon:hover { color: #0072bb;}
-a.just-icon.cancel:hover {color: #c53727;} 
+a.just-icon, button.just-icon {color: #868686 !important;}
+a.just-icon:hover { color: #0072bb !important;} 
+a.just-icon.cancel:hover, button.just-icon.cancel:hover {color: #c53727 !important; background: none !important;} 
 
 .table-condensed th, .table-condensed td {cursor: pointer;}
 
@@ -540,7 +540,9 @@ footer {
 	.recover-btn {width: 150px !important; height: 39px !important; position: relative; top: 3px; margin-left: 10px;}
 }
 
-.account-page {width: 1050px;}
+.account-page {width: 1200px;
+	.wo-bg {background: none;}
+}
 
 /* announcement wrapper */
 .announcement-wrapper {
@@ -574,5 +576,11 @@ footer {
 	.cppmt:hover {background: #388878;}
 	ul li a {color: white; display: block; height: 100%; font-size: 20px; font-weight: 100; padding-top: 30px;}
 }
+
+.add-update {
+	select {width: 205px;}
+	textarea {width: 600px; max-width: 600px; height: 100px;}
+}
+
 
 
