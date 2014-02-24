@@ -1,7 +1,7 @@
 <div class="home-hero">
 	<div class="hero-inner-wrapper">
 	   	   <div class="container">
-		   	  <img src="http://www.frequencycreative.com/codeigniter/assets/img/kronosource_logo.png" />
+		   	  <img src="<?php echo base_url();?>assets/img/kronosource_logo.png" />
 		   	  <?php if($reset){
 			   	  echo '<p class="error">'.$reset.'</p>';
 		   	  }?>
