@@ -37,6 +37,9 @@
 			} else if ($this->ion_auth->logged_in() && $this->ion_auth->in_group(2)) {
 				
 				redirect(base_url().'index.php/locator/landing');
+			} else if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin()) {
+				
+				redirect(base_url().'index.php/admin/controlPanel');
 			}
 			
 			$data['title'] = 'KronoSource '.ucfirst($page); //make first letter of page name uppercase

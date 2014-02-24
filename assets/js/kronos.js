@@ -113,7 +113,8 @@ $(document).ready(function(){
     	$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
 	}else if (window.location.href.indexOf("admin") > -1) {
 		$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
-		$("a.brand").attr("href", "/index.php/admin/controlPanel")
+		//The following call is flawed in that it assumes that every URL will have "admin" in it - this is untrue in cases like the inbox, which is usable by all user types. Implemented same redirect-based solution as locators and properties on homepage instead.
+		//$("a.brand").attr("href", "/index.php/admin/controlPanel")
 	}else if (window.location.href.indexOf("property") > -1) {
 		$('.page-content').css({'top':'120px', 'margin-bottom':'200px'});
 	}
