@@ -5897,7 +5897,7 @@ label {
   right: 0;
   top: 0;
   bottom: 0;
-  background: url('../img/dino.png') center center no-repeat;
+  background: url('../img/dino.png') center top no-repeat;
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
