@@ -273,3 +273,7 @@ function generate_random(){
 	}
 	$('#code').val(random_string);
 }
+
+if(window.location.href.indexOf("kronosaurus=1") > -1) {
+		$('body').append('<div class="kronosaurus"></div>');	
+	} 
