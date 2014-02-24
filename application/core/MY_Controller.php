@@ -123,10 +123,5 @@
 				
 				$this->load->vars($data);
 			}
-			
-			else {
-				$this->session->set_flashdata('login','You are either not logged in or are trying to access restricted content.');
-				redirect(base_url().'index.php/');
-			}
 		}
 	}

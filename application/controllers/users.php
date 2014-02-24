@@ -1,24 +1,11 @@
 <?php
 
-	class Users extends CI_Controller {
+	class Users extends Common_Auth_Controller {
 		
 		public function __construct(){
 			
 			parent::__construct();
 			
-			if(!$this->ion_auth->logged_in()) {
-				
-			} 
-			
-			else {
-				$this->the_user = $this->ion_auth->user()->row();
-				
-				$this->the_user->group = $this->ion_auth->get_users_groups()->result()[0]->name;
-				
-				$data['the_user'] = $this->the_user;
-				
-				$this->load->vars($data);	
-			}
 		}
 		
 		public function register_locator() {

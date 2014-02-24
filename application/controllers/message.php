@@ -6,6 +6,11 @@
 			
 			parent::__construct();
 			$this->load->model('message_model');
+			
+			if(!$this->ion_auth->logged_in()) {
+				$this->session->set_flashdata('login','You are either not logged in or are trying to access restricted content.');
+				redirect(base_url().'index.php/');
+			}
 		}
 		
 		public function inbox() {
