@@ -5888,6 +5888,24 @@ label {
 .home-all-wrapper .home-faq p {
   padding: 0 20px;
 }
+.version-info {
+  position: fixed;
+  background: red;
+  top: 30px;
+  right: -110px;
+  z-index: 999999;
+  font-weight: 700;
+  color: white;
+  width: 300px;
+  text-align: center;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  padding: 5px 0;
+  border: 1px solid #333;
+}
 .kronosaurus {
   position: fixed;
   height: 100%;

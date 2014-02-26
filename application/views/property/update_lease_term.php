@@ -8,8 +8,6 @@
 		  		<th>Lease Term</th>
 		  		<th>Monthly Rent</th>
 		  		<th>Deposit</th>
-		  		<th>Pet Rent</th>
-		  		<th>Pet Deposit</th>
 		  	</tr>
 		  	<tr>
 			  	<td><?php echo form_input('lease_term',$term['term']);?></td>

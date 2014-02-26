@@ -278,3 +278,20 @@ function generate_random(){
 if(window.location.href.indexOf("kronosaurus=1") > -1) {
 		$('body').append('<div class="kronosaurus"></div>');	
 	} 
+
+if(window.location.href.indexOf("dev.kronosource.com") > -1) {
+		$('body').append('<div class="version-info">DEV</div>');	
+}else if(window.location.href.indexOf("demo.kronosource.com") > -1) {
+		$('body').append('<div class="version-info">DEMO</div>');
+}else if(window.location.href.indexOf("kronosource.com") > -1) {
+			
+}else {$('body').append('<div class="version-info">LOCAL</div>');}
+		
+		
+		
+		
+		
+		
+		
+		
+		
