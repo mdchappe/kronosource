@@ -42,7 +42,7 @@
 	
 	<?php echo form_fieldset('Rent Information'); ?>
 		  <table id="rent_information_table">
-		  <a class="btn green add-term pull-right"><i class="icon-plus"></i> Add Lease Term Entry</a>
+		  <a class="btn pull-right add-term green" id="add_term"><i class="icon-plus"></i> Add Lease Term</a>
 		  	<tr class="top-row" id="rent_info_table_header">
 		  		<th>Lease Term</th>
 		  		<th>Monthly Rent</th>
