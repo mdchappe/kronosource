@@ -280,6 +280,8 @@ if(window.location.href.indexOf("kronosaurus=1") > -1) {
 		$('body').append('<div class="kronosaurus"></div>');	
 	} 
 	
+	
+//update banners and version numbers. will need to manually change prod version number when prod changes.
 var prod_version = '1.0';
 var dev_version = prod_version + '.5';
 
@@ -306,6 +308,7 @@ if(window.location.href.indexOf("dev.kronosource.com") > -1) {
 		$('body').prepend('<div id="version-info-demo">DEMO <span class="vnum">v</span></div>');
 }else if(window.location.href.indexOf("kronosource.com") > -1) {
 	$('.vnum').html(prod_version);
+	$('.version-info, .version-info-demo').remove();
 }else {
 	$('body').prepend('<div id="version-info">LOCAL <span class="vnum">v</span><span class="ts"></span></div>');
 	$('.vnum').append(dev_version);
