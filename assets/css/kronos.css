@@ -5888,7 +5888,30 @@ label {
 .home-all-wrapper .home-faq p {
   padding: 0 20px;
 }
-.version-info {
+#version-info {
+  font-weight: 100;
+  position: fixed;
+  background: red;
+  top: 0;
+  z-index: 999999;
+  color: white;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  -webkit-font-smoothing: auto;
+  background: #a90329;
+  background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a90329), color-stop(44%, #8f0222), color-stop(100%, #6d0019));
+  background: -webkit-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: -o-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: -ms-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
+}
+#version-info li {
+  list-style-type: none;
+}
+#version-info-demo {
+  font-weight: 100;
   position: fixed;
   background: red;
   top: 30px;
@@ -5905,6 +5928,14 @@ label {
   transform: rotate(45deg);
   padding: 5px 0;
   border: 1px solid #333;
+  background: #a90329;
+  -webkit-font-smoothing: auto;
+  background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a90329), color-stop(44%, #8f0222), color-stop(100%, #6d0019));
+  background: -webkit-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: -o-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: -ms-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
 }
 .kronosaurus {
   position: fixed;
