@@ -275,17 +275,59 @@ function generate_random(){
 	$('#code').val(random_string);
 }
 
+
 if(window.location.href.indexOf("kronosaurus=1") > -1) {
 		$('body').append('<div class="kronosaurus"></div>');	
 	} 
+	
+	
+//update banners and version numbers. will need to manually change prod version number when prod changes.
+var prod_version = '1.0';
+var dev_version = prod_version + '.5';
 
 if(window.location.href.indexOf("dev.kronosource.com") > -1) {
-		$('body').append('<div class="version-info">DEV</div>');	
+		$('.vnum').append(dev_version);
+		$('body').prepend('<div id="version-info">DEV <span class="vnum">v</span><span class="ts"></span></div>');	
+		$(function() {
+		
+		$('#wrap-section, .navbar-fixed-top').css('padding-top', '40px');
+        $('#version-info .ts').commitment({
+            user: 'mdchappe',
+            repo: 'kronosource',
+            success: function() {
+                console.log('Commit messages were successfuly retrieved from Github!');
+            },
+            error: function(message) {
+                console.log(message);
+            }
+        });
+
+    });	
 }else if(window.location.href.indexOf("demo.kronosource.com") > -1) {
-		$('body').append('<div class="version-info">DEMO</div>');
+		$('.vnum').append(prod_version);
+		$('body').prepend('<div id="version-info-demo">DEMO <span class="vnum">v</span></div>');
 }else if(window.location.href.indexOf("kronosource.com") > -1) {
-			
-}else {$('body').append('<div class="version-info">LOCAL</div>');}
+	$('.vnum').html(prod_version);
+	$('.version-info, .version-info-demo').remove();
+}else {
+	$('body').prepend('<div id="version-info">LOCAL <span class="vnum">v</span><span class="ts"></span></div>');
+	$('.vnum').append(dev_version);
+	$(function() {
+		
+		$('#wrap-section, .navbar-fixed-top').css('padding-top', '40px');
+        $('#version-info .ts').commitment({
+            user: 'mdchappe',
+            repo: 'kronosource',
+            success: function() {
+                console.log('Commit messages were successfuly retrieved from Github!');
+            },
+            error: function(message) {
+                console.log(message);
+            }
+        });
+
+    });		
+}
 		
 		
 		
