@@ -129,7 +129,7 @@ Licensed under the MIT license
 		        		for(var i = 0; i < showLimit; i++) {
 
 		        			//define commit as a list item
-		        			var commit = '<li>';
+		        			var commit = '<li>Most Recent Commit: ';
 
 		        			//if makeCommitLink is true and html_url exists
 		        			if(s.makeCommitLink && data[i].html_url) {
