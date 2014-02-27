@@ -21,7 +21,7 @@
 		<?php echo form_error('city','<p>city: ','</p>'); ?>
 		<?php echo form_error('state','<p>state: ','</p>'); ?>
 		<?php echo form_error('zip','<p>zip code: ','</p>'); ?>
-		<?php echo form_open('property/manage'); ?>
+		<?php echo form_open_multipart('property/manage'); ?>
 		
 		<div class="row">
 			<div class="width50">
@@ -42,6 +42,8 @@
 			</div>
 			<div class="width50">
 				<?php echo form_fieldset('Property Information');?>
+				<label for="property_image"><img src="<?php echo substr_replace($the_user->file_name, '_thumb', -4, 0);?>" style="width:80px;height:80px" /><br/>Profile Image: </label>
+				<?php echo form_upload('userfile');?><br/>
 				<label for="property_name">Property Name: </label>
 				<?php echo form_input('property_name', $the_user->company);?><br/>
 				<label for="management">Property Management: </label>

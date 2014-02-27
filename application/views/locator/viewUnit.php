@@ -25,9 +25,9 @@
 	<li><i class="icon-ok"></i> Furnished: <b><?php if($unit->furnished){echo 'yes';} else {echo 'no';}?></b></li>
 	<li><i class="icon-ok"></i> Washer/Dryer: <b><?php echo $unit->washer;?></b></li>
 	<li><i class="icon-ok"></i> Patio Facing: <b><?php echo $unit->direction;?></b></li><br><hr>
-	<li class="longer"><i class="icon-ok"></i> Requirements: <b><?php if(!property_exists($unit, 'requirements') || $unit->requirements == null || $unit->requirements == ''){echo 'none';} else {echo $unit->requirements;}?></b></li>
+	<li class="longer"><i class="icon-ok"></i> Additional Features: <b><?php if(!property_exists($unit, 'requirements') || $unit->requirements == null || $unit->requirements == ''){echo 'none';} else {echo $unit->requirements;}?></b></li>
 	<li class="longer"><i class="icon-ok"></i> Specials: <b><?php if(!property_exists($unit, 'specials') || $unit->specials == null || $unit->specials == ''){echo 'none';} else {echo $unit->specials;}?></b></li>
-	<li class="longer"><i class="icon-ok"></i> Commission: <b><?php if(!property_exists($unit, 'commission') || $unit->commission == null || $unit->commission == ''){echo 'none';} else {echo $unit->commission;}?></b></li>
+	<li class="longer"><i class="icon-ok"></i> Commission: <b><?php if(!property_exists($unit, 'commission') || $unit->commission == null || $unit->commission == ''){echo 'none';} else {echo $unit->commission.'%';}?></b></li>
 </ul>
 </div>
 
@@ -53,7 +53,7 @@
 		<ul>
 		<?php foreach($images as $image):?>
 			<li>
-				<a href="<?php echo base_url().$image['filename'];?>"><img src="<?php echo substr($image['filename'],0,-4).'_thumb'.substr($image['filename'],-4);?>"/></a>
+				<a href="<?php echo base_url().substr($image['filename'],1);?>"><img src="<?php echo substr($image['filename'],0,-4).'_thumb'.substr($image['filename'],-4);?>"/></a>
 			</li>
 		<?php endforeach;?>
 		</ul>

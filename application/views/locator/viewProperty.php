@@ -11,13 +11,7 @@
 <div class="upper">
 	<h3><?php echo $features['management'];?></h3>
 	<span class="last-updated"><small>
-		Last updated: <?php 
-		$date = substr(unix_to_human($features['updated']),0,10);
-		$year = substr($date,0,4);
-		$month = substr($date,5,2);
-		$day = substr($date,-2);
-		
-		echo $month.'/'.$day.'/'.$year;?>
+		Last updated: <?php echo $features['updated'];?>
 	</small></span>
 </div>
 
