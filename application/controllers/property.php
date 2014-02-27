@@ -66,6 +66,35 @@
 				$this->load->view('property/manage',$data);
 				$this->load->view('templates/footer',$data);
 			} else {
+			
+				$upload_data = Array();
+				
+				$config['upload_path'] = 'assets/img/profile/';
+				$config['allowed_types'] = 'gif|jpg|png|jpeg';
+				$config['max_size']	= '1024';
+				$config['max_width'] = '1024';
+				$config['max_height'] = '1024';
+				$config['encrypt_name'] = TRUE;
+				
+				$this->load->library('upload', $config);
+				
+				if($this->upload->do_upload()) {
+					
+					$upload_data = $this->upload->data();
+					
+					$img_config = Array();
+					$img_config['image_library'] = 'gd2';
+					$img_config['source_image']	= $upload_data['full_path'];
+					$img_config['create_thumb'] = TRUE;
+					$img_config['maintain_ratio'] = TRUE;
+					$img_config['width']	 = 160;
+					$img_config['height']	= 160;
+					
+					$this->load->library('image_lib', $img_config);
+					$this->image_lib->resize();
+				} else {
+					$upload_data['file_name'] = $this->the_user->file_name;
+				}
 				
 				$user_data = array (
 					'username' => $this->input->post('username'),
@@ -77,6 +106,7 @@
 					'street' => $this->input->post('street'),
 					'city' => $this->input->post('city'),
 					'state' => $this->input->post('state'),
+					'file_name' => '/assets/img/profile/'.$upload_data['file_name'],
 					'zip' => $this->input->post('zip')
 				);
 				

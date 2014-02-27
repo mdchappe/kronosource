@@ -29,7 +29,7 @@
 	<label for="unit_washer">Washer/Dryer&nbsp;:&nbsp;</label>
 	<?php echo form_dropdown('unit_washer', $washer_dropdown,$unit->washer);?><br>
 	<label for="unit_furnished">Furnished&nbsp;:&nbsp;</label><?php echo form_checkbox('unit_furnished',1,$unit->furnished);?><br>
-	<label for="unit_requirements">Eligibility Requirements&nbsp;:&nbsp;</label>
+	<label for="unit_requirements">Additional Features&nbsp;:&nbsp;</label>
 	<?php echo form_textarea($requirements_input,$unit->requirements); ?><br/>
 	<label for="unit_specials">Current Specials&nbsp;:&nbsp;</label>
 	<?php echo form_textarea($specials_input,$unit->specials); ?><br/>

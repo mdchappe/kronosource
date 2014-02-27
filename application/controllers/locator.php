@@ -30,6 +30,8 @@
 			$features = $this->property_model->get_features($id);
 			$units = $this->property_model->get_units($id);
 			
+			$features['updated'] = $this->convert_date_to_human_adv($features['updated']);
+			
 			$data['images'] = $this->gallery_model->get_images('property', $id);
 			$data['title'] = $property['company'];
 			$data['property'] = $property;
@@ -158,6 +160,26 @@
 			$month = substr($date, 5, 2);
 			$day = substr($date, 8, 2);
 			$date = $month.'-'.$day.'-'.$year;
+			
+			return $date;
+		}
+		
+		private function convert_date_to_human_adv($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			$now = unix_to_human(now());
+			
+			if(substr($now,0,10) == substr($date,0,10)){
+				$date = substr($date,-8);
+			} else {
+			
+				$year = substr($date, 0, 4);
+				$month = substr($date, 5, 2);
+				$day = substr($date, 8, 2);
+				$date = $month.'-'.$day.'-'.$year;
+			}
 			
 			return $date;
 		}
