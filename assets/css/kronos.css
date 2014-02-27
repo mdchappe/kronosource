@@ -5910,6 +5910,9 @@ label {
 #version-info li {
   list-style-type: none;
 }
+#version-info .message {
+  color: wheat !important;
+}
 #version-info-demo {
   font-weight: 100;
   position: fixed;

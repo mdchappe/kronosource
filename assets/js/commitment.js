@@ -140,7 +140,7 @@ Licensed under the MIT license
 		        			} else {
 
 			        			//otherwise just write out the commit message
-			        			commit += '<span class="message">'+data[i].commit.message+'</span>';
+			        			commit += '<span class="message">'+data[i].commit.message+'</span>, Commited ';
 		        			}
 
 		        			if(s.showCommitDate && data[i].commit.committer.date) {
