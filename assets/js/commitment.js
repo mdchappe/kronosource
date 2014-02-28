@@ -167,7 +167,7 @@ Licensed under the MIT license
 		        			}
 
 		        			//if showCommitter is true and committer.login exists
-		        			if(s.showCommitter && data[i].committer.login) {
+		        			if(s.showCommitter) {
 
 			        			//create committer div
 			        			commit += ' <span class="committer">';
