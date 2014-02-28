@@ -285,6 +285,7 @@ if(window.location.href.indexOf("kronosaurus=1") > -1) {
 var prod_version = '1.0';
 var dev_version = prod_version + '.5';
 
+//DEV.KRONOSOURCE.COM
 if(window.location.href.indexOf("dev.kronosource.com") > -1) {
 		$('body').prepend('<div id="version-info">DEV&nbsp;&nbsp;-&nbsp;&nbsp;<span class="vnum">v</span><span class="ts"></span><i class="icon-remove-circle"></i></div>');	
 		$(function() {
@@ -303,15 +304,19 @@ if(window.location.href.indexOf("dev.kronosource.com") > -1) {
 
     });	
 		$('.vnum').append(dev_version);
+		
+//DEMO.KRONOSOURCE.COM
 }else if(window.location.href.indexOf("demo.kronosource.com") > -1) {
 		$('#wrap-section, .navbar-fixed-top').css('padding-top', '40px');
 		$('body').prepend('<div style="line-height:40px;" id="version-info">DEMO&nbsp;&nbsp;-&nbsp;&nbsp;<span class="vnum">v</span><i class="icon-remove-circle"></i></div>');
 		$('.vnum').append(prod_version);
 		
-
+//KRONOSOURCE.COM
 }else if(window.location.href.indexOf("kronosource.com") > -1) {
 	$('.vnum').html(prod_version);
 	$('.version-info, .version-info-demo').remove();
+
+//LOCAL
 }else {
 	$('body').prepend('<div id="version-info">LOCAL&nbsp;&nbsp;-&nbsp;&nbsp;<span class="vnum">v</span><span class="ts"></span><i class="icon-remove-circle"></i></div>');
 	$(function() {
