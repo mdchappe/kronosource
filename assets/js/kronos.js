@@ -328,8 +328,8 @@ if(window.location.href.indexOf("dev.kronosource.com") > -1) {
             success: function() {
                 console.log('Commit messages were successfuly retrieved from Github!');
             },
-            error: function(message) {
-                console.log(message);
+            error: function() {
+                console.log('theres been a problem getting github shit!');
             }
         });
 
