@@ -42,7 +42,7 @@
 			</div>
 			<div class="width50">
 				<?php echo form_fieldset('Property Information');?>
-				<label for="property_image"><img src="<?php echo substr_replace($the_user->file_name, '_thumb', -4, 0);?>" style="width:80px;height:80px" /><br/>Profile Image: </label>
+				<label for="property_image"><img src="<?php echo substr($the_user->file_name,0,-4).'_thumb'.substr($the_user->file_name,-4);?>" style="width:80px;height:80px" /><br/>Profile Image: </label>
 				<?php echo form_upload('userfile');?><br/>
 				<label for="property_name">Property Name: </label>
 				<?php echo form_input('property_name', $the_user->company);?><br/>

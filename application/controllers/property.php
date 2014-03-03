@@ -93,7 +93,7 @@
 					$this->load->library('image_lib', $img_config);
 					$this->image_lib->resize();
 				} else {
-					$upload_data['file_name'] = $this->the_user->file_name;
+						$upload_data['file_name'] = substr($this->the_user->file_name,20);
 				}
 				
 				$user_data = array (
