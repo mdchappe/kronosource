@@ -49,6 +49,19 @@
 </div>
 <?php endif;?>
 
+<?php if($images):?>
+<h3>Property Images:</h3>
+<div class="row">
+		<ul>
+		<?php foreach($images as $image):?>
+			<li>
+				<a href="<?php echo base_url().substr($image['filename'],1);?>"><img src="<?php echo substr($image['filename'],0,-4).'_thumb'.substr($image['filename'],-4);?>"/></a>
+			</li>
+		<?php endforeach;?>
+		</ul>
+</div>
+<?php endif;?>
+
 <?php if ($features['announcement']  && $features['announcement'] != '0'):?>
 <h3>Announcement</h3>
 <div class="row">
