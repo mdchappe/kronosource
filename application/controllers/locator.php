@@ -173,6 +173,9 @@
 			
 			if(substr($now,0,10) == substr($date,0,10)){
 				$date = substr($date,-8);
+				if($date[0] != '1') {
+					$date = substr($date, -7);
+				}
 			} else {
 			
 				$year = substr($date, 0, 4);

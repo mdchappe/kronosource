@@ -46,9 +46,9 @@
 				$features = $this->property_model->get_features($this->the_user->id);
 				
 				foreach($features as $feature => $value):
-					if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'cable' && $feature != 'trash' && $feature != 'management' && $feature != 'pet_policy' && $feature != 'announcement' && $feature != 'announcement_updated') {
+					if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'cable' && $feature != 'trash' && $feature != 'management' && $feature != 'pet_policy' && $feature != 'announcement' && $feature != 'announcement_updated' && $feature != 'additional') {
 						$data[$feature] = TRUE;
-					} else if($feature == 'cable' || $feature == 'trash' || $feature == 'management' || $feature == 'pet_policy' || $feature == 'announcement'){
+					} else if($feature == 'cable' || $feature == 'trash' || $feature == 'management' || $feature == 'pet_policy' || $feature == 'announcement' || $feature == 'additional'){
 						$data[$feature] = $value;
 					} else {
 						$data[$feature] = FALSE;

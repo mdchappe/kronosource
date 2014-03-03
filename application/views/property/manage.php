@@ -95,6 +95,8 @@
 				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),$trash);
 				  echo form_label('Cable Provider(s):&nbsp;&nbsp;','cable');
 				  echo form_input('cable',$cable); echo '<br><br>';
+				  echo form_label('Additional Features:&nbsp;&nbsp;','additional');
+				  echo form_textarea('additional',$additional).'<br/><br/>';
 				  echo form_fieldset_close('</div>');
 
 				  echo '<div id="pet-policy">';

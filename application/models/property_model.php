@@ -83,6 +83,8 @@
 			
 			$data['pet_policy'] = $this->input->post('pet_policy');
 			
+			$data['additional'] = $this->input->post('additional');
+			
 			$data['property_id'] = $id;
 			
 			$data['updated'] = time();
@@ -137,6 +139,8 @@
 			$data['announcement'] = $this->input->post('announcement');
 			
 			$data['pet_policy'] = $this->input->post('pet_policy');
+			
+			$data['additional'] = $this->input->post('additional');
 			
 			$data['updated'] = time();
 			
@@ -512,6 +516,9 @@
 			
 			if(substr($now,0,10) == substr($date,0,10)){
 				$date = substr($date,-8);
+				if($date[0] != '1') {
+					$date = substr($date, -7);
+				}
 			} else {
 			
 				$year = substr($date, 0, 4);

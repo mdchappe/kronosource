@@ -72,6 +72,8 @@
 				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),'Dumpsters').'<br/>';
 				  echo form_label('Cable Provider(s)&nbsp;:&nbsp;','cable');
 				  echo form_input('cable');
+				  echo form_label('Additional Features:&nbsp;&nbsp;','additional');
+				  echo form_textarea('additional').'<br/><br/>';
 				  echo form_fieldset_close('</span>'); ?>
 				  
 				  <input type="hidden" name="code" value="<?php echo $code?>" />

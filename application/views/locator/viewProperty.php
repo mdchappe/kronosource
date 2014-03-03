@@ -34,12 +34,16 @@
 	 
 	foreach($features as $feature => $value):
 		
-		if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated' && $feature != 'announcement' && $feature != 'announcement_updated' && $feature != 'pet_policy'){ ?>
+		if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated' && $feature != 'announcement' && $feature != 'announcement_updated' && $feature != 'pet_policy' && $feature != 'additional'){ ?>
 	<li><i class="icon-ok"></i> <?php 
-		if($feature == 'cable'){echo 'Cable Providers: ';} else if($feature == 'trash'){echo 'Trash Collection: ';}echo $value;?></li>
+		if($feature == 'cable'){echo 'Cable Providers: ';} else if($feature == 'trash'){echo 'Trash Collection: ';} echo $value;?></li>
 	<?php } 
 	endforeach; ?>
 </ul>
+<?php if($features['additional']):?>
+<h4>Additional Features:</h4>
+<?php echo $features['additional'];
+	endif;?>
 </div>
 
 <?php if ($features['pet_policy'] && $features['pet_policy'] != '0'):?>
