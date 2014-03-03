@@ -72,9 +72,17 @@
 				  echo form_dropdown('trash',array('valet'=>'Valet','dumpster'=>'Dumpsters','chute'=>'Trash Chutes'),'Dumpsters').'<br/>';
 				  echo form_label('Cable Provider(s)&nbsp;:&nbsp;','cable');
 				  echo form_input('cable');
-				  echo form_label('Additional Features:&nbsp;&nbsp;','additional');
-				  echo form_textarea('additional').'<br/><br/>';
-				  echo form_fieldset_close('</span>'); ?>
+				  
+				  echo form_fieldset_close('</span>');
+				  
+				  
+				  echo form_fieldset('pet policy');
+				  echo form_textarea('pet_policy');
+				  echo form_fieldset_close(); 
+				  
+				  echo form_fieldset('requirements');
+				  echo form_textarea('additional');
+				  echo form_fieldset_close();?>
 				  
 				  <input type="hidden" name="code" value="<?php echo $code?>" />
 			<button class="btn black pull-right" type="submit" name="submit">register <i class="icon-caret-right"></i></button>

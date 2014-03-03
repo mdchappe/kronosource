@@ -40,10 +40,6 @@
 	<?php } 
 	endforeach; ?>
 </ul>
-<?php if($features['additional']):?>
-<h4>Additional Features:</h4>
-<?php echo $features['additional'];
-	endif;?>
 </div>
 
 <?php if ($features['pet_policy'] && $features['pet_policy'] != '0'):?>
@@ -52,6 +48,13 @@
 <?php echo $features['pet_policy'];?>
 </div>
 <?php endif;?>
+
+<?php if($features['additional']):?>
+<h3>Resident Requirements</h3>
+<div class="row">
+<?php echo $features['additional'];
+	endif;?>
+</div>
 
 <?php if($images):?>
 <h3>Property Images:</h3>
