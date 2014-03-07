@@ -60,6 +60,7 @@
 			$this->db->join('users','unit.property_id = users.id');
 			$this->db->join('rent','unit.id = rent.unit_id', 'left');
 			$this->db->group_by('id');
+			$this->db->order_by('users.company','asc');
 			$this->db->order_by('unit.name', 'asc');
 			$query = $this->db->get();
 			
