@@ -6448,6 +6448,19 @@ footer .footer-toe {
 .view-property .w-btns .btn {
   width: 130px !important;
 }
+.view-property .row.property-imgs ul li {
+  max-width: 150px;
+  display: inline-block;
+  border: 1px #E4E2E2 solid;
+  height: 150px;
+  float: left;
+  margin: 2px;
+}
+.view-property .row.property-imgs ul li a {
+  display: block;
+  width: 150px;
+  height: 150px;
+}
 /* view unit page */
 .view-unit ul.unit-features {
   text-align: left;
@@ -6515,6 +6528,19 @@ footer .footer-toe {
 }
 .view-unit .img-row {
   padding: 15px;
+}
+.view-unit .img-row ul li {
+  max-width: 150px;
+  display: inline-block;
+  border: 1px #E4E2E2 solid;
+  height: 150px;
+  float: left;
+  margin: 2px;
+}
+.view-unit .img-row ul li a {
+  display: block;
+  width: 150px;
+  height: 150px;
 }
 /* compose message page */
 .compose-message textarea {

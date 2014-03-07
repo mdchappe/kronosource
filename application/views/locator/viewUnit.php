@@ -53,7 +53,7 @@
 		<ul>
 		<?php foreach($images as $image):?>
 			<li>
-				<a href="<?php echo base_url().substr($image['filename'],1);?>"><img src="<?php echo substr($image['filename'],0,-4).'_thumb'.substr($image['filename'],-4);?>"/></a>
+				<a target="_blank" href="<?php echo base_url().substr($image['filename'],1);?>"><img src="<?php echo substr($image['filename'],0,-4).'_thumb'.substr($image['filename'],-4);?>"/></a>
 			</li>
 		<?php endforeach;?>
 		</ul>
