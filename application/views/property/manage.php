@@ -70,8 +70,10 @@
 			<ul class="manage-tabs">
 				<li class="pf"><a class="btn">features</a></li>
 				<li class="pp"><a class="btn black">pet policy</a></li>
+				<li class="pr"><a class="btn black">requirements</a></li>
 				<li class="pa"><a class="btn black">announcement</a></li>
 			</ul>
+			<div class="mgt">
 			<?php echo '<div id="property-features">';
 				  echo form_fieldset('property features');
 				  echo form_checkbox('fitness','24-hour Fitness Center',$fitness).' <span>24-hour Fitness Center</span>';
@@ -114,7 +116,7 @@
 				  echo form_textarea('announcement',$announcement);
 				  echo '</div>';
 				  echo form_fieldset_close();?>
-			
+			</div>
 			<button class="btn black pull-right sub-btn" type="submit" name="submit"><i class="icon-save"></i> save changes</button>
 			</div>
 		</form>

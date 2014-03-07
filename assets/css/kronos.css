@@ -6257,14 +6257,16 @@ footer .footer-toe {
   outline: none;
 }
 .property-edit #pet-policy textarea,
-.property-edit #announcements1 textarea {
+.property-edit #announcements1 textarea,
+.property-edit #requirements textarea {
   width: 99%;
   height: 100px;
   max-width: 99%;
   margin-bottom: 20px;
 }
 .property-edit #pet-policy,
-.property-edit #announcements1 {
+.property-edit #announcements1,
+.property-edit #requirements {
   display: none;
 }
 .property-edit legend {
@@ -6337,6 +6339,9 @@ footer .footer-toe {
 .property-edit .all-the-icons {
   position: relative;
   top: -20px;
+}
+.property-edit .mgt {
+  height: 235px;
 }
 /* view property page */
 .view-property .row {
