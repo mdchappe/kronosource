@@ -54,6 +54,8 @@
 				<?php echo form_input('last_name', $the_user->last_name);?><br/>
 				<label for="phone">Phone(include area code): </label>
 				<?php echo form_input('phone', $the_user->phone);?><br/>
+				<label for="phone">Fax(include area code): </label>
+				<?php echo form_input('fax', $fax);?><br/>
 				<label for="street">Street: </label>
 				<?php echo form_input('street', $the_user->street);?><br/>
 				<label for="city">City: </label>
@@ -62,6 +64,8 @@
 				<?php echo form_dropdown('state',array('tx'=>'TX'),$the_user->state);?><br/>
 				<label for="zip">Zip Code: </label>
 				<?php echo form_input('zip', $the_user->zip);?><br/>
+				<label for="hours">Office Hours: </label>
+				<?php echo form_textarea('hours', $hours);?><br/>
 				<?php echo form_fieldset_close(); ?>
 			</div>
 		</div>

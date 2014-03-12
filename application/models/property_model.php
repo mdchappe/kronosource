@@ -79,11 +79,13 @@
 			
 			$data['trash'] = $this->input->post('trash');
 			
-			//$data['announcement'] = $this->input->post('announcement');
-			
 			$data['pet_policy'] = $this->input->post('pet_policy');
 			
 			$data['additional'] = $this->input->post('additional');
+			
+			$data['fax'] = $this->input->post('fax');
+			
+			$data['hours'] = $this->input->post('hours');
 			
 			$data['property_id'] = $id;
 			
@@ -141,6 +143,10 @@
 			$data['pet_policy'] = $this->input->post('pet_policy');
 			
 			$data['additional'] = $this->input->post('additional');
+			
+			$data['fax'] = $this->input->post('fax');
+			
+			$data['hours'] = $this->input->post('hours');
 			
 			$data['updated'] = time();
 			

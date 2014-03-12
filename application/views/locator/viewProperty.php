@@ -17,7 +17,7 @@
 
 	<div class="row w-btns">
 		<img class="profile-img" src="<?php echo $property['file_name'];?>" />
-		<div class="address"><?php echo $property['street'].'<br/>'.$property['city'].', '.$property['state'].' '.$property['zip'].'<br/><a href="tel:'.$property['phone'].'"><i class="icon-phone"></i> '.$property['phone'].'</a>';?></div>
+		<div class="address"><?php echo $property['street'].'<br/>'.$property['city'].', '.$property['state'].' '.$property['zip'].'<br/><a href="tel:'.$property['phone'].'"><i class="icon-phone"></i> '.$property['phone'].'</a><br/><a href="tel:'.$features['fax'].'"><i class="icon-phone">(fax)</i> '.$features['fax'].'</a><br/>Office Hours:<p>'.nl2br($features['hours']).'</p>';?></div>
 		<a target="_blank" class="btn green gmaps" href="https://maps.google.com?q=<?php echo $property['street'].' '.$property['city'].' '.$property['state'].' '.$property['zip'] ?>"><i class="icon-map-marker"></i> Google maps</a>
 		<a target="_blank" class="btn cancel yelp "href="http://www.yelp.com/biz/<?php echo $property['company'].'--'.$property['city']?>"><i class="icon-asterisk"></i> yelp reviews</a>
 		<form method="post" name="message" id="message" action="<?php echo base_url();?>index.php/message/compose">
@@ -34,7 +34,7 @@
 	 
 				foreach($features as $feature => $value):
 		
-				if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated' && $feature != 'announcement' && $feature != 'announcement_updated' && $feature != 'pet_policy' && $feature != 'additional'){ ?>
+				if($value && $feature != 'id' && $feature != 'property_id' && $feature != 'management' && $feature != 'updated' && $feature != 'announcement' && $feature != 'announcement_updated' && $feature != 'pet_policy' && $feature != 'additional' && $feature != 'fax' && $feature != 'hours'){ ?>
 				<li><i class="icon-ok"></i> <?php 
 					if($feature == 'cable'){echo 'Cable Providers: ';} else if($feature == 'trash'){echo 'Trash Collection: ';} echo $value;?></li>
 					<?php } 

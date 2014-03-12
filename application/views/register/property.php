@@ -40,6 +40,8 @@
 			<?php echo form_input('last_name','', $reg_opts);?><br/>
 			<label for="phone">Phone <small>(with area code)</small>&nbsp;:&nbsp;</label>
 			<?php echo form_input('phone','', $reg_opts);?><br/>
+			<label for="fax">Fax <small>(with area code)</small>&nbsp;:&nbsp;</label>
+			<?php echo form_input('fax','', $reg_opts);?><br/>
 			<label for="street">Street&nbsp;:&nbsp;</label>
 			<?php echo form_input('street','', $reg_opts);?><br/>
 			<label for="city">City&nbsp;:&nbsp;</label>
@@ -48,6 +50,8 @@
 			<?php echo form_dropdown('state',array('tx'=>'TX'),'TX', $reg_opts);?><br>
 			<label for="zip">Zip Code&nbsp;:&nbsp;</label>
 			<?php echo form_input('zip','', $reg_opts);?><br/>
+			<label for="hours">Office Hours&nbsp;:&nbsp;</label>
+			<?php echo form_textarea('hours');?><br/>
 			<?php echo form_fieldset_close(); ?><hr>
 			<div class="checkboxes">
 			<?php echo form_fieldset('Property Features');
