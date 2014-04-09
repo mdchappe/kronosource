@@ -3,7 +3,11 @@
 		<span class="validation-errors"></span>
 		<h2 class="text-center">Edit Profile</h2>
 		<hr>
-		
+		<div class="row">
+			<div class="content">
+				<p>This account expires at 12:00AM on <?php echo $the_user->expiration;?>. You can renew online <a href="#">here</a>.</p> 
+			</div>
+		</div>
 		<?php echo form_open('users/edit'); ?>
 		
 			<label for="username">User Name: </label>

@@ -48,10 +48,21 @@
 				
 				$this->the_user = $this->ion_auth->user()->row();
 				
+				if($this->the_user->expiration+86400 < now()){
+					
+					$this->session->set_flashdata('status','This account has expired. Please make online payment or <a href="#">contact the Administrator</a> to continue using KronoSource.');
+					//redirect to payment page
+					redirect(base_url().'index.php/payment/renew');
+				}
+				
 				$this->the_user->group = $this->ion_auth->get_users_groups()->result()[0]->name;
 				
 				$this->load->model('message_model');
 				$this->the_user->unread = $this->message_model->count_unread($this->the_user->id);
+				
+				//convert account expiration date to human readable
+				$date = $this->the_user->expiration+86400;
+				$this->the_user->expiration = $this->convert_date_to_human($date);
 				
 				$data['the_user'] = $this->the_user;
 				
@@ -67,6 +78,20 @@
 				redirect(base_url().'index.php/');
 			}
 		}
+		
+		private function convert_date_to_human($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			
+			$year = substr($date, 0, 4);
+			$month = substr($date, 5, 2);
+			$day = substr($date, 8, 2);
+			$date = $month.'-'.$day.'-'.$year;
+			
+			return $date;
+		}
 	}
 		
 	class Property_Auth_Controller extends CI_Controller {
@@ -81,10 +106,21 @@
 				
 				$this->the_user = $this->ion_auth->user()->row();
 				
+				if($this->the_user->expiration+86400 < now()){
+					
+					$this->session->set_flashdata('status','This account has expired. Please make online payment or <a href="#">contact the Administrator</a> to continue using KronoSource.');
+					//redirect to payment page
+					redirect(base_url().'index.php/payment/renew');
+				}
+				
 				$this->the_user->group = $this->ion_auth->get_users_groups()->result()[0]->name;
 				
 				$this->load->model('message_model');
 				$this->the_user->unread = $this->message_model->count_unread($this->the_user->id);
+				
+				//convert account expiration date to human readable
+				$date = $this->the_user->expiration+86400;
+				$this->the_user->expiration = $this->convert_date_to_human($date);
 				
 				$data['the_user'] = $this->the_user;
 				
@@ -99,6 +135,20 @@
 				$this->session->set_flashdata('login','You are either not logged in or are trying to access restricted content.');
 				redirect(base_url().'index.php/');
 			}
+		}
+		
+		private function convert_date_to_human($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			
+			$year = substr($date, 0, 4);
+			$month = substr($date, 5, 2);
+			$day = substr($date, 8, 2);
+			$date = $month.'-'.$day.'-'.$year;
+			
+			return $date;
 		}
 	}
 		
@@ -119,9 +169,27 @@
 				$this->load->model('message_model');
 				$this->the_user->unread = $this->message_model->count_unread($this->the_user->id);
 				
+				//convert account expiration date to human readable
+				$date = $this->the_user->expiration+86400;
+				$this->the_user->expiration = $this->convert_date_to_human($date);
+				
 				$data['the_user'] = $this->the_user;
 				
 				$this->load->vars($data);
 			}
+		}
+		
+		private function convert_date_to_human($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$date = unix_to_human($date);
+			
+			$year = substr($date, 0, 4);
+			$month = substr($date, 5, 2);
+			$day = substr($date, 8, 2);
+			$date = $month.'-'.$day.'-'.$year;
+			
+			return $date;
 		}
 	}

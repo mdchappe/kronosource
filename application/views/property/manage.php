@@ -22,7 +22,11 @@
 		<?php echo form_error('state','<p>state: ','</p>'); ?>
 		<?php echo form_error('zip','<p>zip code: ','</p>'); ?>
 		<?php echo form_open_multipart('property/manage'); ?>
-		
+		<div class="row">
+			<div class="content">
+				<p>This account expires at 12:00AM on <?php echo $the_user->expiration;?>. You can renew online <a href="<?php echo base_url();?>index.php/payment/renew>here</a>.</p> 
+			</div>
+		</div>
 		<div class="row">
 			<div class="width50">
 				<?php echo form_fieldset('User Information');?>

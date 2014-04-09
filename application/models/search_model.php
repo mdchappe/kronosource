@@ -48,7 +48,7 @@
 			}
 			
 			if($params['unit_date']){
-			
+				
 				$this->db->where('unit.date_available <=',$params['unit_date']);
 			}
 			

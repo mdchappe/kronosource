@@ -116,10 +116,12 @@
 				$params['size_min'] = 0;
 			}
 			
+			$date = $this->input->post('unit_date');
+			
 			$params['floor'] = $this->input->post('floor');
 			$params['direction'] = $this->input->post('direction');
 			$params['washer'] = $this->input->post('washer');
-			$params['unit_date'] = $this->input->post('unit_date');
+			$params['unit_date'] = $this->convert_date_to_unix($date);
 			$params['commission'] = $this->input->post('commission');
 			
 			foreach($params as $key => $value) {
@@ -143,5 +145,17 @@
 				$this->session->set_flashdata('status','Please specify at least one search criterion.');
 				redirect(base_url().'index.php/locator/searchProperties');
 			}
+		}
+		
+		private function convert_date_to_unix($date) {
+			//YYYY-MM-DD HH:MM:SS AM/PM
+			$this->load->helper('date');
+			
+			$year = substr($date, -4);
+			$month = substr($date, 0, 2);
+			$day = substr($date, 3, 2);
+			$date = $year.'-'.$month.'-'.$day.' 11:59:59 PM';
+			
+			return human_to_unix($date);
 		}
 	}
