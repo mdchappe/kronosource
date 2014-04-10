@@ -24,6 +24,6 @@ $db['kronosource']['password'] = 'root';<br>
 $db['kronosource']['database'] = 'db491689781';</code><br>
 "
 </li>
-<li>copy the <code>config.php</code> and <code>database.php</code> into your local <code>/application/config</code> directory</li>
+
 <li>configure MAMP accordingly</li>
 </ul>
