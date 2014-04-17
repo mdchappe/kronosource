@@ -6,7 +6,7 @@
 			   	  echo '<p class="error">'.$reset.'</p>';
 		   	  }?>
 		   	  <p>kronosource apartment locator management system</p>
-		   	  <? if (isset($home)):?>
+		   	  <?php if (isset($home)):?>
 		   	  <div class="reg-box">
 				<p class="unregistered">
 					
