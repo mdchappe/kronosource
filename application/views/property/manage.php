@@ -24,7 +24,7 @@
 		<?php echo form_open_multipart('property/manage'); ?>
 		<div class="row">
 			<div class="content">
-				<p>This account expires at 12:00AM on <?php echo $the_user->expiration;?>. You can renew online <a href="<?php echo base_url();?>index.php/payment/renew>here</a>.</p> 
+				<p>This account expires at 12:00AM on <?php echo $the_user->expiration;?>. You can renew online <a href="<?php echo base_url();?>index.php/payment/renew">here</a>.</p> 
 			</div>
 		</div>
 		<div class="row">
@@ -113,7 +113,7 @@
 				  echo '</div>';
 				  echo form_fieldset_close(); 
 				  
-				   echo '<div id="requirements">';
+				  echo '<div id="requirements">';
 				  echo form_fieldset('requirements');
 				  echo form_textarea('additional',$additional);
 				  echo '</div>';

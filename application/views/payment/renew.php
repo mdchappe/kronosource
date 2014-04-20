@@ -8,10 +8,24 @@
 				<?php if(isset($status)):?>
 				<span><?php echo $status;?></span>
 				<?php endif;?>
-				
+				<h3>Billing Information</h3>
 				<?php echo form_open('payment/pay'); ?>
-				<label for="months">Months to renew at $<?php echo $rate;?>/month:</label>
-				<?php echo form_input('months',6);?> <button type="submit" name="submit">renew</button>
+                <label for="first_name">First Name:</label>
+                <?php echo form_input('first_name');?><br/>
+                <label for="last_name">Last Name:</label>
+                <?php echo form_input('last_name');?><br/>
+                <label for="street">Street:</label>
+                <?php echo form_input('street');?><br/>
+                <label for="city">City:</label>
+                <?php echo form_input('city');?><br/>
+                <label for="state">State:</label>
+                <?php echo form_input('state');?>
+                <label for="zip">Zip:</label>
+                <?php echo form_input('zip');?><br/>
+				<label for="months">Months(30 days per month) to renew at $<?php echo $rate;?>/month:</label>
+				<?php echo form_input('months',6);
+                      echo form_hidden('rate',$rate);?>
+                <button type="submit" name="submit">renew</button>
 				</form>
 				
 			</div>

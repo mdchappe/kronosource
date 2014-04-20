@@ -37,6 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+$route['payment/payconfirm'] = 'payment/payconfirm';
 $route['payment/pay'] = 'payment/pay';
 $route['payment/renew'] = 'payment/renew';
 $route['locator/landing'] = 'locator/landing';
