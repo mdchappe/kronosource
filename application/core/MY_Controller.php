@@ -48,7 +48,7 @@
 				
 				$this->the_user = $this->ion_auth->user()->row();
 				
-				if($this->the_user->expiration+86400 < now()){
+				if($this->the_user->expiration < now()){
 					
 					$this->session->set_flashdata('status','This account has expired. Please make online payment or <a href="#">contact the Administrator</a> to continue using KronoSource.');
 					//redirect to payment page
@@ -106,7 +106,7 @@
 				
 				$this->the_user = $this->ion_auth->user()->row();
 				
-				if($this->the_user->expiration+86400 < now()){
+				if($this->the_user->expiration < now()){
 					
 					$this->session->set_flashdata('status','This account has expired. Please make online payment or <a href="#">contact the Administrator</a> to continue using KronoSource.');
 					//redirect to payment page

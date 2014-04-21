@@ -132,18 +132,30 @@
             $this->session->unset_userdata('months');
             
             $expiration = $this->the_user->expiration;
-            $expiration += (2592000 * $months);
+            
+            if(strtotime('+1 day', intval($expiration)) < time()){ 
+                $expiration = time();
+            }
+            
+            if($months == 1) {
+                $monthString = '+1 month';
+            } else {
+                $monthString = '+'.$months.' months';
+            }
+            
+            $newExpiration = strtotime($monthString,$expiration);
             
             $id = $this->the_user->id;
-            $update = array("expiration" => $expiration);
+            $update = array('expiration' => $newExpiration);
+            
             if($this->ion_auth->update($id, $update)){
             
-            $data['expiration'] = $this->convert_date_to_human($expiration);
-            $data['title'] = 'Account Renewal Successful';
-            
-            $this->load->view('templates/header',$data);
-            $this->load->view('payment/payconfirm',$data);
-            $this->load->view('templates/footer',$data);
+            	$data['expiration'] = $this->convert_date_to_human($newExpiration);
+            	$data['title'] = 'Account Renewal Successful';
+            	
+            	$this->load->view('templates/header',$data);
+            	$this->load->view('payment/payconfirm',$data);
+            	$this->load->view('templates/footer',$data);
             } else {
                 echo 'update failed';
             }

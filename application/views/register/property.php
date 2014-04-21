@@ -89,6 +89,7 @@
 				  echo form_fieldset_close();?>
 				  
 				  <input type="hidden" name="code" value="<?php echo $code?>" />
+                  <input type="hidden" name="exp" value="<?php echo $exp;?>" />
 			<button class="btn black pull-right" type="submit" name="submit">register <i class="icon-caret-right"></i></button>
 			</div>
 		</form>

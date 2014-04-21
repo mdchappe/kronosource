@@ -20,10 +20,10 @@
 			
 			if($this->ion_auth->logged_in() && $this->ion_auth->in_group(3)){
 				
-				redirect(base_url().'index.php/property/manage');
+				redirect(base_url().'index.php/property/manage', 'refresh');
 			} else if ($this->ion_auth->logged_in() && $this->ion_auth->in_group(2)) {
 				
-				redirect(base_url().'index.php/locator/landing');
+				redirect(base_url().'index.php/locator/landing', 'refresh');
 			} else if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin()) {
 				
 				redirect(base_url().'index.php/admin/controlPanel');
@@ -61,8 +61,11 @@
 					$this->load->model('preregistration_model');
 					$user_type = $this->preregistration_model->check_registration_code($code);
 					$data['code'] = $code;
+                    $data['exp'] = $user_type['account_expiration'];
+                    
+                    //$this->session->set_userdata('exp',$data['exp']);
 					
-					if(!empty($user_type) && $user_type['active'] == 1){
+					if(!empty($user_type) && $user_type['active'] == 1 && strtotime('+1 day', $user_type['code_expiration']) > time()){
 						
 						$this->load->view('templates/header',$data);
 						$this->load->view('register/'.$user_type['usertype'],$data);

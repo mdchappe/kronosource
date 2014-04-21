@@ -14,6 +14,7 @@
 			$this->load->library('form_validation');
 			
 			$data['code'] = $this->input->post('code');
+            $data['exp'] = $this->input->post('exp');
 			
 			$this->form_validation->set_rules('username','User Name','trim|required|min_length[6]|max_length[18]|xss_clean|is_unique[users.username]');
 			$this->form_validation->set_rules('password','Password','trim|required|min_length[8]|max_length[18]');
@@ -40,7 +41,8 @@
 					'last_name' => $this->input->post('last_name'),
 					'phone' => $this->input->post('phone'),
 					'company' => $this->input->post('company'),
-					'display_name' => $this->input->post('display_name')
+					'display_name' => $this->input->post('display_name'),
+                    'expiration' => $this->input->post('exp')
 				);
 				$group = array('2');
 				$remember = TRUE;
@@ -61,6 +63,7 @@
 						redirect('/','refresh');
 					}
 				} else {
+                    $this->session->set_flashdata('status','Registration failed. Please try again or contact administrator.');
 					redirect('/','refresh');
 				}
 			}
@@ -71,6 +74,9 @@
 			$this->load->helper('form');
 			$this->load->library('form_validation');
 			$this->load->model('preregistration_model');
+            
+            $data['code'] = $this->input->post('code');
+            $data['exp'] = $this->input->post('exp');
 			
 			$this->form_validation->set_rules('username','User Name','trim|required|min_length[6]|max_length[18]|xss_clean|is_unique[users.username]');
 			$this->form_validation->set_rules('password','Password','trim|required|min_length[8]|max_length[18]');
@@ -135,7 +141,8 @@
 					'state' => $this->input->post('state'),
 					'zip' => $this->input->post('zip'),
 					'file_name' => '/assets/img/profile/'.$upload_data['file_name'],
-					'display_name' => $this->input->post('display_name')
+					'display_name' => $this->input->post('display_name'),
+                    'expiration' => $this->input->post('exp')
 				);
 				
 				$group = array('3');
@@ -160,6 +167,7 @@
 					}
 					
 				} else {
+                    $this->session->set_flashdata('status','Registration failed. Please try again or contact administrator.');
 					redirect('/','refresh');
 				}
 			}

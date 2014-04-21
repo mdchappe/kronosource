@@ -31,6 +31,7 @@
 			<?php echo form_input('company','', $reg_opts);?><br/>
 			
 			<input type="hidden" name="code" value="<?php echo $code;?>" />
+            <input type="hidden" name="exp" value="<?php echo $exp;?>" />
 			
 			<button class="btn black pull-right" type="submit" name="submit">register <i class="icon-caret-right"></i></button>
 		</form>

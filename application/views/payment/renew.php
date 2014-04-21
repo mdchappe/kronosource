@@ -22,7 +22,7 @@
                 <?php echo form_input('state');?>
                 <label for="zip">Zip:</label>
                 <?php echo form_input('zip');?><br/>
-				<label for="months">Months(30 days per month) to renew at $<?php echo $rate;?>/month:</label>
+				<label for="months">Months to renew at $<?php echo $rate;?>/month:</label>
 				<?php echo form_input('months',6);
                       echo form_hidden('rate',$rate);?>
                 <button type="submit" name="submit">renew</button>
