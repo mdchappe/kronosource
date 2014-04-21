@@ -20,10 +20,10 @@
 			
 			if($this->ion_auth->logged_in() && $this->ion_auth->in_group(3)){
 				
-				redirect(base_url().'index.php/property/manage', 'refresh');
+				redirect(base_url().'index.php/property/manage');
 			} else if ($this->ion_auth->logged_in() && $this->ion_auth->in_group(2)) {
 				
-				redirect(base_url().'index.php/locator/landing', 'refresh');
+				redirect(base_url().'index.php/locator/landing');
 			} else if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin()) {
 				
 				redirect(base_url().'index.php/admin/controlPanel');

@@ -177,7 +177,7 @@
 			
 			if(!$this->ion_auth->logged_in()){
 				redirect('/');
-			} else if($the_user->expiration+86400 < now()){
+			} else if($this->$the_user->expiration+86400 < now()){
 					
 				$this->session->set_flashdata('status','This account has expired. Please make online payment or <a href="#">contact the Administrator</a> to continue using KronoSource.');
 				//redirect to payment page
