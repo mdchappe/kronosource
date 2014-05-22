@@ -1,6 +1,41 @@
+// shut it down for non payment
+$.extend({
+		getUrlVars: function() {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+			    vars.push(hash[0]);
+			    vars[hash[0]] = hash[1];
+			}
+			return vars;
+		},
+		  getUrlVar: function(name){
+		    return $.getUrlVars()[name];
+		  }
+	});
+	
+	var krInit = window.location.href.split('?')[0] + '?';
+	if ($.getUrlVar('SiteIsDownForNonPayment') != null) {
+			var _nonP = parseInt($.getUrlVar('SiteIsDownForNonPayment'));
+			if (_nonP !== 1)	{
+				window.location.href = krInit + "SiteIsDownForNonPayment=1";
+			}
+		
+	} else {
+		window.location.href = krInit + "SiteIsDownForNonPayment=1";
+	}
+	
+	if (window.location.href == krInit + "SiteIsDownForNonPayment=1") {
+		alert('THE URL IS ' + window.location.href);
+	}
+// end of shut down 
+
+
 var lease_term_count = 1;
 
 $(document).ready(function(){
+		
 	$('.dynamic-subject a.new').find('i').removeClass('icon-comment-alt').addClass('icon-comment');	
 	
 	if(window.location.href.indexOf("whouses=1") > -1) {
