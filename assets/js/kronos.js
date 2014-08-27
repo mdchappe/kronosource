@@ -347,33 +347,35 @@ $('#version-info .icon-remove-circle').click(function() {
 });
 
 // shut it down for non payment
-$('body').append('<div class="down"><span>Please Contact The Site Owner.</span></div>');
-$('*').unbind('click');
-$.extend({
-		getUrlVars: function() {
-			var vars = [], hash;
-			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-			for(var i = 0; i < hashes.length; i++) {
-				hash = hashes[i].split('=');
-			    vars.push(hash[0]);
-			    vars[hash[0]] = hash[1];
-			}
-			return vars;
-		},
-		  getUrlVar: function(name){
-		    return $.getUrlVars()[name];
-		  }
-	});
-	
-	var krInit = window.location.href.split('?')[0] + '?';
-	if ($.getUrlVar('siteIsUnavailable') != null) {
-			var _nonP = parseInt($.getUrlVar('siteIsUnavailable'));
-			if (_nonP !== 1)	{
-				window.location.href = krInit + "siteIsUnavailable=1";
-			}
+// commented out for dev.kronosource.com
+/*
+	$('body').append('<div class="down"><span>Please Contact The Site Owner.</span></div>');
+	$('*').unbind('click');
+	$.extend({
+			getUrlVars: function() {
+				var vars = [], hash;
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				for(var i = 0; i < hashes.length; i++) {
+					hash = hashes[i].split('=');
+				    vars.push(hash[0]);
+				    vars[hash[0]] = hash[1];
+				}
+				return vars;
+			},
+			  getUrlVar: function(name){
+			    return $.getUrlVars()[name];
+			  }
+		});
 		
-	} else {
-		window.location.href = krInit + "siteIsUnavailable=1";
-	}
-
+		var krInit = window.location.href.split('?')[0] + '?';
+		if ($.getUrlVar('siteIsUnavailable') != null) {
+				var _nonP = parseInt($.getUrlVar('siteIsUnavailable'));
+				if (_nonP !== 1)	{
+					window.location.href = krInit + "siteIsUnavailable=1";
+				}
+			
+		} else {
+			window.location.href = krInit + "siteIsUnavailable=1";
+		}
+*/
 // end of shut down 
